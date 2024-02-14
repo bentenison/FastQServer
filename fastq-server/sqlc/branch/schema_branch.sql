@@ -1,0 +1,20 @@
+CREATE TABLE `manage_branch` (
+  `id` varchar(255) NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `license` varchar(255) DEFAULT NULL,
+  `services` varchar(1024) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `license_key` varchar(1024) DEFAULT NULL,
+  `check_in_url` varchar(255) DEFAULT NULL,
+  `ticket_page_url` varchar(255) DEFAULT NULL,
+  `display_url` varchar(255) DEFAULT NULL,
+  `company_code` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_by` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_by` varchar(255) DEFAULT NULL,
+  `printer_details` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`id`,`code`,`company_code`)
+)

@@ -1,0 +1,23 @@
+CREATE TABLE `manage_service` (
+  `id` varchar(255) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `code` varchar(255) NOT NULL,
+  `prefix` varchar(255) DEFAULT NULL,
+  `number_starts` int(255) DEFAULT NULL,
+  `number_ends` int(255) DEFAULT NULL,
+  `hide` tinyint(1) DEFAULT NULL,
+  `show_display` tinyint(1) DEFAULT NULL,
+  `description` varchar(1024) DEFAULT NULL,
+  `start_time` time DEFAULT NULL,
+  `end_time` time DEFAULT NULL,
+  `default_time` int(255) DEFAULT NULL,
+  `workflow` varchar(255) DEFAULT NULL,
+  `branch_code` varchar(255) NOT NULL,
+  `branch_name` varchar(255) DEFAULT NULL,
+  `company_code` varchar(255) NOT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_by` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`,`code`,`branch_code`,`company_code`)
+)

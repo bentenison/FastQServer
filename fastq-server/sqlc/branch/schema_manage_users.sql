@@ -1,0 +1,20 @@
+CREATE TABLE `manage_user` (
+  `id` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `firstname` varchar(255) DEFAULT NULL,
+  `lastname` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `user_type` varchar(255) DEFAULT NULL,
+  `suspended` tinyint(1) DEFAULT NULL,
+  `branch_name` varchar(255) DEFAULT NULL,
+  `branch_code` varchar(255) NOT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  `company_code` varchar(255) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `image_url` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` varchar(255) DEFAULT NULL,
+  `updated_by` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`,`email`,`branch_code`,`company_code`)
+)

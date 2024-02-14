@@ -1,0 +1,21 @@
+CREATE TABLE `ticket` (
+  `id` varchar(255) NOT NULL,
+  `service` varchar(255) DEFAULT NULL,
+  `ticket_status` tinyint(1) DEFAULT NULL,
+  `counter_id` varchar(255) DEFAULT NULL,
+  `transfered_to` varchar(255) DEFAULT NULL,
+  `transfered_by` varchar(255) DEFAULT NULL,
+  `customer_id` varchar(255) DEFAULT NULL,
+  `ticket_number` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `updated_by` varchar(255) DEFAULT NULL,
+  `started_serving_at` timestamp NULL DEFAULT NULL,
+  `end_serving_at` timestamp NULL DEFAULT NULL,
+  `ticket_name` varchar(255) DEFAULT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  `company_code` varchar(255) NOT NULL,
+  `branch_code` varchar(255) NOT NULL,
+  `branch_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`,`company_code`,`branch_code`)
+)
