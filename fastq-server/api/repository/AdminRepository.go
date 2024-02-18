@@ -3,6 +3,7 @@ package repository
 import (
 	"context"
 	"database/sql"
+	"fmt"
 	"log"
 
 	"github.com/bentenison/fastq-server/models"
@@ -1116,4 +1117,17 @@ func (q *sqlAdminRepo) UpdateUser(ctx context.Context, arg models.UpdateUserPara
 		arg.ID,
 	)
 	return err
+}
+func (q *sqlAdminRepo) ActivateSystemDAO(ip string, active bool) error {
+	_, err := q.db.ExecContext(context.TODO(), UpdateSystemActive(ip, active))
+	return err
+}
+
+func UpdateSystemActive(ip string, active bool) string {
+	return fmt.Sprintf(`
+		UPDATE systems SET 
+			is_active = %t
+		WHERE client_ip = '%s'`,
+		active, ip,
+	)
 }

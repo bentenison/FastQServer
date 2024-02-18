@@ -24,9 +24,9 @@
 
     <div class="mx-3" />
 
-    <v-btn class="ml-2" min-width="0" text to="/">
+    <!-- <v-btn class="ml-2" min-width="0" text to="/">
       <v-icon>mdi-view-dashboard</v-icon>
-    </v-btn>
+    </v-btn> -->
 
     <!-- <v-menu
         bottom
@@ -72,15 +72,90 @@
         </v-list>
       </v-menu> -->
 
-    <v-btn class="ml-2" min-width="0" text to="/pages/user">
-      <v-icon>mdi-account</v-icon>
-    </v-btn>
+    <div class="text-center">
+      <v-menu v-model="menu" :close-on-content-click="true" :nudge-width="200" offset-x>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn class="ml-2" min-width="0" text v-bind="attrs" v-on="on">
+            <v-icon>mdi-account</v-icon>
+          </v-btn>
+        </template>
+        <v-card>
+          <v-list>
+            <v-list-item>
+              <v-list-item-avatar>
+                <v-avatar color="red" class="text-center">
+                  <span class="white--text text-h5 text-center">{{ initials }}</span>
+                </v-avatar>
+              </v-list-item-avatar>
+
+              <v-list-item-content>
+                <v-list-item-title>{{ $store.state.Auth.user.firstname }} {{ $store.state.Auth.user.lastname
+                }}</v-list-item-title>
+                <v-list-item-subtitle>{{ $store.state.Auth.user.company.toUpperCase() }}</v-list-item-subtitle>
+              </v-list-item-content>
+
+              <v-list-item-action>
+                <v-btn :class="fav ? 'red--text' : ''" icon @click="fav = !fav">
+                  <v-icon>mdi-heart</v-icon>
+                </v-btn>
+              </v-list-item-action>
+            </v-list-item>
+          </v-list>
+
+          <v-divider></v-divider>
+
+          <v-list>
+            <v-list-item>
+              <v-list-item-title><v-btn block text color="error" class="mt-1 text-md-button" @click="$router.push('/')"> <v-icon
+                    left>mdi-logout</v-icon>
+                  logout
+                </v-btn></v-list-item-title>
+            </v-list-item>
+
+            <v-list-item>
+
+              <v-list-item-title><v-btn block text color="primary" class="mt-1 text-md-button"
+                  @click="$router.push('/company')"> <v-icon left>mdi-card-account-details</v-icon>
+                  profile
+                </v-btn></v-list-item-title>
+            </v-list-item>
+          </v-list>
+
+          <v-card-actions>
+            <v-spacer></v-spacer>
+
+            <v-btn text @click="menu = false">
+              Cancel
+            </v-btn>
+            <v-btn color="primary" text @click="menu = false">
+              Save
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-menu>
+    </div>
   </v-app-bar>
 </template>
 
 <script>
 // import EventBus from '@/plugins/eventBus';
 export default {
+
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+
+  },
+  computed: {
+    initials() {
+      const firstInitial = this.$store.state.Auth.user.firstname ? this.$store.state.Auth.user.firstname[0] : '';
+      const lastInitial = this.$store.state.Auth.user.lastname ? this.$store.state.Auth.user.lastname[0] : '';
+      return `${firstInitial}${lastInitial}`.toUpperCase();
+    }
+  }
 
 }
 </script>

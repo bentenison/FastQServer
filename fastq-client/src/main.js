@@ -58,7 +58,7 @@ axios.defaults.headers.common[
 ] = `Bearer ${store.state.Auth.token}`;
 // console.log(store.state.Auth.token);
 axios.defaults.baseURL = baseURL;
-
+// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 // axios.interceptors.request.use(
 //   (config) => {
 //     console.log("::::::::::::::::", config);

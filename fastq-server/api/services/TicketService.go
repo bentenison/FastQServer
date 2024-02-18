@@ -347,7 +347,7 @@ func UpdateSystemsIP(ctx context.Context, db *sql.DB, client models.UpdateSystem
 	return rows, nil
 }
 func GetAllSystems(ctx context.Context, db *sql.DB) ([]*models.UpdateSystemParams, error) {
-	rows, err := db.QueryContext(ctx, `select * from systems`)
+	rows, err := db.QueryContext(ctx, `select * from systems where is_active = 1`)
 	if err != nil {
 		return nil, err
 	}
