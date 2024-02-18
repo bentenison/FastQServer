@@ -38,28 +38,41 @@
                     </div>
                 </div>
                 <div class="col-md-4 black text-white align-content-center">
-                    <h3 class="mt-3">NOW SERVING</h3>
+                    <!-- <h3 class="mt-3">NOW SERVING</h3> -->
                     <!-- <div class="white w-100" style="height: 1px;"></div> -->
                     <!-- {{ activeClients }} -->
                     <!-- {{ activeClients }} -->
                     <div v-for="(n, i) in activeClients" class="d-flex flex-column align-items-center">
-                        <div class="col-md-12">
-                            <h4 style="font-size: 2rem;">{{ n.counter_name }}
+                        <div class="col-md-12 d-flex flex-wrap">
+                            <div class="col-md-6">
+                                <h4>Counter</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Ticket</h4>
+                            </div>
+                            <div class="col-md-6 text-left py-0 my-0">
+                                <h2 style="font-size: 3rem;">{{ n.CounterNumber }}</h2>
+                                <!-- {{ n.ID }} -->
+                            </div>
+                            <div class="col-md-6 text-center py-0 my-0">
+                                <h2 style="font-size: 3rem;"> <span v-if="$store.state.Auth.activeTickets && $store.state.Auth.activeTickets.findIndex(
+                                    j => j.ticket_payload.CounterID === n.ID) !== -1">
+                                        {{ $store.state.Auth.activeTickets[$store.state.Auth.activeTickets.findIndex(
+                                            j => j.ticket_payload.CounterID === n.ID)].ticket_payload.TicketName }}
+                                    </span></h2>
+                            </div>
+                            <!-- 
                                 ==>
-                                <span v-if="$store.state.Auth.activeTickets && $store.state.Auth.activeTickets.findIndex(
-                                    j => j.ticket_payload.CounterID === n.counter_id) !== -1">
-                                    {{ $store.state.Auth.activeTickets[$store.state.Auth.activeTickets.findIndex(
-                                        j => j.ticket_payload.CounterID === n.counter_id)].ticket_payload.TicketName }}
-                                </span>
-                            </h4>
+                               
+                            </h4> -->
 
                             <!-- {{ $store.state.Auth.activeTickets }} -->
                             <!-- <h2
                                 v-if="activeTickets.length !== 0 && activeTickets[i].ticket_payload.CounterID === n.counter_id">
                                 {{ activeTickets[i].ticket_payload.Service }}</h2> -->
                             <!-- <h2>{{ activeTickets }}</h2> -->
+                            <div class="white w-100" style="height: 1px;"></div>
                         </div>
-                        <div class="white w-100" style="height: 1px;"></div>
                     </div>
                     <v-card>
 
@@ -273,31 +286,71 @@ export default {
 
         },
         getActiveCounters(clientip, name) {
-            axios.get(`http://${clientip}:3000/api/check`).then(res => {
-                console.log("res client:::::", res);
-                this.add(name)
-                // this.activeClients.push(name)
-                // this.$store.commit("SET_USER", res.data)
-                // this.$store.commit(types.MUTATE_LOADER_OFF)
-            }).catch(err => {
-                console.log(err.response);
-                this.activeClients.splice(this.activeClients.findIndex(a => a.counter_id === name.counter_id), 1)
-                // this.activeClients.delete(name)
-                // reject(err.response)
-                // this.$store.commit(types.MUTATE_LOADER_OFF)
-                // this.$toast.error("error occured while getting connected clients!!!")
-            })
+            // this.getConnected().then(connected => {
+            // })
+            // if (this.activeClients.legth > 0) {
+            //     // for (let j = 0; j < this.clients.length; j++) {
+            //     for (let index = 0; index < this.activeClients.length; index++) {
+            //         const element = this.activeClients[index];
+            //         if (element.client_ip === clientip) {
+            //             continue
+            //         } else {
+            //             this.activeClients = this.activeClients.splice(index, 1)
+            //         }
+            //     }
+
+            //     // }
+
+            // } else {
+            //     this.add(name)
+            // }
+            // for (const key in connected) {
+            //     if (key === clientip) {
+            //         // console.log("key fouind", key);
+
+            //     } else {
+            //         for (let index = 0; index < this.activeClients.length; index++) {
+            //             const element = this.activeClients[index];
+            //             console.log("object", element.client_ip === key);
+            //             if (element.client_ip === key) {
+            //                 // console.log("continuimng>>>>>>>>>>>>>.");
+            //                 this.activeClients = this.activeClients.splice(index, 1)
+            //                 // break
+            //                 // continue
+            //             }
+            //         }
+
+            //     }
+            // };
+            // axios.get(`http://${clientip}:3000/api/check`).then(res => {
+            //     console.log("res client:::::", res);
+            //     this.add(name)
+            //     // this.activeClients.push(name)
+            //     // this.$store.commit("SET_USER", res.data)
+            //     // this.$store.commit(types.MUTATE_LOADER_OFF)
+            // }).catch(err => {
+            //     console.log("eroro active counters", err.response);
+            //     this.activeClients.splice(this.activeClients.findIndex(a => a.counter_id === name.counter_id), 1)
+            //     // this.activeClients.delete(name)
+            //     // reject(err.response)
+            //     // this.$store.commit(types.MUTATE_LOADER_OFF)
+            //     // this.$toast.error("error occured while getting connected clients!!!")
+            // })
         },
         getConnected() {
-            axios.get(`/getconnectedclients`).then(res => {
-                console.log("res ::::: connected clients", res);
-                // this.$store.commit("SET_USER", res.data)
-                // this.$store.commit(types.MUTATE_LOADER_OFF)
-            }).catch(err => {
-                console.log(err.response);
-                // reject(err.response)
-                // this.$store.commit(types.MUTATE_LOADER_OFF)
-                this.$toast.error("error occured while getting connected clients!!!")
+            return new Promise((resolve, reject) => {
+                axios.get(`/getconnectedclients`).then(res => {
+                    // console.log("res ::::: connected clients", res);
+                    resolve(res.data)
+                    // this.$store.commit("SET_USER", res.data)
+                    // this.$store.commit(types.MUTATE_LOADER_OFF)
+                }).catch(err => {
+                    console.log(err.response);
+                    reject(err)
+                    // reject(err.response)
+                    // this.$store.commit(types.MUTATE_LOADER_OFF)
+                    this.$toast.error("error occured while getting connected clients!!!")
+                })
             })
 
         },
@@ -368,6 +421,31 @@ export default {
             this.days.forEach(element => {
                 this.dayWiseVideo[element] = []
             });
+        },
+        addcounter(client) {
+            const { length } = this.activeClients;
+            const found = this.activeClients.some(el => el.counter_id === client.counter_id);
+            if (!found) this.activeClients.push(client);
+        },
+        getAllcounters(id) {
+            return new Promise((resolve, reject) => {
+                let payload = {
+                    id: id,
+                    company_code: this.$store.state.Auth.user.company_code,
+                    branch_code: this.$store.state.Auth.user.company_code,
+                }
+                // console.log("object:::::::", payload);
+                axios.post(`/counter/getcounter`, payload).then(res => {
+                    console.log("res:::::", res);
+                    // this.counter = res.data.message
+                    resolve(res.data.message)
+                    // this.$toast.success("branch added successfully.")
+                }).catch(err => {
+                    console.log(err.response);
+                    this.$toast.error("error occured while getting counter!!!")
+                    reject(err)
+                })
+            })
         }
     },
     beforeMount() {
@@ -386,23 +464,34 @@ export default {
 
         this.socket = new WebSocket(`ws://${this.$route.query.ip}:8090/ws`);
         this.connectToServer()
+        // this.getConnected()
         // console.log("object", this.clients);
         this.interval = setInterval(() => {
             this.GetAllClients().then(res => {
-                // this.clients = res
-                for (let i = 0; i < this.clients.length; i++) {
-                    // console.log("single object", this.clients[i]);
-                    if (this.clients[i].client_ip) {
-                        this.getActiveCounters(this.clients[i].client_ip, this.clients[i])
-                    }
-                    // console.log("object map", this.activeClients);
-                }
+                let temp = []
+                res.forEach(element => {
+                    console.log("element is", element);
+                    this.getAllcounters(element.counter_id).then(counter => {
+                        console.log("Counters are,", counter);
+                        temp.push(counter)
+                    })
+                });
+                // this.activeClients.push(counter)
+                this.activeClients = temp
+                // for (let i = 0; i < this.clients.length; i++) {
+                //     // console.log("single object", this.clients[i]);
+                //     if (this.clients[i].client_ip) {
+
+                //     }
+                //     // console.log("object map", this.activeClients);
+                // }
+
             }).catch(err => {
                 console.error(err);
                 this.$toast.error("error occured while getting systems!!!")
             })
             //     this.getActiveCounters()
-        }, 5000)
+        }, 3000)
         this.getAllConfigs()
         setInterval(() => {
             this.getAllConfigs()

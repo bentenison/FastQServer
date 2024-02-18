@@ -286,7 +286,7 @@ func (dao *ReportsDAO) GetTicketsWithUserInfo(companyCode string) ([]map[string]
 	// query := "SELECT t.id, t.service, t.ticket_status, u.email AS user_name FROM ticket t INNER JOIN manage_user u ON t.updated_by = u.id WHERE t.company_code = ?"
 	// SELECT concat(u.firstname," ",u.lastname) AS user_name,c.counter_name,t.ticket_name, t.service, t.ticket_status,c.company_name FROM ticket t INNER JOIN manage_user u ON t.updated_by = u.id inner join manage_counters c on t.counter_id=c.id WHERE t.company_code = "nDmmyD0" and date(t.created_at)=date(now())
 	query := `SELECT concat(u.firstname," ",u.lastname) AS user_name,
-	c.counter_name,t.ticket_name, t.service, t.ticket_status,c.company_name
+	c.counter_name,t.ticket_name, t.service, t.ticket_status,c.company_name,TIMESTAMPDIFF(SECOND, t.started_serving_at, t.end_serving_at) as time_taken
 	FROM ticket t INNER JOIN manage_user u ON t.updated_by = u.id inner join manage_counters c on t.counter_id=c.id WHERE t.company_code = ? `
 	rows, err := dao.DB.Query(query, companyCode)
 	if err != nil {
@@ -297,8 +297,8 @@ func (dao *ReportsDAO) GetTicketsWithUserInfo(companyCode string) ([]map[string]
 
 	result := make([]map[string]interface{}, 0)
 	for rows.Next() {
-		var tickeName, CounterName, service, company, ticketStatus, userName string
-		err := rows.Scan(&userName, &CounterName, &tickeName, &service, &ticketStatus, &company)
+		var tickeName, CounterName, service, company, ticketStatus, userName, time_taken string
+		err := rows.Scan(&userName, &CounterName, &tickeName, &service, &ticketStatus, &company, &time_taken)
 		if err != nil {
 			log.Println("Error scanning row:", err)
 			return nil, err
@@ -310,6 +310,7 @@ func (dao *ReportsDAO) GetTicketsWithUserInfo(companyCode string) ([]map[string]
 			"service":       service,
 			"ticket_status": ticketStatus,
 			"company_name":  userName,
+			"time_taken":    time_taken,
 		}
 		result = append(result, data)
 	}

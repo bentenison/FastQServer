@@ -1,8 +1,8 @@
 <template>
     <v-app>
         <div class="container-fluid h-100">
-            <div class="row h-100">
-                <div class="col-md-3 h-80">
+            <div class="row h-100" v-if="!floating">
+                <div class="col-md-3 h-80" style="margin-top: 70px;">
                     <v-card class="h-100" flat>
                         <v-card-title primary-title
                             v-if="$store.state.Auth.counterUser.Firstname && $store.state.Auth.activeCounter.CounterName && $store.state.Auth.counterUser.Lastname">
@@ -14,7 +14,8 @@
                         <div class="d-flex p-2">
                             <v-card class="w-100" elevation="6">
                                 <h4 class="p-1">CURRENT:</h4>
-                                <h1 class="font-weight-bold px-2">{{ $store.state.Auth.activeTicket.TicketName }}</h1>
+                                <h1 class="font-weight-bold px-2" v-if="$store.state.Auth.activeTicket">{{
+                                    $store.state.Auth.activeTicket.TicketName }}</h1>
                             </v-card>
                         </div>
                         <hr>
@@ -25,6 +26,7 @@
                                         <p class="px-2">Processing Time :</p>
                                         <div class="px-2">
                                             <Stopwatch :resetWhenStart="true" :running="startTimer"
+                                                v-if="$store.state.Auth.activeTicket"
                                                 :starter="calculateTimestampDifference($store.state.Auth.activeTicket.StartedServingAt, convertDateToCustomFormat(convertDateToIndianTimestampFormat(new Date())))" />
                                         </div>
                                     </div>
@@ -32,6 +34,7 @@
                                         <p class="px-2">Waiting Time :</p>
                                         <div class="px-2">
                                             <Stopwatch :resetWhenStart="true" :running="startTimer"
+                                                v-if="$store.state.Auth.activeTicket"
                                                 :starter="calculateTimestampDifference($store.state.Auth.activeTicket.CreatedAt, convertDateToCustomFormat(convertDateToIndianTimestampFormat(new Date())))" />
                                         </div>
                                     </div>
@@ -39,6 +42,7 @@
                                         <p class="px-2">Transaction :</p>
                                         <div class="px-2">
                                             <Stopwatch :resetWhenStart="true" :running="startTimer"
+                                                v-if="$store.state.Auth.activeTicket"
                                                 :starter="calculateTimestampDifference($store.state.Auth.activeTicket.StartedServingAt, convertDateToCustomFormat(convertDateToIndianTimestampFormat(new Date()))) + calculateTimestampDifference($store.state.Auth.activeTicket.CreatedAt, convertDateToCustomFormat(convertDateToIndianTimestampFormat(new Date())))" />
                                         </div>
                                     </div>
@@ -56,7 +60,7 @@
                                         <h6 class="font-weight-bold">{{ lastcalled.Service }}</h6>
                                     </div>
                                     <div class="d-flex flex-column">
-                                        <h1 class="font-weight-bold">1</h1>
+                                        <!-- <h1 class="font-weight-bold">1</h1> -->
                                         <h6 class="font-weight-bold">{{ $store.state.Auth.activeCounter.CounterName }}</h6>
                                     </div>
                                 </div>
@@ -86,14 +90,14 @@
                                     <h6>Call Next</h6>
                                 </v-card>
                                 <v-card class="col-md-2 primary d-flex flex-column align-items-center  text-white" hover
-                                    ripple>
+                                    ripple :class="{ 'disabled': true }">
                                     <v-icon size="48px" color="white">
                                         mdi-volume-high
                                     </v-icon>
                                     <h6>Call Again</h6>
                                 </v-card>
                                 <v-card class="col-md-2 warning accent-2 d-flex flex-column align-items-center text-white"
-                                    hover ripple>
+                                    hover ripple :class="{ 'disabled': true }">
                                     <v-icon size="48px" color="white">
                                         mdi-lock
                                     </v-icon>
@@ -123,33 +127,33 @@
                                         <h1>{{ finished.length }}</h1>
                                     </div>
                                 </div>
-                                <div class="col-md-9 d-flex flex-wrap gap-2 justify-center align-center" v-if="false">
+                                <!-- <div class="col-md-9 d-flex flex-wrap gap-2 justify-center align-center" v-if="false">
                                     <v-col cols="12" sm="12" class="m-0 p-0">
                                         <p class=" grey--text text-center">Customer Information</p>
 
                                     </v-col>
                                     <v-col cols="12" sm="4" class="m-0 p-0">
-                                        <!-- <p class=" grey--text">Name</p> -->
+                                        
                                         <v-text-field label="customer name" class="m-0 p-0" hide-details="auto"
                                             placeholder="" solo dense></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="4" class="m-0 p-0">
-                                        <!-- <p class=" grey--text">Name</p> -->
+                                        
                                         <v-text-field label="customer name" class="m-0 p-0" placeholder=""
                                             hide-details="auto" solo dense></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="4" class="m-0 p-0">
-                                        <!-- <p class=" grey--text">Name</p> -->
+                                        
                                         <v-text-field label="customer name" class="m-0 p-0" hide-details="auto"
                                             placeholder="" solo dense></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="4" class="m-0 p-0">
-                                        <!-- <p class=" grey--text">Name</p> -->
+                                        
                                         <v-text-field label="mo. number" class="m-0 p-0" hide-details="auto" placeholder=""
                                             solo dense></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" class="m-0 p-0 text-center">
-                                        <!-- <p class=" grey--text">Name</p> -->
+                                        
                                         <v-btn color="primary text-white green accent-4" style="margin-top:2px">
                                             <v-icon left>
                                                 mdi-content-save
@@ -157,7 +161,7 @@
                                             save
                                         </v-btn>
                                     </v-col>
-                                </div>
+                                </div> -->
 
 
                             </div>
@@ -288,7 +292,71 @@
                 <!-- <div class="row"> -->
                 <!-- </div> -->
             </div>
+            <div class="floating-window w-100" style="margin-top:70px;" v-if="floating">
+                <div class="d-flex flex-wrap align-items-center justify-content-between row w-100">
+                    <div class="col-6 d-flex flex-wrap">
+                        <h5 class="p-1">Current:</h5>
+                        <h2 class="font-weight-bold px-2" v-if="$store.state.Auth.activeTicket">{{
+                            $store.state.Auth.activeTicket.TicketName || 'NO TICKET' }}
+                        </h2>
+                    </div>
+                    <div class="col-6 d-flex flex-wrap">
+                        <div class="">
+                            <p class="px-2 my-0">Processing Time :</p>
+                            <div class="px-2 my-0">
+                                <Stopwatch :resetWhenStart="true" :running="startTimer"
+                                    v-if="$store.state.Auth.activeTicket"
+                                    :starter="calculateTimestampDifference($store.state.Auth.activeTicket.StartedServingAt, convertDateToCustomFormat(convertDateToIndianTimestampFormat(new Date())))" />
+                            </div>
 
+                        </div>
+                        <div class="">
+                            <p class="px-2 my-0">Waiting Time :</p>
+                            <div class="px-2 my-0">
+                                <Stopwatch :resetWhenStart="true" :running="startTimer"
+                                    v-if="$store.state.Auth.activeTicket"
+                                    :starter="calculateTimestampDifference($store.state.Auth.activeTicket.CreatedAt, convertDateToCustomFormat(convertDateToIndianTimestampFormat(new Date())))" />
+                            </div>
+
+                        </div>
+                        <div class="">
+                            <p class="px-2 my-0">Transaction :</p>
+                            <div class="px-2 my-0">
+                                <Stopwatch :resetWhenStart="true" :running="startTimer"
+                                    v-if="$store.state.Auth.activeTicket"
+                                    :starter="calculateTimestampDifference($store.state.Auth.activeTicket.StartedServingAt, convertDateToCustomFormat(convertDateToIndianTimestampFormat(new Date()))) + calculateTimestampDifference($store.state.Auth.activeTicket.CreatedAt, convertDateToCustomFormat(convertDateToIndianTimestampFormat(new Date())))" />
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex flex-wrap">
+                        <h5 class="p-1">Waiting:</h5>
+                        <h2 class="font-weight-bold px-2">{{ waiting.length }}
+                        </h2>
+                    </div>
+                    <div class="col-6 d-flex">
+                        <v-card-title primary-title
+                            v-if="$store.state.Auth.counterUser && $store.state.Auth.counterUser.Firstname && $store.state.Auth.activeCounter.CounterName && $store.state.Auth.counterUser.Lastname">
+                            {{ $store.state.Auth.activeCounter.CounterName.toUpperCase() }}<br />
+                            {{ $store.state.Auth.counterUser.Firstname.toUpperCase() }} {{
+                                $store.state.Auth.counterUser.Lastname.toUpperCase() }}
+                        </v-card-title>
+                    </div>
+                    <div class="col-12 w-100 d-flex justify-content-center">
+                        <v-card class="w-90 d-flex px-2" elevation="6">
+                            <h5 class="p-2">LAST CALLED :</h5>
+                            <div class="d-flex justify-content-around" v-if="lastcalled !== 'NO_RESULT'">
+                                <div class="d-flex flex-column">
+                                    <h1 class="font-weight-bold">{{ lastcalled.TicketName }}</h1>
+                                    <h6 class="font-weight-bold">{{ lastcalled.Service }}</h6>
+                                </div>
+                            </div>
+                        </v-card>
+                    </div>
+                    <!-- <v-card class="w-100" elevation="6">
+                    </v-card> -->
+                </div>
+            </div>
         </div>
     </v-app>
 </template>
@@ -310,6 +378,7 @@ export default {
     },
     data() {
         return {
+            floating: false,
             noShow: [],
             finished: [],
             waiting: [],
@@ -356,23 +425,34 @@ export default {
         },
 
         getnextticket() {
+            this.getlastongoingticket().then(res => {
+                if (res === "NO_RESULT") {
+
+                } else {
+                    this.updateLastTicketStatus('FINISHED')
+                }
+                //get last ongoing ticket directly first if not available go for this API
+            })
             let payload = {
                 id: "",
                 company_code: this.$store.state.Auth.user.company_code,
                 branch_code: this.$store.state.Auth.user.company_code,
             }
-            //get last ongoing ticket directly first if not available go for this API
             axios.post("/ticket/gettickettoprocess", payload).then(res => {
-                if (res.status)
-                    console.log("res:::::", res);
-                res.data.CounterID = this.$store.state.Auth.activeCounter.ID
-                res.data.StartedServingAt = this.convertDateToCustomFormat(this.convertDateToIndianTimestampFormat(new Date()))
-                this.$store.commit("SET_ACTIVE_TICKET", res.data)
-                this.startTimer = true
-                this.updatestartTime()
-                this.updateLastTicketStatus("STARTED")
-                this.sendMessage(res.data, "next")
-                this.reUpdate()
+                // if (res.status)
+                // console.log("res::::: next", res);
+                if (res.data && res.data !== "NO_RESULT") {
+                    res.data.CounterID = this.$store.state.Auth.activeCounter.ID
+                    res.data.StartedServingAt = this.convertDateToCustomFormat(this.convertDateToIndianTimestampFormat(new Date()))
+                    this.$store.commit("SET_ACTIVE_TICKET", res.data)
+                    this.startTimer = true
+                    this.updatestartTime()
+                    this.disableNext = true
+                    this.updateLastTicketStatus("STARTED")
+                    this.sendMessage(res.data, "next")
+                    this.reUpdate()
+
+                }
 
                 // this.noShow = res.data
                 // this.$toast.success("branch added successfully.")
@@ -384,21 +464,29 @@ export default {
 
         },
         getlastongoingticket() {
-            axios.get(`/ticket/getlaststarted/${this.$store.state.Auth.counterUser.ID}`).then(res => {
-                console.log("res:::::", res);
-                this.present = true
-                this.startTimer = true
-                this.$store.commit("SET_ACTIVE_TICKET", res.data)
-                // this.$store.commit("SET_ACTIVE_TICKET", res.data)
-                // this.updatestartTime()
-                // this.updateLastTicketStatus("STARTED")
-                // this.noShow = res.data
-                // this.$toast.success("branch added successfully.")
-                // this.branch = {}
-            }).catch(err => {
-                this.present = false
-                console.log("error getting error", err.response.data);
-                this.$toast.error("error occured while getting ticket!!!")
+            return new Promise((resolve, reject) => {
+                axios.get(`/ticket/getlaststarted/${this.$store.state.Auth.counterUser.ID}`).then(res => {
+                    console.log("res::::: last ongoing", res);
+                    if (res.data && res.data !== "NO_RESULT") {
+                        this.present = true
+                        this.startTimer = true
+                        this.$store.commit("SET_ACTIVE_TICKET", res.data)
+                        resolve(res.data)
+                    }
+                    resolve(res.data)
+                    // this.$store.commit("SET_ACTIVE_TICKET", res.data)
+                    // this.updatestartTime()
+                    // this.updateLastTicketStatus("STARTED")
+                    // this.noShow = res.data
+                    // this.$toast.success("branch added successfully.")
+                    // this.branch = {}
+                }).catch(err => {
+                    this.present = false
+                    console.log("error getting error", err.response.data);
+                    this.$toast.error("error occured while getting ticket!!!")
+                    reject(err)
+                })
+
             })
         },
         updateLastTicketStatus(status) {
@@ -410,17 +498,19 @@ export default {
 
             }
             axios.post("/ticket/updateticketstatus", payload).then(res => {
-                console.log("res:::::", res);
-                if (this.disableNext) {
+                // console.log("res:::::", res);
+                if (status === "NO_SHOW" || status === "FINISHED") {
                     this.disableNext = false
+                } else {
+                    this.disableNext = true
                 }
                 console.log("Status", status);
-                if (status === "NO_SHOW" || status === "FINISHED") {
+                if ((status === "NO_SHOW" || status === "FINISHED") && this.$store.state.Auth.activeTicket && this.$store.state.Auth.activeTicket !== "NO_RESULT") {
                     this.sendMessage(this.$store.state.Auth.activeTicket, "finish")
                     this.startTimer = false
                     this.reUpdate()
                     this.updateEndTime()
-                    this.$store.commit("SET_ACTIVE_TICKET", {})
+                    this.$store.commit("SET_ACTIVE_TICKET", null)
                 }
                 // this.noShow = res.data
                 // this.$toast.success("branch added successfully.")
@@ -440,7 +530,7 @@ export default {
                 counterId: this.$store.state.Auth.activeCounter.ID
             }
             axios.post("/ticket/updatetickettime", payload).then(res => {
-                console.log("res:::::", res);
+                // console.log("res:::::", res);
                 // this.noShow = res.data
                 // this.$toast.success("branch added successfully.")
                 // this.branch = {}
@@ -458,7 +548,7 @@ export default {
                 id: this.$store.state.Auth.activeTicket.ID,
             }
             axios.post("/ticket/updateendtime", payload).then(res => {
-                console.log("res:::::", res);
+                // console.log("res:::::", res);
                 // this.noShow = res.data
                 // this.$toast.success("branch added successfully.")
                 // this.branch = {}
@@ -470,7 +560,7 @@ export default {
         },
         getnoshow() {
             axios.get(`/ticket/getnoshow/${this.$store.state.Auth.activeCounter.ID}`).then(res => {
-                console.log("res:::::", res);
+                // console.log("res:::::", res);
                 if (!res.data) {
                     this.noShow = []
                     return
@@ -485,7 +575,7 @@ export default {
         },
         getwaiting() {
             axios.get("/ticket/getwaiting").then(res => {
-                console.log("res:::::", res);
+                // console.log("res:::::", res);
                 if (!res.data) {
                     this.waiting = []
                     return
@@ -500,7 +590,7 @@ export default {
         },
         getcompleted() {
             axios.get(`/ticket/getfinished/${this.$store.state.Auth.activeCounter.ID}`).then(res => {
-                console.log("res:::::", res);
+                // console.log("res:::::", res);
                 if (!res.data) {
                     this.finished = []
                     return
@@ -515,7 +605,7 @@ export default {
         },
         getlastcalled() {
             axios.get("/ticket/getlastcalled").then(res => {
-                console.log("res:::::", res);
+                // console.log("res:::::", res);
                 this.lastcalled = res.data
                 // this.$toast.success("branch added successfully.")
                 // this.branch = {}
@@ -555,7 +645,7 @@ export default {
                 branch_code: ""
             }
             axios.post(`/user/getAlluser`, payload).then(res => {
-                console.log("res:::::", res);
+                // console.log("res:::::", res);
                 // this.$toast.success("branch added successfully.")
                 res.data.message.forEach(element => {
                     let data = {}
@@ -577,7 +667,7 @@ export default {
         getAllCounters() {
             // get those counters which are running here (active counters)
             axios.get(`/counter/getAllcounter/${this.$store.getters.getUser.company_code}`).then(res => {
-                console.log(">>>>>>>>>>>>>>>>>", res);
+                // console.log(">>>>>>>>>>>>>>>>>", res);
                 res.data.message.forEach(element => {
                     let data = {}
                     data.counterNumber = element.CounterNumber
@@ -644,6 +734,32 @@ export default {
             this.getcompleted()
             this.getlastcalled()
             this.getnoshow()
+        },
+        activatefloat() {
+            console.log("float mode activated");
+            if (window.ipc) {
+                window.ipc.send("FLOAT_MODE", {})
+                this.floating = true
+                // window.ipc.on("SERVER_IP_REPLY", res => {
+                //     console.log("from electron process", res);
+                //     // this.$store.commit(types.MUTATE_LOADER_OFF)
+                //     this.serverIp = res.IP
+                //     resolve(res)
+                // })
+            }
+        },
+        deactivatefloat() {
+            console.log("float mode deactivated");
+            if (window.ipc) {
+                window.ipc.send("FLOAT_MODE_OFF", {})
+                this.floating = false
+                // window.ipc.on("SERVER_IP_REPLY", res => {
+                //     console.log("from electron process", res);
+                //     // this.$store.commit(types.MUTATE_LOADER_OFF)
+                //     this.serverIp = res.IP
+                //     resolve(res)
+                // })
+            }
         }
 
     },
@@ -657,29 +773,57 @@ export default {
         if (this.intervalId) {
             clearInterval(this.intervalId)
         }
+
+        this.$eventBus.$off('float-mode')
+        this.$eventBus.$off('float-mode-off')
+
     },
     mounted() {
-        this.getlastongoingticket()
-        this.reUpdate()
-        this.getAllUser()
-        this.getAllCounters()
+        this.getlastongoingticket().then(res => {
+            this.reUpdate()
+            this.getAllUser()
+            this.getAllCounters()
+        })
     },
     created() {
+        this.$eventBus.$on('float-mode', this.activatefloat)
+        this.$eventBus.$on('float-mode-off', this.deactivatefloat)
         this.getServerIP().then(res => {
-            console.log("server ip address", res);
+            // console.log("server ip address", res);
             this.socket = new WebSocket(`ws://${res.IP}:8090/ws`);
             this.connectToServer()
         })
         this.intervalId = setInterval(this.getwaiting, 2000);
         if (window.ipc) {
             // window.ipc.send("SERVER_IP", {})
-            window.ipc.on("shortcut-pressed", res => {
+            window.ipc.on("next-ticket", res => {
                 console.log("from electron process", res);
-                alert("shortcut pressed")
+                // alert("next")
+                this.getnextticket()
                 // this.$store.commit(types.MUTATE_LOADER_OFF)
                 // this.serverIp = res.IP
                 // resolve(res)
             })
+            window.ipc.on("finish-ticket", res => {
+                console.log("from electron process", res);
+                this.updateLastTicketStatus('FINISHED')
+                // this.$store.commit(types.MUTATE_LOADER_OFF)
+                // this.serverIp = res.IP
+                // resolve(res)
+            })
+            window.ipc.on("no-show-ticket", res => {
+                console.log("from electron process", res);
+                this.updateLastTicketStatus('NO_SHOW')
+                // this.$store.commit(types.MUTATE_LOADER_OFF)
+                // this.serverIp = res.IP
+                // resolve(res)
+            })
+        }
+        if (!this.floating) {
+            window.ipc.send("FLOAT_MODE_OFF", {})
+            this.$eventBus.$emit('float-mode-off')
+            // window.reload()
+            this.floating = false
         }
     }
 }

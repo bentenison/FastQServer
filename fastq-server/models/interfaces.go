@@ -89,6 +89,7 @@ type AdminService interface {
 	UpdateUserEmailService(ctx context.Context, arg UpdateUserEmailParams) error
 	UpdateUserPassword(ctx context.Context, arg UpdateUserPasswordParams) error
 	UpdateUserService(ctx context.Context, arg UpdateUserParams) error
+	SetActiveService(ip string, active bool) error
 }
 
 type AdminRepository interface {
@@ -126,6 +127,7 @@ type AdminRepository interface {
 	UpdateUserEmail(ctx context.Context, arg UpdateUserEmailParams) error
 	UpdateUserPassword(ctx context.Context, arg UpdateUserPasswordParams) error
 	UpdateUser(ctx context.Context, arg UpdateUserParams) error
+	ActivateSystemDAO(ip string, active bool) error
 }
 
 type TicketRepository interface {

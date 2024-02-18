@@ -109,7 +109,7 @@ func NewHandler(c *Config) {
 	g.GET("/user/deleteuser/:id", middleware.AuthUser(h.TokenService), h.DeleteUserHandler)
 	//? counter handlers
 	g.POST("/counter/addcounter", middleware.AuthUser(h.TokenService), h.AddCounterHandler)
-	g.POST("/counter/getcounter", middleware.AuthUser(h.TokenService), h.GetCounterHandler)
+	g.POST("/counter/getcounter", h.GetCounterHandler)
 	g.POST("/counter/updatecounter", h.UpdateCounterHandler)
 	g.GET("/counter/getAllcounter/:code", h.GetAllCountersHandler)
 	g.GET("/counter/getinactivecounter/:code", h.GetAllUnActivatedCountersHandler)

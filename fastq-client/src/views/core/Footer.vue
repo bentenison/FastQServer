@@ -1,5 +1,5 @@
 <template>
-    <v-footer id="dashboard-core-footer" fixed app>
+    <v-footer id="dashboard-core-footer" fixed app v-if="!hide && $route.name === 'Teller'">
         <v-container>
             <v-row align-center no-gutters>
                 <!-- <v-col v-for="(link, i) in links" :key="i" class="text-center mb-sm-0 mb-5" cols="auto">
@@ -11,7 +11,7 @@
 
                 <v-col cols="12" md="auto">
                     <div class="body-1 font-weight-light pt-6 pt-md-0 text-center">
-                        &copy; {{ new  Date().getFullYear() }}, made with
+                        &copy; {{ new Date().getFullYear() }}, made with
                         <v-icon size="18">
                             mdi-heart
                         </v-icon>
@@ -27,6 +27,7 @@
 export default {
     name: 'DashboardCoreFooter',
     data: () => ({
+        hide: false,
         links: [
             {
                 href: '#',
@@ -46,6 +47,23 @@ export default {
             },
         ],
     }),
+    methods() {
+
+    },
+    beforeDestroy() {
+    this.$eventBus.$off('float-mode')
+    this.$eventBus.$off('float-mode-off')
+  },
+    created() {
+        console.log("parent", this.$route);
+        this.$eventBus.$on('float-mode', () => {
+            console.log("hiding footer");
+            this.hide = true
+        })
+        this.$eventBus.$on('float-mode-off', () => {
+            this.hide = false
+        }) 
+    }
 }
 </script>
   

@@ -35,14 +35,22 @@
                     </v-card-text>
                 </v-card>
             </v-col>
-            <v-col cols="12" md="12" lg="12">
+            <v-col cols="12" md="12" lg="12" class="d-flex justify-content-between">
                 <h2 class="grey--text"> Tickets Served By User</h2>
+                <v-btn large text color="success" class="mt-1 text-md-button" @click="exportToExcel(userData, 'tickets_served'
+                )"> <v-icon left>mdi-export</v-icon>
+                    Export Excel
+                </v-btn>
             </v-col>
             <v-col cols="12" md="12" lg="12">
                 <DataTables :headers="tableheaders" :items="userData" />
             </v-col>
-            <v-col cols="12" md="12" lg="12">
+            <v-col cols="12" md="12" lg="12" class="d-flex justify-content-between">
                 <h2 class="grey--text"> Active Time Of User Per Day</h2>
+                <v-btn large text color="success" class="mt-1 text-md-button" @click="exportToExcel(activeData, 'active_time_user_per_day'
+                )"> <v-icon left>mdi-export</v-icon>
+                    Export Excel
+                </v-btn>
             </v-col>
             <v-col cols="12" md="12" lg="12">
                 <DataTables :headers="activeheaders" :items="activeData" />
@@ -55,6 +63,7 @@
 import TiimePickers from '@/components/TiimePickers.vue';
 import axios from 'axios';
 import DataTables from './tables/dataTables.vue';
+import * as XLSX from 'xlsx';
 export default {
     components: { TiimePickers, DataTables },
     data: () => ({
@@ -68,7 +77,7 @@ export default {
             {
                 text: 'CounterName',
                 align: 'start',
-                sortable: false,
+                sortable: true,
                 value: 'counter_name',
             },
             { text: 'BranchName', value: 'company_name' },
@@ -76,6 +85,7 @@ export default {
             { text: 'TicketName', value: 'ticket_name' },
             { text: 'TicketStatus', value: 'ticket_status' },
             { text: 'UserName', value: 'user_name' },
+            { text: 'TimeTaken (seconds)', align: 'center', value: 'time_taken' },
             // { text: 'CreatedAt', value: 'date' },
 
             { text: 'Actions', value: 'actions', sortable: false },
@@ -108,6 +118,28 @@ export default {
 
     },
     methods: {
+        exportToExcel(data, name) {
+            if (data.length <= 0) {
+                this.$toast.error("no data to export!!")
+                return
+            }
+            // Your JSON data
+            // const jsonData = [
+            //     { Name: 'John Doe', Age: 30, City: 'New York' },
+            //     { Name: 'Jane Smith', Age: 25, City: 'Los Angeles' },
+            //     // Add more rows as needed
+            // ];
+
+            // Create a worksheet
+            const ws = XLSX.utils.json_to_sheet(data);
+
+            // Create a workbook
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, 'Sheet 1');
+
+            // Save the workbook as an Excel file
+            XLSX.writeFile(wb, `${name}.xlsx`);
+        },
         async getTotalTicketsByService() {
             try {
                 const response = await axios.get(`/report/tickets-by-service/${this.$store.state.Auth.user.company_code}`);

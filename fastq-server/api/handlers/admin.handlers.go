@@ -40,6 +40,7 @@ func (h *Handler) wsHandler(c *gin.Context) {
 		log.Println(err)
 	}
 	clientIp := c.ClientIP()
+	h.AdminService.SetActiveService(clientIp, true)
 	// helpful log statement to show connections
 	log.Println("Client Connected")
 	clientsMutex.Lock()
@@ -52,6 +53,7 @@ func (h *Handler) wsHandler(c *gin.Context) {
 		delete(clients, conn)
 		clientsMutex.Unlock()
 		conn.Close()
+		h.AdminService.SetActiveService(clientIp, false)
 	}()
 
 	for {
@@ -64,6 +66,7 @@ func (h *Handler) wsHandler(c *gin.Context) {
 			delete(clients, conn)
 			clientsMutex.Unlock()
 			conn.Close()
+			h.AdminService.SetActiveService(clientIp, false)
 			return
 		}
 		log.Println("string", msg)

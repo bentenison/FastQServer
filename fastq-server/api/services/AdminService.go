@@ -325,3 +325,14 @@ func (as *adminService) UpdateUserService(ctx context.Context, arg models.Update
 	}
 	return nil
 }
+func (as *adminService) SetActiveService(ip string, active bool) error {
+	// const createdFormat = "2006-01-02 15:04:05"
+	// arg.CreatedAt = time.Now().Format(createdFormat)
+	// arg.UpdatedAt = time.Now().Format(createdFormat)
+	err := as.AdminRepository.ActivateSystemDAO(ip, active)
+	if err != nil {
+		log.Println("error while updating user in DB", err)
+		return err
+	}
+	return nil
+}

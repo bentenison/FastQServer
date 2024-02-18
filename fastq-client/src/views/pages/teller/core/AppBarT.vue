@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar id="app-bar" fixed app color="#F5F5F5" flat height="75">
+  <v-app-bar id="app-bar" fixed app color="#F5F5F5" flat :height="!hide ? 75 : 50">
     <v-btn class="mr-3" elevation="1" fab small>
       <!-- <v-icon v-if="value">
         mdi-view-quilt
@@ -12,7 +12,8 @@
 
     <v-toolbar-title class="hidden-sm-and-down font-weight-light" v-text="$route.name" />
 
-    <v-img class="mx-2" src="../../../../assets/rsz_fastq_2.png" max-height="45" max-width="100" contain></v-img>
+    <v-img class="mx-2" src="../../../../assets/sec-icon.svg" max-height="45" max-width="100" contain
+      v-if="!hide"></v-img>
     <!-- <v-toolbar-title class="hidden-sm-and-down" v-text="'Branch Name'" /> -->
     <v-spacer />
 
@@ -23,7 +24,7 @@
     <!-- <v-btn class="ml-2" min-width="0" text color="primary">
       <v-icon color="primary">mdi-cog</v-icon>setting
     </v-btn> -->
-    <v-chip class="ma-2" color="primary" label text-color="white">
+    <v-chip class="ma-2" color="primary" label text-color="white" v-if="!hide">
       <v-icon left>
         mdi-label
       </v-icon>
@@ -74,7 +75,15 @@
         </v-list>
       </v-menu> -->
 
-    <v-btn class="ml-2" min-width="0" text color="error" @click="logout">
+    <v-btn class="ml-2" min-width="0" text color="primary" v-if="!hide && $route.name === 'Teller'"
+      @click="$eventBus.$emit('float-mode')">
+      <v-icon color="primary">mdi-window-minimize</v-icon> Float Mode
+    </v-btn>
+    <v-btn class="ml-2" min-width="0" text color="primary" v-if="hide && $route.name === 'Teller'"
+      @click="$eventBus.$emit('float-mode-off')">
+      <v-icon color="primary">mdi-window-maximize</v-icon> exit float mode
+    </v-btn>
+    <v-btn class="ml-2" min-width="0" text color="error" v-if="!hide" @click="logout">
       <v-icon color="error">mdi-logout</v-icon> logout
     </v-btn>
   </v-app-bar>
@@ -86,7 +95,8 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      value: true
+      value: true,
+      hide: false,
     }
   },
   methods: {
@@ -102,6 +112,18 @@ export default {
         console.error(err)
       })
     }
+  },
+  beforeDestroy() {
+    // this.$eventBus.$off('float-mode')
+    // this.$eventBus.$off('float-mode-off')
+  },
+  created() {
+    this.$eventBus.$on('float-mode', () => {
+      this.hide = true
+    })
+    this.$eventBus.$on('float-mode-off', () => {
+      this.hide = false
+    })
   }
 
 }
