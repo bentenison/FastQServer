@@ -62,7 +62,12 @@ func NewHandler(c *Config) {
 	// 	g.POST("/image", middleware.AuthUser(h.TokenService), h.Image)
 	// 	g.DELETE("/image", middleware.AuthUser(h.TokenService), h.DeleteImage)
 	// } else {
-	// 	g.GET("/me", h.Me)
+	g.GET("/me", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, gin.H{
+			"status": "running",
+			"time":   time.Now(),
+		})
+	})
 	// 	g.POST("/signout", h.Signout)
 	// 	g.PUT("/details", h.Details)
 	// 	g.POST("/image", h.Image)

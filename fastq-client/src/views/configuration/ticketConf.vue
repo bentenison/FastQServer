@@ -144,6 +144,9 @@ export default {
         },
         uploadVideo() {
             const formData = new FormData();
+            // this.selectedFile.name = "logo.png"
+            this.selectedFile = new File([this.selectedFile], 'logo.png', { type: this.selectedFile.type });
+            // let newFile = new File([this.selectedFile], "logo.png")
             formData.append("video", this.selectedFile);
 
             axios.post("/upload", formData)

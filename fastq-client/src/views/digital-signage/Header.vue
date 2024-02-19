@@ -1,8 +1,8 @@
 <template>
-    <v-app-bar elevation="4" app height="80px">
+    <v-app-bar elevation="4" app height="70px">
         <div class="d-flex align-items-center justify-content-center p-3">
             <h2 class="m-0">
-                {{ $store.state.Auth.user.company }}
+                {{ $store.state.Auth.user.company.toUpperCase() }}
             </h2>
             <v-chip class="ma-2" color="primary" label text-color="white">
                 <v-icon left>

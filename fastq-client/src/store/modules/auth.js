@@ -193,7 +193,12 @@ export const actions = {
       // this.$toast.error("error signing in ");
     });
   },
-
+  SET_CUTRRENT: ({ commit }, payload) => {
+    return new Promise((resolve, reject) => {
+      commit("SET_ACTIVE_TICKET", payload);
+      resolve()
+    })
+  },
   AUTH_LOGOUT: () => {
     return new Promise((resolve, reject) => {
       sessionStorage.removeItem("user-token");
