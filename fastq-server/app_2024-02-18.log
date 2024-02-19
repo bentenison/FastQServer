@@ -1,0 +1,998 @@
+2024/02/18 07:35:19 main.go:27: initializing the FASTQ server
+2024/02/18 07:35:19 main.go:28: Starting server...
+2024/02/18 07:35:19 db.go:22: Initializing data sources
+2024/02/18 07:35:19 db.go:49: connected to sql db successfully
+2024/02/18 07:35:19 main.go:164: Hostname ASUSVivobook
+2024/02/18 07:35:19 main.go:180: Server is running on port 9090
+2024/02/18 07:35:19 main.go:65: Server IP found 192.168.125.148
+2024/02/18 07:35:19 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/18 07:35:24 ticket.handlers.go:469: data:::::: {   192.168.125.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/02/18 07:35:26 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/18 07:35:26 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/18 07:35:38 admin.handlers.go:45: Client Connected
+2024/02/18 07:35:46 LicenseService.go:121: user not present, sql: no rows in result set
+2024/02/18 07:35:46 license.handler.go:103: error binding data : User is not present
+2024/02/18 07:35:55 LicenseService.go:126: user not present, sql: expected 23 destination arguments in Scan, not 20
+2024/02/18 07:35:55 LicenseService.go:429: error while updating counters <nil>
+2024/02/18 07:35:55 admin.handlers.go:45: Client Connected
+2024/02/18 07:35:55 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:35:55 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:35:55 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:35:55 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:35:55 admin.handlers.go:641: params::::: {nDmmyD0 }
+2024/02/18 07:35:55 ticket.handlers.go:469: data:::::: {   192.168.125.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/02/18 07:35:57 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:00 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:02 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:04 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:06 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:07 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:09 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:10 ticket.handlers.go:281: data:::::: {FINISHED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d bf98e3ee-302b-460b-aa71-5671a0d0daf8}
+2024/02/18 07:36:10 admin.handlers.go:72: string { finish {{{bf98e3ee-302b-460b-aa71-5671a0d0daf8 true}} {{Parts Order true}} STARTED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{1 true}} 2024-02-18 12:16:56 +0000 UTC 2024-02-18 12:17:12 +0000 UTC {{3a49a4a5-dabf-4bf9-82db-c816c539ad9d true}} 2024-02-18 12:17:12 +0000 UTC 2017-01-01 10:31:00 +0000 UTC {{A-1 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:36:10 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:10 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:10 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:10 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:10 ticket.handlers.go:257: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d bf98e3ee-302b-460b-aa71-5671a0d0daf8}
+2024/02/18 07:36:11 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:14 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:15 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:17 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:19 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:21 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:23 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:25 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:26 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0}
+2024/02/18 07:36:27 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:29 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:31 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:33 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:35 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:35 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/18 07:36:37 admin.handlers.go:45: Client Connected
+2024/02/18 07:36:37 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:37 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:37 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:37 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:38 admin.handlers.go:641: params::::: {nDmmyD0 }
+2024/02/18 07:36:39 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:41 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:44 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:45 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:47 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:49 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:51 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:53 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:55 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:55 ticket.handlers.go:281: data:::::: {FINISHED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d efff866f-c996-405a-972f-71dc1e4ee090}
+2024/02/18 07:36:55 admin.handlers.go:72: string { finish {{{efff866f-c996-405a-972f-71dc1e4ee090 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{2 true}} 2024-02-18 12:16:57 +0000 UTC 2024-02-18 12:16:57 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:06:26 +0000 UTC 2017-01-01 10:30:00 +0000 UTC {{11-2 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:36:55 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:55 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:55 ticket.handlers.go:257: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d efff866f-c996-405a-972f-71dc1e4ee090}
+2024/02/18 07:36:55 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:55 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:57 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:36:59 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:00 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/18 07:37:01 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:02 admin.handlers.go:45: Client Connected
+2024/02/18 07:37:03 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:05 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:07 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:09 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:11 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:12 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0}
+2024/02/18 07:37:13 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:15 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:17 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:20 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:22 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:24 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:26 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:28 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:30 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:33 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:34 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:36 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:38 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:40 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:42 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:44 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:46 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:47 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:49 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:49 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/18 07:37:52 admin.handlers.go:45: Client Connected
+2024/02/18 07:37:52 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:52 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:52 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:52 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:52 admin.handlers.go:641: params::::: {nDmmyD0 }
+2024/02/18 07:37:54 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:56 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:58 ticket.handlers.go:281: data:::::: {FINISHED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d fd5cb986-531a-43f2-b7ba-def32ac88079}
+2024/02/18 07:37:58 admin.handlers.go:72: string { finish {{{fd5cb986-531a-43f2-b7ba-def32ac88079 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{3 true}} 2024-02-18 12:16:58 +0000 UTC 2024-02-18 12:16:58 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:07:12 +0000 UTC 2017-01-01 10:31:00 +0000 UTC {{A-3 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:37:58 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:58 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:58 ticket.handlers.go:257: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d fd5cb986-531a-43f2-b7ba-def32ac88079}
+2024/02/18 07:37:58 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:58 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:37:58 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:00 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:02 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:04 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:06 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:08 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:10 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:12 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:14 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:16 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:18 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:20 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0}
+2024/02/18 07:38:20 ticket.handlers.go:233: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 1f319f0d-7b40-43fc-87cd-a2d71b76aaf6 12411d0d-5454-426d-adc2-2eba9ee0fdf1 }
+2024/02/18 07:38:20 admin.handlers.go:72: string { next {{{1f319f0d-7b40-43fc-87cd-a2d71b76aaf6 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{4 true}} 2024-02-18 12:16:59 +0000 UTC 2024-02-18 12:16:59 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:08:20 +0000 UTC 2017-01-01 10:30:00 +0000 UTC {{11-4 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:38:20 ticket.handlers.go:281: data:::::: {STARTED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 1f319f0d-7b40-43fc-87cd-a2d71b76aaf6}
+2024/02/18 07:38:20 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:20 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:20 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:20 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:20 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:22 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:24 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:26 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:28 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:30 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:32 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:34 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:36 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:38 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:40 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0}
+2024/02/18 07:38:40 admin.handlers.go:72: string { next {{{eeb6f46c-9ba8-4419-9f68-23378f60bc94 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{5 true}} 2024-02-18 12:17:00 +0000 UTC 2024-02-18 12:17:00 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:08:40 +0000 UTC 2017-01-01 10:31:00 +0000 UTC {{A-5 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:38:40 ticket.handlers.go:233: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d eeb6f46c-9ba8-4419-9f68-23378f60bc94 12411d0d-5454-426d-adc2-2eba9ee0fdf1 }
+2024/02/18 07:38:40 ticket.handlers.go:281: data:::::: {STARTED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d eeb6f46c-9ba8-4419-9f68-23378f60bc94}
+2024/02/18 07:38:40 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:40 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:40 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:40 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:40 ticket.handlers.go:281: data:::::: {FINISHED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 1f319f0d-7b40-43fc-87cd-a2d71b76aaf6}
+2024/02/18 07:38:40 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:40 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:40 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:40 ticket.handlers.go:257: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 1f319f0d-7b40-43fc-87cd-a2d71b76aaf6}
+2024/02/18 07:38:40 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:40 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:42 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:44 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:46 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:48 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:50 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:52 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:54 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:56 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:38:58 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:01 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:03 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:05 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:07 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:09 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:11 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:13 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:15 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:17 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:19 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:21 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:23 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:25 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:27 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:29 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:31 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:33 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:35 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:36 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:38 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:40 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/18 07:39:42 admin.handlers.go:45: Client Connected
+2024/02/18 07:39:42 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:42 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:42 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:42 admin.handlers.go:641: params::::: {nDmmyD0 }
+2024/02/18 07:39:42 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:44 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:46 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:48 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:50 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:52 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:54 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:56 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:39:58 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:00 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0}
+2024/02/18 07:40:00 ticket.handlers.go:233: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d aba4ddf7-7936-4696-b989-b553a7bdf7f3 12411d0d-5454-426d-adc2-2eba9ee0fdf1 }
+2024/02/18 07:40:00 ticket.handlers.go:281: data:::::: {STARTED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d aba4ddf7-7936-4696-b989-b553a7bdf7f3}
+2024/02/18 07:40:00 admin.handlers.go:72: string { next {{{aba4ddf7-7936-4696-b989-b553a7bdf7f3 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{6 true}} 2024-02-18 12:17:04 +0000 UTC 2024-02-18 12:17:04 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:10:00 +0000 UTC 2017-01-01 10:30:00 +0000 UTC {{11-6 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:40:00 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:00 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:00 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:00 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:00 ticket.handlers.go:281: data:::::: {FINISHED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d eeb6f46c-9ba8-4419-9f68-23378f60bc94}
+2024/02/18 07:40:00 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:00 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:00 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:00 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:00 ticket.handlers.go:257: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d eeb6f46c-9ba8-4419-9f68-23378f60bc94}
+2024/02/18 07:40:00 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:02 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:04 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:06 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:08 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:10 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:12 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:14 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:16 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:18 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:20 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:22 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:24 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:26 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:28 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:30 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:32 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:34 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:37 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:39 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:41 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:43 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:45 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:47 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:49 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:51 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:53 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:55 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:57 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:40:59 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:01 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:03 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:05 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:07 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:09 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:11 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:13 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:15 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:17 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:19 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:21 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:23 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:25 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:27 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:29 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:31 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:33 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:35 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:50 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:50 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:52 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:53 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/18 07:41:56 admin.handlers.go:45: Client Connected
+2024/02/18 07:41:56 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:56 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:56 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:56 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:41:56 admin.handlers.go:641: params::::: {nDmmyD0 }
+2024/02/18 07:41:58 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:00 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:01 ticket.handlers.go:281: data:::::: {FINISHED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d aba4ddf7-7936-4696-b989-b553a7bdf7f3}
+2024/02/18 07:42:01 admin.handlers.go:72: string { finish {{{aba4ddf7-7936-4696-b989-b553a7bdf7f3 true}} {{Parts Inquiry true}} STARTED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{6 true}} 2024-02-18 12:17:04 +0000 UTC 2024-02-18 13:10:00 +0000 UTC {{3a49a4a5-dabf-4bf9-82db-c816c539ad9d true}} 2024-02-18 13:10:00 +0000 UTC 2017-01-01 10:30:00 +0000 UTC {{11-6 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:42:01 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:01 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:01 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:01 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:01 ticket.handlers.go:257: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d aba4ddf7-7936-4696-b989-b553a7bdf7f3}
+2024/02/18 07:42:02 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:04 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:06 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:08 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:10 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:12 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:14 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:16 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:18 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:20 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:20 ticket.handlers.go:469: data:::::: {   192.168.125.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/02/18 07:42:22 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:22 ticket.handlers.go:352: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:24 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:26 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:28 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:30 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:32 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:34 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:36 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:38 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:40 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:42 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:44 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:46 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:48 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:50 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:52 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:54 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:56 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:42:58 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:00 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:00 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0}
+2024/02/18 07:43:00 ticket.handlers.go:281: data:::::: {STARTED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d d59aec74-4e8e-4ed8-b1db-f5bd417daf29}
+2024/02/18 07:43:00 ticket.handlers.go:233: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d d59aec74-4e8e-4ed8-b1db-f5bd417daf29 12411d0d-5454-426d-adc2-2eba9ee0fdf1 }
+2024/02/18 07:43:00 admin.handlers.go:72: string { next {{{d59aec74-4e8e-4ed8-b1db-f5bd417daf29 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{7 true}} 2024-02-18 13:12:23 +0000 UTC 2024-02-18 13:12:23 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:13:00 +0000 UTC 2017-01-01 10:31:00 +0000 UTC {{A-7 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:43:00 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:00 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:00 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:00 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:02 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:04 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:06 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:08 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:10 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:12 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:14 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:16 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:18 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:20 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:22 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:24 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:26 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:28 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:28 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0}
+2024/02/18 07:43:28 admin.handlers.go:72: string { next {{{ade74ce9-994e-4460-a6e1-9f76c56a0cad true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{8 true}} 2024-02-18 13:12:24 +0000 UTC 2024-02-18 13:12:24 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:13:28 +0000 UTC 2017-01-01 10:30:00 +0000 UTC {{11-8 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:43:28 ticket.handlers.go:233: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d ade74ce9-994e-4460-a6e1-9f76c56a0cad 12411d0d-5454-426d-adc2-2eba9ee0fdf1 }
+2024/02/18 07:43:28 ticket.handlers.go:281: data:::::: {STARTED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d ade74ce9-994e-4460-a6e1-9f76c56a0cad}
+2024/02/18 07:43:28 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:28 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:28 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:28 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:28 ticket.handlers.go:281: data:::::: {FINISHED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d d59aec74-4e8e-4ed8-b1db-f5bd417daf29}
+2024/02/18 07:43:28 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:28 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:28 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:28 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:30 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:32 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:34 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:36 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:38 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:40 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:42 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:44 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:46 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:48 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:50 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:52 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:54 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:56 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:43:58 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:00 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:02 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:04 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:06 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:08 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:10 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:12 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:14 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:16 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:18 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:20 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:22 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:24 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:26 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:28 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:30 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:32 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:34 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:36 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:38 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:40 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:42 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:44 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:46 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:48 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:48 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/18 07:44:51 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:51 admin.handlers.go:45: Client Connected
+2024/02/18 07:44:51 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:51 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:51 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:51 admin.handlers.go:641: params::::: {nDmmyD0 }
+2024/02/18 07:44:53 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:55 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:57 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:59 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0}
+2024/02/18 07:44:59 admin.handlers.go:72: string { next {{{c710d79b-0900-4451-8326-ccbb492804b7 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{9 true}} 2024-02-18 13:12:25 +0000 UTC 2024-02-18 13:12:25 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:14:59 +0000 UTC 2017-01-01 10:31:00 +0000 UTC {{A-9 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:44:59 ticket.handlers.go:233: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d c710d79b-0900-4451-8326-ccbb492804b7 12411d0d-5454-426d-adc2-2eba9ee0fdf1 }
+2024/02/18 07:44:59 ticket.handlers.go:281: data:::::: {STARTED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d c710d79b-0900-4451-8326-ccbb492804b7}
+2024/02/18 07:44:59 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:59 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:59 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:59 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:44:59 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:01 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:03 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:05 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:07 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:09 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:11 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:13 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:15 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:17 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:19 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:21 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:23 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:25 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:27 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:29 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:31 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:33 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:35 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:38 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:39 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:41 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:42 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0}
+2024/02/18 07:45:42 admin.handlers.go:72: string { next {{{9af2b7e8-2008-43c6-a257-757fb7787d44 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{10 true}} 2024-02-18 13:12:26 +0000 UTC 2024-02-18 13:12:26 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:15:42 +0000 UTC 2017-01-01 10:30:00 +0000 UTC {{11-10 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:45:42 ticket.handlers.go:233: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 9af2b7e8-2008-43c6-a257-757fb7787d44 12411d0d-5454-426d-adc2-2eba9ee0fdf1 }
+2024/02/18 07:45:42 ticket.handlers.go:281: data:::::: {STARTED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 9af2b7e8-2008-43c6-a257-757fb7787d44}
+2024/02/18 07:45:42 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:42 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:42 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:42 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:43 ticket.handlers.go:281: data:::::: {FINISHED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 9af2b7e8-2008-43c6-a257-757fb7787d44}
+2024/02/18 07:45:43 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:43 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:43 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:43 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:43 ticket.handlers.go:257: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 9af2b7e8-2008-43c6-a257-757fb7787d44}
+2024/02/18 07:45:43 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:45 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:48 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:50 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:51 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:53 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:55 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:57 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:45:59 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:02 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:04 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:06 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:08 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:10 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:11 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:13 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:15 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:17 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:19 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:21 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:22 ticket.handlers.go:281: data:::::: {FINISHED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 9af2b7e8-2008-43c6-a257-757fb7787d44}
+2024/02/18 07:46:22 admin.handlers.go:72: string { finish {{{9af2b7e8-2008-43c6-a257-757fb7787d44 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{10 true}} 2024-02-18 13:12:26 +0000 UTC 2024-02-18 13:12:26 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:15:42 +0000 UTC 2017-01-01 10:30:00 +0000 UTC {{11-10 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:46:22 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:22 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:22 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:22 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:22 ticket.handlers.go:257: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 9af2b7e8-2008-43c6-a257-757fb7787d44}
+2024/02/18 07:46:23 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:25 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:27 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:29 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:31 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:33 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:35 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:36 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/18 07:46:39 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:39 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:39 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:39 admin.handlers.go:45: Client Connected
+2024/02/18 07:46:39 admin.handlers.go:641: params::::: {nDmmyD0 }
+2024/02/18 07:46:39 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:41 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:43 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:44 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0}
+2024/02/18 07:46:44 admin.handlers.go:72: string { next {{{51298385-f178-445a-959f-5a16f1d4c1e0 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{11 true}} 2024-02-18 13:12:27 +0000 UTC 2024-02-18 13:12:27 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:16:44 +0000 UTC 2017-01-01 10:31:00 +0000 UTC {{A-11 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:46:44 ticket.handlers.go:233: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 51298385-f178-445a-959f-5a16f1d4c1e0 12411d0d-5454-426d-adc2-2eba9ee0fdf1 }
+2024/02/18 07:46:44 ticket.handlers.go:281: data:::::: {STARTED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 51298385-f178-445a-959f-5a16f1d4c1e0}
+2024/02/18 07:46:44 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:44 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:44 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:44 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:45 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:47 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:49 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:51 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:53 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:55 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:57 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:46:59 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:01 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:03 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:05 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:07 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:09 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:11 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:13 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:15 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:17 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:19 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:21 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:23 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:25 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:27 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:29 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:31 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:33 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:35 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:37 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:39 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:41 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:43 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:45 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:47 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:49 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:51 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:53 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:55 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:57 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:47:58 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/18 07:48:01 admin.handlers.go:45: Client Connected
+2024/02/18 07:48:01 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:01 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:01 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:01 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:01 admin.handlers.go:641: params::::: {nDmmyD0 }
+2024/02/18 07:48:03 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:03 ticket.handlers.go:281: data:::::: {FINISHED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 51298385-f178-445a-959f-5a16f1d4c1e0}
+2024/02/18 07:48:03 admin.handlers.go:72: string { finish {{{51298385-f178-445a-959f-5a16f1d4c1e0 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{11 true}} 2024-02-18 13:12:27 +0000 UTC 2024-02-18 13:12:27 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:16:44 +0000 UTC 2017-01-01 10:31:00 +0000 UTC {{A-11 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:48:03 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:03 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:03 ticket.handlers.go:257: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 51298385-f178-445a-959f-5a16f1d4c1e0}
+2024/02/18 07:48:03 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:03 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:05 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:07 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:09 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:11 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:13 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:15 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:17 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:19 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:21 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:23 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:25 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:27 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:29 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:31 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:33 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:35 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:37 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:39 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:41 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:43 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:45 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:47 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:49 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:51 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:53 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:55 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:57 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:48:59 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:01 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:03 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:05 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:07 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:09 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:11 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:13 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:15 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:17 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:19 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:21 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:23 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:25 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:26 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/18 07:49:29 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:29 admin.handlers.go:45: Client Connected
+2024/02/18 07:49:29 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:29 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:29 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:29 admin.handlers.go:641: params::::: {nDmmyD0 }
+2024/02/18 07:49:31 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:33 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:35 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:37 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:39 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:41 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:42 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/18 07:49:43 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:44 admin.handlers.go:45: Client Connected
+2024/02/18 07:49:45 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:47 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:49 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:51 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:53 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:55 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:57 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:49:59 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:01 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:03 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:05 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:07 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:09 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:11 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:13 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:15 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:17 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:19 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:21 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:23 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:25 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:27 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:29 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:31 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:33 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:35 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:37 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:39 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:41 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:43 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:45 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:47 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:49 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:51 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:53 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:55 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:57 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:50:59 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:01 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:03 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:05 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:08 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:09 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:11 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:13 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:15 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:17 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:19 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:21 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:23 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:25 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:27 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:29 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:31 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:33 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:34 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/18 07:51:37 admin.handlers.go:45: Client Connected
+2024/02/18 07:51:37 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:37 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:37 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:37 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:37 admin.handlers.go:641: params::::: {nDmmyD0 }
+2024/02/18 07:51:39 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:41 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:43 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:45 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0}
+2024/02/18 07:51:45 ticket.handlers.go:233: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 58c48221-5722-4654-b97c-5de5cc96db75 12411d0d-5454-426d-adc2-2eba9ee0fdf1 }
+2024/02/18 07:51:45 admin.handlers.go:72: string { next {{{58c48221-5722-4654-b97c-5de5cc96db75 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{12 true}} 2024-02-18 13:12:31 +0000 UTC 2024-02-18 13:12:31 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:21:45 +0000 UTC 2017-01-01 10:30:00 +0000 UTC {{11-12 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:51:45 ticket.handlers.go:281: data:::::: {STARTED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 58c48221-5722-4654-b97c-5de5cc96db75}
+2024/02/18 07:51:45 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:45 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:45 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:45 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:45 ticket.handlers.go:281: data:::::: {FINISHED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 58c48221-5722-4654-b97c-5de5cc96db75}
+2024/02/18 07:51:45 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:45 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:45 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:45 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:45 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:45 ticket.handlers.go:257: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 58c48221-5722-4654-b97c-5de5cc96db75}
+2024/02/18 07:51:47 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:49 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:51 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:53 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:55 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:57 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:58 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0}
+2024/02/18 07:51:58 admin.handlers.go:72: string { next {{{0059e394-df1d-4849-bf51-48c1549f7678 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{13 true}} 2024-02-18 13:12:34 +0000 UTC 2024-02-18 13:12:34 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:21:58 +0000 UTC 2017-01-01 10:30:00 +0000 UTC {{11-13 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:51:58 ticket.handlers.go:233: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 0059e394-df1d-4849-bf51-48c1549f7678 12411d0d-5454-426d-adc2-2eba9ee0fdf1 }
+2024/02/18 07:51:58 ticket.handlers.go:281: data:::::: {STARTED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 0059e394-df1d-4849-bf51-48c1549f7678}
+2024/02/18 07:51:58 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:58 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:58 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:58 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:58 ticket.handlers.go:281: data:::::: {FINISHED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 0059e394-df1d-4849-bf51-48c1549f7678}
+2024/02/18 07:51:58 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:58 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:58 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:58 ticket.handlers.go:257: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 0059e394-df1d-4849-bf51-48c1549f7678}
+2024/02/18 07:51:58 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:51:59 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:01 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:04 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:06 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:08 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:10 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:12 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:13 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:15 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:18 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:20 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:22 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:24 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:26 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:28 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:30 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:31 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:33 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:35 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:37 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:39 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:41 ticket.handlers.go:281: data:::::: {FINISHED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 0059e394-df1d-4849-bf51-48c1549f7678}
+2024/02/18 07:52:41 admin.handlers.go:72: string { finish {{{0059e394-df1d-4849-bf51-48c1549f7678 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{13 true}} 2024-02-18 13:12:34 +0000 UTC 2024-02-18 13:12:34 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-02-18 13:21:58 +0000 UTC 2017-01-01 10:30:00 +0000 UTC {{11-13 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/02/18 07:52:41 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:41 ticket.handlers.go:410: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:41 ticket.handlers.go:388: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:41 ticket.handlers.go:424: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:41 ticket.handlers.go:257: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 0059e394-df1d-4849-bf51-48c1549f7678}
+2024/02/18 07:52:41 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:43 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:46 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:47 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:49 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:52 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:54 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:56 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:52:58 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:53:00 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:53:02 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:53:03 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:53:05 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:53:06 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/18 07:53:07 ticket.handlers.go:366: handlers &{0xc00009c018 0xc0003f6680}
+2024/02/18 07:53:07 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/18 11:11:38 server.go:3217: http: TLS handshake error from 192.168.254.148:51945: acme/autocert: missing server name
+2024/02/18 11:11:38 server.go:3217: http: TLS handshake error from 192.168.254.148:51946: acme/autocert: missing server name
+2024/02/18 11:11:46 server.go:3217: http: TLS handshake error from 192.168.254.148:51951: acme/autocert: missing server name
+2024/02/18 11:11:46 server.go:3217: http: TLS handshake error from 192.168.254.148:51952: acme/autocert: missing server name
+2024/02/18 11:11:49 server.go:3217: http: TLS handshake error from 192.168.254.148:51955: acme/autocert: missing server name
+2024/02/18 11:11:49 server.go:3217: http: TLS handshake error from 192.168.254.148:51956: acme/autocert: missing server name
+2024/02/18 11:12:15 server.go:3217: http: TLS handshake error from 192.168.254.148:51968: acme/autocert: missing server name
+2024/02/18 11:12:15 server.go:3217: http: TLS handshake error from 192.168.254.148:51969: acme/autocert: missing server name
+2024/02/18 11:12:33 server.go:3217: http: TLS handshake error from 192.168.254.148:51981: acme/autocert: missing server name
+2024/02/18 11:12:33 server.go:3217: http: TLS handshake error from 192.168.254.148:51982: acme/autocert: missing server name
+2024/02/18 11:32:58 main.go:34: initializing the FASTQ server
+2024/02/18 11:32:58 main.go:35: Starting server...
+2024/02/18 11:32:58 db.go:22: Initializing data sources
+2024/02/18 11:32:58 db.go:49: connected to sql db successfully
+2024/02/18 11:32:58 main.go:178: Hostname ASUSVivobook
+2024/02/18 11:32:58 main.go:194: Server is running on port 9090
+2024/02/18 11:32:58 main.go:72: Server IP found 192.168.254.148
+2024/02/18 11:32:59 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/18 11:32:59 main.go:102: Generating self-signed certificates...
+2024/02/18 11:32:59 main.go:106: Certificates generated successfully.
+2024/02/18 11:32:59 main.go:124: listen tcp :443: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2024/02/18 11:34:30 main.go:34: initializing the FASTQ server
+2024/02/18 11:34:30 main.go:35: Starting server...
+2024/02/18 11:34:30 db.go:22: Initializing data sources
+2024/02/18 11:34:30 db.go:49: connected to sql db successfully
+2024/02/18 11:34:30 main.go:178: Hostname ASUSVivobook
+2024/02/18 11:34:30 main.go:194: Server is running on port 9090
+2024/02/18 11:34:30 main.go:72: Server IP found 192.168.254.148
+2024/02/18 11:34:31 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/18 11:34:31 main.go:124: listen tcp :443: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2024/02/18 11:34:53 main.go:34: initializing the FASTQ server
+2024/02/18 11:34:53 main.go:35: Starting server...
+2024/02/18 11:34:53 db.go:22: Initializing data sources
+2024/02/18 11:34:53 db.go:49: connected to sql db successfully
+2024/02/18 11:34:53 main.go:178: Hostname ASUSVivobook
+2024/02/18 11:34:53 main.go:194: Server is running on port 9090
+2024/02/18 11:34:53 main.go:72: Server IP found 192.168.254.148
+2024/02/18 11:34:54 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/18 11:34:54 main.go:124: listen tcp :443: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2024/02/18 11:35:41 main.go:34: initializing the FASTQ server
+2024/02/18 11:35:41 main.go:35: Starting server...
+2024/02/18 11:35:41 db.go:22: Initializing data sources
+2024/02/18 11:35:41 db.go:49: connected to sql db successfully
+2024/02/18 11:35:41 main.go:178: Hostname ASUSVivobook
+2024/02/18 11:35:41 main.go:194: Server is running on port 9090
+2024/02/18 11:35:41 main.go:72: Server IP found 192.168.254.148
+2024/02/18 11:35:41 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/18 11:39:12 main.go:34: initializing the FASTQ server
+2024/02/18 11:39:12 main.go:35: Starting server...
+2024/02/18 11:39:12 db.go:22: Initializing data sources
+2024/02/18 11:39:12 db.go:49: connected to sql db successfully
+2024/02/18 11:39:12 main.go:178: Hostname ASUSVivobook
+2024/02/18 11:39:12 main.go:194: Server is running on port 9090
+2024/02/18 11:39:12 main.go:72: Server IP found 192.168.254.148
+2024/02/18 11:39:13 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/18 11:40:07 main.go:34: initializing the FASTQ server
+2024/02/18 11:40:07 main.go:35: Starting server...
+2024/02/18 11:40:07 db.go:22: Initializing data sources
+2024/02/18 11:40:07 db.go:49: connected to sql db successfully
+2024/02/18 11:40:07 main.go:178: Hostname ASUSVivobook
+2024/02/18 11:40:07 main.go:194: Server is running on port 9090
+2024/02/18 11:40:07 main.go:72: Server IP found 192.168.254.148
+2024/02/18 11:40:07 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/18 11:41:19 server.go:3217: http: TLS handshake error from 192.168.254.148:53017: remote error: tls: unknown certificate
+2024/02/18 11:41:27 server.go:3217: http: TLS handshake error from 192.168.254.148:53026: remote error: tls: unknown certificate
+2024/02/18 11:41:52 server.go:3217: http: TLS handshake error from 192.168.254.148:53060: remote error: tls: unknown certificate
+2024/02/18 11:41:52 server.go:3217: http: TLS handshake error from 192.168.254.148:53061: remote error: tls: unknown certificate
+2024/02/18 11:41:52 server.go:3217: http: TLS handshake error from 192.168.254.148:53064: read tcp 192.168.254.148:443->192.168.254.148:53064: wsarecv: An established connection was aborted by the software in your host machine.
+2024/02/18 11:41:52 server.go:3217: http: TLS handshake error from 192.168.254.148:53063: read tcp 192.168.254.148:443->192.168.254.148:53063: wsarecv: An established connection was aborted by the software in your host machine.
+2024/02/18 11:46:05 server.go:3217: http: TLS handshake error from 192.168.254.148:53199: remote error: tls: unknown certificate
+2024/02/18 11:47:55 server.go:3217: http: TLS handshake error from [::1]:53272: remote error: tls: unknown certificate
+2024/02/18 11:47:55 server.go:3217: http: TLS handshake error from [::1]:53273: remote error: tls: unknown certificate
+2024/02/18 11:47:59 server.go:3217: http: TLS handshake error from [::1]:53277: remote error: tls: unknown certificate
+2024/02/18 11:47:59 server.go:3217: http: TLS handshake error from [::1]:53279: remote error: tls: unknown certificate
+2024/02/18 11:47:59 server.go:3217: http: TLS handshake error from [::1]:53280: remote error: tls: unknown certificate
+2024/02/18 11:48:31 server.go:3217: http: TLS handshake error from [::1]:53319: remote error: tls: unknown certificate
+2024/02/18 11:48:36 server.go:3217: http: TLS handshake error from [::1]:53334: remote error: tls: unknown certificate
+2024/02/18 11:50:02 server.go:3217: http: TLS handshake error from 192.168.254.38:49778: remote error: tls: unknown certificate
+2024/02/18 11:50:02 server.go:3217: http: TLS handshake error from 192.168.254.38:49790: remote error: tls: unknown certificate
+2024/02/18 11:50:04 server.go:3217: http: TLS handshake error from 192.168.254.38:49804: remote error: tls: unknown certificate
+2024/02/18 11:50:04 server.go:3217: http: TLS handshake error from 192.168.254.38:49800: remote error: tls: unknown certificate
+2024/02/18 11:50:06 server.go:3217: http: TLS handshake error from 192.168.254.38:49818: remote error: tls: unknown certificate
+2024/02/18 11:50:06 server.go:3217: http: TLS handshake error from 192.168.254.38:49814: remote error: tls: unknown certificate
+2024/02/18 11:52:41 server.go:3217: http: TLS handshake error from 192.168.254.148:53490: remote error: tls: unknown certificate
+2024/02/18 11:52:50 server.go:3217: http: TLS handshake error from [::1]:53496: remote error: tls: unknown certificate
+2024/02/18 11:52:50 server.go:3217: http: TLS handshake error from [::1]:53498: remote error: tls: unknown certificate
+2024/02/18 11:56:21 main.go:35: initializing the FASTQ server
+2024/02/18 11:56:21 main.go:36: Starting server...
+2024/02/18 11:56:21 db.go:22: Initializing data sources
+2024/02/18 11:56:21 db.go:49: connected to sql db successfully
+2024/02/18 11:56:21 main.go:180: Hostname ASUSVivobook
+2024/02/18 11:56:21 main.go:196: Server is running on port 9090
+2024/02/18 11:56:21 main.go:74: Server IP found 192.168.254.148
+2024/02/18 11:56:21 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/18 11:56:51 server.go:3217: http: TLS handshake error from 192.168.254.148:53636: remote error: tls: unknown certificate
+2024/02/18 11:57:11 server.go:3217: http: TLS handshake error from [::1]:53658: remote error: tls: unknown certificate
+2024/02/18 11:57:11 server.go:3217: http: TLS handshake error from [::1]:53660: remote error: tls: unknown certificate
+2024/02/18 11:57:16 server.go:3217: http: TLS handshake error from 192.168.254.148:53665: remote error: tls: unknown certificate
+2024/02/18 12:41:03 server.go:3217: http: TLS handshake error from 192.168.254.148:54665: remote error: tls: unknown certificate
+2024/02/18 12:43:34 server.go:3217: http: TLS handshake error from 192.168.254.148:54737: remote error: tls: unknown certificate
+2024/02/18 12:45:44 server.go:3217: http: TLS handshake error from 192.168.254.148:54800: remote error: tls: unknown certificate
+2024/02/18 12:46:56 server.go:3217: http: TLS handshake error from 192.168.254.38:55730: remote error: tls: unknown certificate
+2024/02/18 12:46:56 server.go:3217: http: TLS handshake error from 192.168.254.38:55746: remote error: tls: unknown certificate
+2024/02/18 16:56:41 server.go:3217: http: TLS handshake error from 192.168.254.148:55010: remote error: tls: unknown certificate
+2024/02/18 16:57:08 server.go:3217: http: TLS handshake error from 192.168.254.38:41470: remote error: tls: unknown certificate
+2024/02/18 16:57:08 server.go:3217: http: TLS handshake error from 192.168.254.38:41480: remote error: tls: unknown certificate
+2024/02/18 17:04:15 server.go:3217: http: TLS handshake error from 192.168.254.148:55235: remote error: tls: unknown certificate
+2024/02/18 17:36:19 server.go:3217: http: TLS handshake error from [::1]:56272: remote error: tls: unknown certificate
+2024/02/18 17:53:13 main.go:35: initializing the FASTQ server
+2024/02/18 17:53:13 main.go:36: Starting server...
+2024/02/18 17:53:13 db.go:22: Initializing data sources
+2024/02/18 17:53:13 db.go:49: connected to sql db successfully
+2024/02/18 17:53:13 main.go:180: Hostname ASUSVivobook
+2024/02/18 17:53:13 main.go:196: Server is running on port 9090
+2024/02/18 17:53:13 main.go:74: Server IP found 192.168.254.148
+2024/02/18 17:53:13 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/18 17:53:38 ticket.handlers.go:469: data:::::: {   192.168.254.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/02/18 17:53:39 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:22:39 UserService.go:68: &{73ac3366-c04d-11ee-a5d5-ce47405e851e admin@fastq.com ed0e8943a4c2cfe4abde83d2d759583c96935685e5152b552e87ddca7e892a16.dc1150457f5d60a7b43b64841b4c06aa33aa2ac276d228dea2601dde7daca85e Tanvir Shaikh fastq solutions ltd nDmmyD0 India IN 73ac3366-c04d-11ee-a5d5-ce47405e851e 2024-01-31T20:58:58Z 2024-01-31T20:58:58Z}
+2024/02/19 06:30:01 ticket.handlers.go:469: data:::::: {   192.168.254.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/02/19 06:30:03 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/19 06:30:03 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/19 06:30:37 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/19 06:30:37 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/19 06:30:46 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/19 06:30:46 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/19 06:30:51 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/19 06:30:51 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/02/19 06:31:05 LicenseService.go:126: user not present, sql: expected 23 destination arguments in Scan, not 20
+2024/02/19 06:31:05 LicenseService.go:429: error while updating counters <nil>
+2024/02/19 06:31:05 admin.handlers.go:641: params::::: {nDmmyD0 }
+2024/02/19 06:31:05 admin.handlers.go:45: Client Connected
+2024/02/19 06:31:05 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:05 ticket.handlers.go:424: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:05 ticket.handlers.go:410: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:05 ticket.handlers.go:388: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:05 ticket.handlers.go:469: data:::::: {   192.168.254.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/02/19 06:31:07 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:09 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:11 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:13 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:15 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:17 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:19 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:21 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:23 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:25 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:27 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:29 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:31 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:33 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:35 ticket.handlers.go:469: data:::::: {   192.168.254.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/02/19 06:31:35 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:37 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:37 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:39 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:41 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:43 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:45 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:47 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:49 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:51 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:53 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:55 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:57 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:31:59 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:32:01 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:32:03 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:32:05 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:32:07 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:32:09 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:32:11 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:32:13 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:32:15 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:32:17 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:32:19 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:32:21 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:32:28 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:32:34 admin.handlers.go:45: Client Connected
+2024/02/19 06:32:36 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/19 06:32:38 admin.handlers.go:45: Client Connected
+2024/02/19 06:33:28 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:34:28 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:35:14 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/19 06:35:15 admin.handlers.go:45: Client Connected
+2024/02/19 06:35:28 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/19 06:35:28 ticket.handlers.go:366: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:35:31 admin.handlers.go:64: error in reading message websocket: close 1001 (going away)
+2024/02/19 06:39:55 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:40:45 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:44:04 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:44:06 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:44:15 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:45:23 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:45:36 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:46:24 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:46:31 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:48:10 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:48:17 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:50:52 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 06:50:57 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 07:31:29 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 07:36:43 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 07:36:58 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 07:40:49 server.go:3217: http: TLS handshake error from 192.168.254.148:63121: remote error: tls: unknown certificate
+2024/02/19 07:41:09 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 07:41:36 server.go:3217: http: TLS handshake error from 192.168.254.38:44348: remote error: tls: unknown certificate
+2024/02/19 07:41:36 server.go:3217: http: TLS handshake error from 192.168.254.38:44364: remote error: tls: unknown certificate
+2024/02/19 07:42:20 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 07:42:36 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 07:42:41 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 07:42:46 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 07:42:50 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 11:57:33 server.go:3217: http: TLS handshake error from 192.168.254.148:63615: remote error: tls: unknown certificate
+2024/02/19 11:57:34 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 11:58:01 server.go:3217: http: TLS handshake error from 192.168.254.148:63652: remote error: tls: unknown certificate
+2024/02/19 11:58:02 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 11:58:04 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 11:58:21 server.go:3217: http: TLS handshake error from 192.168.254.148:63672: remote error: tls: unknown certificate
+2024/02/19 11:58:22 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 11:58:25 server.go:3217: http: TLS handshake error from 192.168.254.148:63675: remote error: tls: unknown certificate
+2024/02/19 11:59:16 server.go:3217: http: TLS handshake error from 192.168.254.148:63723: remote error: tls: unknown certificate
+2024/02/19 11:59:17 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:01:58 server.go:3217: http: TLS handshake error from 192.168.254.148:63838: remote error: tls: unknown certificate
+2024/02/19 12:01:58 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:02:24 server.go:3217: http: TLS handshake error from 192.168.254.148:63861: remote error: tls: unknown certificate
+2024/02/19 12:02:25 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:02:53 server.go:3217: http: TLS handshake error from 192.168.254.148:63907: remote error: tls: unknown certificate
+2024/02/19 12:02:54 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:03:36 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:03:47 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:07:08 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:07:08 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:07:15 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:07:34 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:08:52 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:08:58 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:10:07 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:10:13 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:11:49 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:12:04 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:13:50 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:13:53 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}
+2024/02/19 12:15:12 ticket.handlers.go:352: handlers &{0xc00000a040 0xc000030270}

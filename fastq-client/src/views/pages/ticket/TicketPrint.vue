@@ -1,17 +1,24 @@
 <template>
     <v-app>
         <v-app-bar flat rounded app>
-            <h2 class="" v-if="this.$store.state.Auth.user">{{ this.$store.state.Auth.user.company }}</h2>
+            <!-- `http://${ipAddress}:8080/server/uploaded/logo.png -->
+            <v-img class="mx-2"
+                :src="ipAddress ? `https://${ipAddress}:443/uploaded/logo.png` : `http://localhost:8080/server/uploaded/logo.png`"
+                max-height="45" max-width="100" contain></v-img>
+            <h2 class="" v-if="this.$store.state.Auth.user">{{ this.$store.state.Auth.user.company.toUpperCase() }}</h2>
             <v-spacer></v-spacer>
             <div class="d-flex">
-                <v-chip class="ma-2" close color="cyan" label text-color="white">
+                <!-- <v-chip class="ma-2" close color="cyan" label text-color="white">
                     <v-icon left>
                         mdi-account
                     </v-icon>
                     Admin
-                </v-chip>
+                </v-chip> -->
                 <v-btn fab small color="#6A6A69" class="mx-2">
                     <v-icon color="white">mdi-cloud</v-icon>
+                </v-btn>
+                <v-btn fab small color="#6A6A69" class="mx-2" @click="connectBluetoothPrinter">
+                    <v-icon color="white">mdi-bluetooth</v-icon>
                 </v-btn>
             </div>
         </v-app-bar>
@@ -75,8 +82,7 @@
             </div>
             <div class="row fill-height align-items-center justify-content-center" v-if="this.$store.state.Auth.user">
                 <div class="d-flex col-md-12 flex-column align-items-center">
-                    <p class="text-h6">Please select from the Services below :</p>
-
+                    <!-- <p class="text-h6">Please select from the services below :</p> -->
                     <v-card v-for="n in services" :key="n.id" class="mb-3 col-md-4 text-center" @click="addTicket(n)" shaped
                         hover color="primary">
                         <h1 class="text-center white--text p-1">
@@ -117,17 +123,148 @@
 import axios from 'axios';
 import moment from 'moment';
 import * as types from "../../../store/types"
+import EscPosEncoder from '../../../../node_modules/esc-pos-encoder/dist/esc-pos-encoder.esm.js';
 export default {
     data() {
         return {
+            printCharacteristic: null,
+            device: null,
             services: [],
             lastNumber: null,
             dialog: false,
             allconf: null,
+            ipAddress: null,
             m: moment()
         }
     },
     methods: {
+        printwithConnected(data) {
+            const self = this
+            self.device.gatt
+                .connect()
+                .then(server =>
+                    server.getPrimaryService('000018f0-0000-1000-8000-00805f9b34fb')
+                )
+                .then(service =>
+                    service.getCharacteristic('00002af1-0000-1000-8000-00805f9b34fb')
+                )
+                .then(characteristic => {
+                    console.log('characteristic', characteristic)
+                    self.printCharacteristic = characteristic
+                    let encoder = new EscPosEncoder({
+                        imageMode: 'raster'
+                    });
+
+                    // let result = encoder
+                    //     .initialize()
+                    //     .text('The quick brown fox jumps over the lazy dog')
+                    //     .newline()
+                    //     .qrcode('https://nielsleenheer.com')
+                    //     .encode();
+
+                    console.log("router", window.location);
+                    const url = new URL(window.location.origin);
+
+                    // Get the IP address from the URL
+                    this.ipAddress = url.hostname;
+                    let img = new Image();
+                    if (ipAddress === "localhost") {
+                        return
+                    }
+                    img.src = `https://${this.ipAddress}:443/uploaded/logo.png`;
+                    // img.src = `http://localhost:8080/server/uploaded/logo.png`;
+
+                    img.onload = async function () {
+                        let result = encoder.align('center')
+                            .image(img, 160, 160, 'atkinson').newline()
+                            .encode()
+                        console.log("hello", result);
+                        const dataSize = result.length;
+                        let startIndex = 0;
+                        const maxChunkSize = characteristic.properties.writeWithoutResponse ? 512 : 20;
+                        // Send chunks of data until the entire image is sent
+
+                        // this.loop(0, result, device)
+                        // characteristic.writeValue(result)
+                        // 
+                        self.printlogo(startIndex, result, maxChunkSize).then(async () => {
+
+                            // let data = {
+                            //     service: 'Parts Order',
+                            //     ticket_status: 'CREATED',
+                            //     ticket_number: '15',
+                            //     started_serving_at: '2017-01-01 10:31:00',
+                            //     end_serving_at: '2017-01-01 10:31:00',
+                            //     ticket_name: 'A-15',
+                            //     company_code: 'nDmmyD0',
+                            //     company_name: 'fastq solutions ltd',
+                            //     updated_by: '73ac3366-c04d-11ee-a5d5-ce47405e851e',
+                            //     timeDate: '18 Feb 24 23:02 PM',
+                            //     Waiting: '15'
+                            // }
+                            let text = encoder.align('center')
+                                .width(3)
+                                .height(3)
+                                .line(data.ticket_name).bold().newline()
+                                .width(2)
+                                .height(2)
+                                .line(data.service).bold().newline()
+                                .width(2)
+                                .height(2)
+                                .line(`Waiting Count : ${data.Waiting}`)
+                                .width(1)
+                                .height(1)
+                                .line(`Created At : ${data.timeDate}`)
+                                .line("").newline()
+                                .line("").newline()
+                                .encode()
+                            self.printCharacteristic.writeValue(text);
+                            // self.device.gatt
+                            //     .disconnect()
+                        })
+                    }
+                    // self.sendTextData(device)
+                })
+                .catch(error => {
+                    console.log("error", error);
+                    // this.handleError(error, this.device)
+                })
+        },
+        printlogo(startIndex, result, maxChunkSize) {
+            return new Promise(async (resolve, reject) => {
+                let dataSize = result.length
+                while (startIndex < dataSize) {
+                    const endIndex = Math.min(startIndex + maxChunkSize, dataSize);
+                    const chunk = result.slice(startIndex, endIndex);
+                    // Send the current chunk to the printer
+                    await this.printCharacteristic.writeValue(chunk);
+                    startIndex = endIndex;
+                }
+                resolve()
+            })
+        },
+        connectBluetoothPrinter() {
+            navigator.bluetooth
+                .requestDevice({
+                    filters: [
+                        {
+                            name: 'MPT-III',
+                            services: ['000018f0-0000-1000-8000-00805f9b34fb']
+                        }
+                    ]
+                },
+                    {
+                        optionalServices: ['00002af1-0000-1000-8000-00805f9b34fb']
+                    })
+                .then(device => {
+                    console.log('device', device)
+                    // window.alert(device)
+                    this.device = device
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        },
         getAllServices() {
             let payload = {
                 company_code: this.$store.state.Auth.user.company_code,
@@ -194,14 +331,15 @@ export default {
             this.waitingTickets().then(res => {
                 ticketPayload.Waiting = res
                 console.log("object", ticketPayload.Waiting);
-                axios.post("http://localhost:4000/api/print", ticketPayload).then(res => {
-                    console.log("res:::::", res);
-                    this.$toast.success("ticket printed successfully.")
-                    this.branch = {}
-                }).catch(err => {
-                    console.log(err.response);
-                    this.$toast.error("error occured while printing ticket!!!")
-                })
+                // axios.post("http://localhost:4000/api/print", ticketPayload).then(res => {
+                //     console.log("res:::::", res);
+                //     this.$toast.success("ticket printed successfully.")
+                //     this.branch = {}
+                // }).catch(err => {
+                //     console.log(err.response);
+                //     this.$toast.error("error occured while printing ticket!!!")
+                // })
+                this.printwithConnected(ticketPayload)
             })
         },
         waitingTickets() {

@@ -42,14 +42,16 @@
                     <!-- <div class="white w-100" style="height: 1px;"></div> -->
                     <!-- {{ activeClients }} -->
                     <!-- {{ activeClients }} -->
+                    <div class="col-md-12 d-flex flex-wrap">
+                        <div class="col-md-6">
+                            <h4>Counter</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Ticket</h4>
+                        </div>
+                    </div>
                     <div v-for="(n, i) in activeClients" class="d-flex flex-column align-items-center">
                         <div class="col-md-12 d-flex flex-wrap">
-                            <div class="col-md-6">
-                                <h4>Counter</h4>
-                            </div>
-                            <div class="col-md-6">
-                                <h4>Ticket</h4>
-                            </div>
                             <div class="col-md-6 text-left py-0 my-0">
                                 <h2 style="font-size: 3rem;">{{ n.CounterNumber }}</h2>
                                 <!-- {{ n.ID }} -->

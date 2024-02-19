@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar id="app-bar" fixed app color="#F5F5F5" flat height="75">
+  <v-app-bar id="app-bar" fixed app color="#F5F5F5" flat height="60">
     <v-btn class="mr-3" elevation="1" fab small @click="$eventBus.$emit('fabClicked')">
       <v-icon v-if="false">
         mdi-view-quilt

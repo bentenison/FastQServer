@@ -429,9 +429,10 @@ export default {
                 if (res === "NO_RESULT") {
 
                 } else {
-                    this.updateLastTicketStatus('FINISHED')
+                    this.updateJustTicketStatus('FINISHED')
                 }
                 //get last ongoing ticket directly first if not available go for this API
+
             })
             let payload = {
                 id: "",
@@ -444,6 +445,7 @@ export default {
                 if (res.data && res.data !== "NO_RESULT") {
                     res.data.CounterID = this.$store.state.Auth.activeCounter.ID
                     res.data.StartedServingAt = this.convertDateToCustomFormat(this.convertDateToIndianTimestampFormat(new Date()))
+                    // this.$store.dispatch('SET_CUTRRENT', res.data).then(ok => {
                     this.$store.commit("SET_ACTIVE_TICKET", res.data)
                     this.startTimer = true
                     this.updatestartTime()
@@ -451,7 +453,7 @@ export default {
                     this.updateLastTicketStatus("STARTED")
                     this.sendMessage(res.data, "next")
                     this.reUpdate()
-
+                    // })
                 }
 
                 // this.noShow = res.data
@@ -470,7 +472,7 @@ export default {
                     if (res.data && res.data !== "NO_RESULT") {
                         this.present = true
                         this.startTimer = true
-                        this.$store.commit("SET_ACTIVE_TICKET", res.data)
+                        // this.$store.commit("SET_ACTIVE_TICKET", res.data)
                         resolve(res.data)
                     }
                     resolve(res.data)
@@ -519,6 +521,27 @@ export default {
                 console.log("error iin  ticket status", err.response);
                 this.$toast.error("error occured while updating last ticket!!!")
             })
+
+        },
+        updateJustTicketStatus(status) {
+            if (this.$store.state.Auth.activeTicket) {
+                let payload = {
+                    ticket_status: status,
+                    // updated_at: "",
+                    updated_by: this.$store.state.Auth.counterUser.ID,
+                    id: this.$store.state.Auth.activeTicket.ID
+
+                }
+                axios.post("/ticket/updateticketstatus", payload).then(res => {
+                    // this.$store.commit("SET_ACTIVE_TICKET", null)
+                    this.reUpdate()
+                    this.updateEndTime()
+                }).catch(err => {
+                    console.log("error iin  ticket status", err.response);
+                    this.$toast.error("error occured while updating last ticket!!!")
+                })
+
+            }
 
         },
         updatestartTime() {

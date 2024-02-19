@@ -2,10 +2,18 @@ package main
 
 import (
 	"context"
+	"crypto/ecdsa"
+	"crypto/elliptic"
+	"crypto/rand"
+	"crypto/x509"
+	"crypto/x509/pkix"
 	"database/sql"
+	"encoding/pem"
 	"fmt"
 	"io/fs"
+	"io/ioutil"
 	"log"
+	"math/big"
 	"net/http"
 	"os"
 	"os/signal"
@@ -17,7 +25,7 @@ import (
 	"github.com/bentenison/fastq-server/api/helpers"
 	"github.com/bentenison/fastq-server/api/services"
 	"github.com/bentenison/fastq-server/models"
-	"github.com/gin-gonic/autotls"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"github.com/grandcat/zeroconf"
@@ -40,6 +48,7 @@ func main() {
 		log.Fatalf("Failure to inject data sources: %v\n", err)
 		return
 	}
+	router.Use(cors.Default())
 	// serve dist from the location
 	// router.StaticFS("/", http.Dir("./client/dist"))
 	router.StaticFS("/fastqclient", gin.Dir("./client/dist/", true))
@@ -91,6 +100,13 @@ func main() {
 		Addr:    ":8090",
 		Handler: router,
 	}
+	if _, err := os.Stat(certFile); os.IsNotExist(err) {
+		log.Println("Generating self-signed certificates...")
+		if err := generateSelfSignedCert(); err != nil {
+			log.Fatal("Failed to generate certificates:", err)
+		}
+		log.Println("Certificates generated successfully.")
+	}
 	// certManager := autocert.Manager{
 	// 	Prompt:     autocert.AcceptTOS,
 	// 	HostPolicy: autocert.HostWhitelist("fastqsolutions.com"), // Your domain here
@@ -106,7 +122,7 @@ func main() {
 	}()
 	go func() {
 		fmt.Println("HTTPS server listening on :443")
-		if err := autotls.Run(router, "localhost"); err != nil {
+		if err := http.ListenAndServeTLS(":443", certFile, keyFile, router); err != nil {
 			log.Fatal(err)
 			return
 		}
@@ -142,7 +158,7 @@ func main() {
 	log.Printf("Listening on port %v\n", srv.Addr)
 	// Run the autocert background routine
 
-	select {}
+	// select {}
 }
 
 // const MaxFileSize = 5 * 1024 * 1024 // 5 MB
@@ -296,3 +312,58 @@ func AddVideo(ctx context.Context, db *sql.DB, newVideo models.Video) (sql.Resul
 // 	}
 
 // }
+const (
+	certFile = "cert.pem"
+	keyFile  = "key.pem"
+)
+
+func generateSelfSignedCert() error {
+	priv, err := ecdsa.GenerateKey(elliptic.P384(), rand.Reader)
+	if err != nil {
+		return err
+	}
+
+	notBefore := time.Now()
+	notAfter := notBefore.Add(365 * 24 * time.Hour) // Valid for 1 year
+
+	serialNumber, err := rand.Int(rand.Reader, new(big.Int).Lsh(big.NewInt(1), 128))
+	if err != nil {
+		return err
+	}
+
+	template := x509.Certificate{
+		SerialNumber: serialNumber,
+		Subject: pkix.Name{
+			Organization: []string{"FASTQ"},
+		},
+		NotBefore:             notBefore,
+		NotAfter:              notAfter,
+		KeyUsage:              x509.KeyUsageKeyEncipherment | x509.KeyUsageDigitalSignature,
+		ExtKeyUsage:           []x509.ExtKeyUsage{x509.ExtKeyUsageServerAuth},
+		BasicConstraintsValid: true,
+	}
+
+	certDER, err := x509.CreateCertificate(rand.Reader, &template, &template, &priv.PublicKey, priv)
+	if err != nil {
+		return err
+	}
+
+	certFileData := pem.EncodeToMemory(&pem.Block{Type: "CERTIFICATE", Bytes: certDER})
+	privkeyBytes, err := x509.MarshalECPrivateKey(priv)
+	if err != nil {
+		log.Println("error marshaling keyfile", err)
+	}
+	keyFileData := pem.EncodeToMemory(&pem.Block{Type: "EC PRIVATE KEY", Bytes: privkeyBytes})
+
+	err = ioutil.WriteFile(certFile, certFileData, 0644)
+	if err != nil {
+		return err
+	}
+
+	err = ioutil.WriteFile(keyFile, keyFileData, 0644)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}

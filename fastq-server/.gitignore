@@ -1,3 +1,4 @@
 fastq-server.exe
 rsa_private_dev.pem
 rsa_public_dev.pem
+client/
