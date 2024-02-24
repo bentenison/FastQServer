@@ -4,7 +4,7 @@
             <div class="row col-md-12 h-100">
                 <v-card class="col-md-6 h-auto" flat>
                     <div class="d-flex align-center">
-                        <v-checkbox v-model="ticketconf.image_header" label="Has Image Header"></v-checkbox>
+                        <v-checkbox v-model="ticketconf.image_header" input-value="true" label="Has Image Header"></v-checkbox>
                         <!-- <p class="h6 grey--text">Has Image Header</p> -->
                     </div>
                     <div class="d-flex flex-column">
@@ -13,19 +13,19 @@
                     </div>
                     <div class="d-flex">
                         <!-- <p class="h6 grey--text"></p> -->
-                        <v-checkbox label="Has Text Header" v-model="ticketconf.text_header"></v-checkbox>
+                        <v-checkbox label="Has Text Header" value :input-value="false" v-model="ticketconf.text_header"></v-checkbox>
                     </div>
                     <div class="d-flex flex-column">
                         <!-- <p class="h6 grey--text"></p> -->
-                        <v-checkbox label="Print Duplicate?" v-model="ticketconf.print_duplicate"></v-checkbox>
+                        <v-checkbox label="Print Duplicate?" :input-value="false" v-model="ticketconf.print_duplicate"></v-checkbox>
                     </div>
                     <div class="d-flex flex-column">
                         <p class="h6 grey--text">Date Format:</p>
-                        <v-select :items="items" v-model="ticketconf.date_format" class="m-0" label="country"></v-select>
+                        <v-select :items="items" v-model="ticketconf.date_format" class="m-0" label="date format"></v-select>
                     </div>
                     <div class="d-flex flex-column align-items-start">
                         <!-- <p class="h6 grey--text"></p> -->
-                        <v-checkbox label="Print Estimated Waiting Time?" v-model="ticketconf.estimated_time"></v-checkbox>
+                        <v-checkbox label="Print Estimated Waiting Time?" :input-value="false" v-model="ticketconf.estimated_time"></v-checkbox>
                     </div>
 
                     <v-btn color="primary" class="" v-if="createOne" @click="addTicketConfig"><v-icon
@@ -45,11 +45,11 @@
                         </v-icon>Upload</v-btn>
                     <div class="d-flex flex-column align-items-start mt-5">
                         <!-- <p class="h6 grey--text">Print Queue Position?</p> -->
-                        <v-checkbox v-model="ticketconf.print_position" label="Print Queue Position?"></v-checkbox>
+                        <v-checkbox v-model="ticketconf.print_position" :input-value="false" label="Print Queue Position?"></v-checkbox>
                     </div>
                     <div class="d-flex flex-column align-items-start">
                         <!-- <p class="h6 grey--text"></p> -->
-                        <v-checkbox label="Hide Date" v-model="ticketconf.hide_time"></v-checkbox>
+                        <v-checkbox label="Hide Date" :input-value="false" v-model="ticketconf.hide_time"></v-checkbox>
                     </div>
                     <div class="d-flex flex-column p-0">
                         <p class="h6 grey--text">Print Header <span class="caption">(maximum 26 characters allowed)</span>
@@ -94,16 +94,16 @@ export default {
             panel: "",
             readonly: false,
             ticketconf: {
-                image_header: "",
+                image_header: false,
                 image_url: "",
                 no_show_exp: "",
-                text_header: "",
+                text_header: false,
                 header_text: "",
-                hide_time: "",
-                print_duplicate: "",
+                hide_time: false,
+                print_duplicate: false,
                 date_format: "",
-                print_position: "",
-                estimated_time: "",
+                print_position:false,
+                estimated_time: false,
                 // pop_up_delay: "",
                 created_at: "",
                 updated_at: "",

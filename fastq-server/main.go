@@ -11,11 +11,11 @@ import (
 	"encoding/pem"
 	"fmt"
 	"io/fs"
-	"io/ioutil"
 	"log"
 	"math/big"
 	"net/http"
 	"os"
+	"os/exec"
 	"os/signal"
 	"path/filepath"
 	"strconv"
@@ -34,13 +34,26 @@ import (
 func main() {
 	log.Println("initializing the FASTQ server")
 	log.Println("Starting server...")
+	gin.SetMode(gin.ReleaseMode)
+	ok, err := isMySQLInstalled()
+	if err != nil {
+		log.Println("error checking mysqql intallation", err)
+	}
+	log.Println("MySQL installed. Performing necessary actions...")
+	if !ok {
+		log.Fatal("error mysql not installed install it first!!!")
+	}
 
 	// initialize data sources
 	ds, err := initDS()
-
 	if err != nil {
 		log.Fatalf("Unable to initialize data sources: %v\n", err)
 	}
+
+	// err = setupSQLAutomatic(context.Background(), ds.DB, "./Dump20240219_structures")
+	// if err != nil {
+	// 	log.Fatalf("Unable to initialize data sources: %v\n", err)
+	// }
 
 	router, err := inject(ds)
 
@@ -100,13 +113,13 @@ func main() {
 		Addr:    ":8090",
 		Handler: router,
 	}
-	if _, err := os.Stat(certFile); os.IsNotExist(err) {
-		log.Println("Generating self-signed certificates...")
-		if err := generateSelfSignedCert(); err != nil {
-			log.Fatal("Failed to generate certificates:", err)
-		}
-		log.Println("Certificates generated successfully.")
+	// if _, err := os.Stat(certFile); os.IsNotExist(err) {
+	log.Println("Generating self-signed certificates...")
+	if err := generateSelfSignedCert(); err != nil {
+		log.Fatal("Failed to generate certificates:", err)
 	}
+	log.Println("Certificates generated successfully.")
+	// }
 	// certManager := autocert.Manager{
 	// 	Prompt:     autocert.AcceptTOS,
 	// 	HostPolicy: autocert.HostWhitelist("fastqsolutions.com"), // Your domain here
@@ -355,15 +368,24 @@ func generateSelfSignedCert() error {
 	}
 	keyFileData := pem.EncodeToMemory(&pem.Block{Type: "EC PRIVATE KEY", Bytes: privkeyBytes})
 
-	err = ioutil.WriteFile(certFile, certFileData, 0644)
+	err = os.WriteFile(certFile, certFileData, 0644)
 	if err != nil {
 		return err
 	}
 
-	err = ioutil.WriteFile(keyFile, keyFileData, 0644)
+	err = os.WriteFile(keyFile, keyFileData, 0644)
 	if err != nil {
 		return err
 	}
 
 	return nil
+}
+func isMySQLInstalled() (bool, error) {
+	// Check if the MySQL executable is in the system PATH
+	_, err := exec.LookPath("mysqld")
+	if err != nil {
+		log.Println("error in checking mysql executable", err)
+		return false, nil
+	}
+	return err == nil, nil
 }

@@ -209,4 +209,5 @@ type ConfigService interface {
 	GetAllConfService(id string) (AllConfig, error)
 	GetAllAnnouncement(a string) ([]AnnouncementConfRes, error)
 	SelectAnnouncementToDisplay(id, code string) error
+	GetServerByIDService(id string) (ServerDetails, error)
 }

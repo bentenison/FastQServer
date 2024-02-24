@@ -536,7 +536,7 @@ export default {
         // }
     },
     async created() {
-        await this.listBluetoothDevices()
+        // await this.listBluetoothDevices()
     }
 }
 </script>

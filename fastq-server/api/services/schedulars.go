@@ -197,7 +197,6 @@ func GetServerDetailsByIP(serverIP string, db *sql.DB) (models.ServerDetails, er
 	}
 	return serverDetails, nil
 }
-
 func RunCronJobs() {
 	// 2
 	s := cron.New()

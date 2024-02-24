@@ -17,7 +17,7 @@
                 <v-btn fab small color="#6A6A69" class="mx-2">
                     <v-icon color="white">mdi-cloud</v-icon>
                 </v-btn>
-                <v-btn fab small color="#6A6A69" class="mx-2" @click="connectBluetoothPrinter">
+                <v-btn fab small color="#6A6A69" class="mx-2" @click.prevent="connectBluetoothPrinter">
                     <v-icon color="white">mdi-bluetooth</v-icon>
                 </v-btn>
             </div>
@@ -166,12 +166,12 @@ export default {
                     const url = new URL(window.location.origin);
 
                     // Get the IP address from the URL
-                    this.ipAddress = url.hostname;
+                    self.ipAddress = url.hostname;
                     let img = new Image();
-                    if (ipAddress === "localhost") {
+                    if (self.ipAddress === "localhost") {
                         return
                     }
-                    img.src = `https://${this.ipAddress}:443/uploaded/logo.png`;
+                    img.src = `https://${self.ipAddress}:443/uploaded/logo.png`;
                     // img.src = `http://localhost:8080/server/uploaded/logo.png`;
 
                     img.onload = async function () {

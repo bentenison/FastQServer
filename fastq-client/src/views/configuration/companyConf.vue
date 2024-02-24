@@ -29,6 +29,11 @@
                         <!-- <v-select :items="items" v-model="$store.state.Auth.user.timezone" label="timezone"></v-select> -->
                         <p class="h4 grey--text">{{ $store.state.Auth.user.timezone }}</p>
                     </div>
+                    <div class="d-flex flex-column">
+                        <p class="h6 grey--text">Ticket Print URL:</p>
+                        <!-- <v-select :items="items" v-model="$store.state.Auth.user.timezone" label="timezone"></v-select> -->
+                        <p class="h4 grey--text">{{ url }}</p>
+                    </div>
 
                     <v-btn color="primary" class=""><v-icon left>mdi-content-save-all</v-icon>Save config</v-btn>
                 </v-card>
@@ -58,6 +63,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import DataTables from '../tables/dataTables.vue';
 
 export default {
@@ -65,10 +71,42 @@ export default {
         return {
             panel: "",
             readonly: false,
-            items: ["India", "America", "Europe", "Japan"]
+            items: ["India", "America", "Europe", "Japan"],
+            ServerDetails: null,
         };
     },
-    components: { DataTables }
+    components: { DataTables },
+    computed: {
+        url() {
+            if (this.ServerDetails) {
+                return "https://" + this.ServerDetails.server_ip + ":443/fastqclient/#/ticket?company=" + this.$store.state.Auth.user.company_code
+            }
+        }
+    },
+    methods: {
+        getServerByCompany() {
+            return new Promise((resolve, reject) => {
+                axios.get(`/config/getServer/${this.$store.state.Auth.user.company_code}`).then(res => {
+                    // this.allvideos = res.data
+                    // console.log("res >>>>>>>>>>:::::", res);
+                    // this.tableData = []
+                    this.ServerDetails = res.data
+                    resolve(res.data)
+                    // this.$store.commit("SET_USER", res.data)
+                    // this.$store.commit(types.MUTATE_LOADER_OFF)
+                }).catch(err => {
+                    console.log(err.response);
+                    // reject(err.response)
+                    reject(err)
+                    // this.$store.commit(types.MUTATE_LOADER_OFF)
+                    this.$toast.error("error occured while getting server details!!!")
+                })
+            })
+        }
+    },
+    mounted() {
+        this.getServerByCompany()
+    }
 }
 </script>
 

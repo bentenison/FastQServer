@@ -426,10 +426,11 @@ export default {
 
         getnextticket() {
             this.getlastongoingticket().then(res => {
+                console.log("last ongoing", res);
                 if (res === "NO_RESULT") {
 
                 } else {
-                    this.updateJustTicketStatus('FINISHED')
+                    this.updateJustTicketStatus('FINISHED', res.ID)
                 }
                 //get last ongoing ticket directly first if not available go for this API
 
@@ -523,13 +524,13 @@ export default {
             })
 
         },
-        updateJustTicketStatus(status) {
+        updateJustTicketStatus(status, id) {
             if (this.$store.state.Auth.activeTicket) {
                 let payload = {
                     ticket_status: status,
                     // updated_at: "",
                     updated_by: this.$store.state.Auth.counterUser.ID,
-                    id: this.$store.state.Auth.activeTicket.ID
+                    id: id,
 
                 }
                 axios.post("/ticket/updateticketstatus", payload).then(res => {

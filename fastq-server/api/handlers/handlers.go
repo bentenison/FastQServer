@@ -182,6 +182,7 @@ func NewHandler(c *Config) {
 	g.POST("/config/updateticketconf", h.UpdateTicketConfHandler)
 	g.GET("/config/getticketconf/:id", h.GetTicketConfHandler)
 	g.GET("/config/getallconfig/:id", h.GetAllConfigHandler)
+	g.GET("/config/getServer/:id", h.GetServerByIDHandler)
 
 	// Reports Handlers
 	g.GET("/report/tickets-by-service/:id", h.GetTicketsByService)
