@@ -113,7 +113,7 @@ func inject(ds *dataSources) (*gin.Engine, error) {
 	reportrepository := reports.NewReportsDAO(ds.DB)
 
 	// initialize gin.Engine
-	router := gin.Default()
+	router := gin.New()
 
 	// read in ACCOUNT_API_URL
 	// baseURL := os.Getenv("ACCOUNT_API_URL")

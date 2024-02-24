@@ -351,7 +351,7 @@ export default {
                     reject(err)
                     // reject(err.response)
                     // this.$store.commit(types.MUTATE_LOADER_OFF)
-                    this.$toast.error("error occured while getting connected clients!!!")
+                    // this.$toast.error("error occured while getting connected clients!!!")
                 })
             })
 
@@ -388,7 +388,7 @@ export default {
                     // reject(err.response)
                     reject(err)
                     // this.$store.commit(types.MUTATE_LOADER_OFF)
-                    this.$toast.error("error occured while getting connected clients!!!")
+                    // this.$toast.error("error occured while getting connected clients!!!")
                 })
 
             })

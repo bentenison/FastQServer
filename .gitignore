@@ -1,0 +1,13 @@
+teller/dist
+/teller/node_modules
+/kiosk/dist
+/kiosk/node_modules
+/ds/dist
+/ds/node_modules
+/admin/dist
+/admin/node_modules
+/fastq-client/dist
+/fastq-client/node_modules
+/fastq-server/fastq-server.exe
+/fastq-server/license_FASTQ Solutions.json
+/fastq-server/client

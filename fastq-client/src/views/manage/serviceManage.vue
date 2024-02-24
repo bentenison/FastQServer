@@ -190,6 +190,7 @@ export default {
             // console.log("date", this.service.start_time);
             axios.post("/service/addservice", this.service).then(res => {
                 this.$toast.success("service added successfully.")
+                this.tableData = []
                 this.getServices()
             }).catch(err => {
                 console.log(err.response);
@@ -199,9 +200,9 @@ export default {
             })
         },
         getServices() {
-            console.log("store>>>>>>>>>>>>>>>>>>>",);
+            // console.log("store>>>>>>>>>>>>>>>>>>>",);
             axios.get(`/service/getAllservice/${this.$store.getters.getUser.company_code}`).then(res => {
-                console.log(">>>>>>>>>>>>>>>>>", res);
+                // console.log(">>>>>>>>>>>>>>>>>", res);
 
                 res.data.message.forEach(element => {
                     let data = {}
@@ -216,10 +217,10 @@ export default {
                 });
 
                 this.$toast.success("services fetched successfully.")
-                this.connection.send("Hello World !!!")
+                // this.connection.send("Hello World !!!")
             }).catch(err => {
                 console.log(err.response);
-                this.$toast.error("error occured while getting service!!!")
+                // this.$toast.error("error occured while getting service!!!")
             })
         },
         clear() {
@@ -235,12 +236,12 @@ export default {
         // this.connection.onmessage = function (event) {
         //     console.log(event);
         // }
-        
+
         // this.connection.onopen = function (event) {
         //     console.log(event)
         //     console.log("Successfully connected to the echo websocket server...")
         // }
-        
+
 
     }
 }

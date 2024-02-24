@@ -513,3 +513,25 @@ func (h *Handler) GetAllConfigHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, res)
 
 }
+func (h *Handler) GetServerByIDHandler(c *gin.Context) {
+	id := c.Param("id")
+	if id == "" {
+		err := apperrors.NewExpectationFailed("id is required param!!")
+		c.JSON(http.StatusExpectationFailed, gin.H{
+			"error": err,
+		})
+		return
+	}
+	// ctx := c.Request.Context()
+	res, err := h.ConfigService.GetServerByIDService(id)
+	if err != nil {
+		log.Println("error getting data :", err)
+
+		c.JSON(http.StatusExpectationFailed, gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
+	c.JSON(http.StatusOK, res)
+
+}

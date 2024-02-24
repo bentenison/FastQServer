@@ -101,6 +101,7 @@ export default {
                     console.log("res :::::", res);
                     // this.$store.commit("SET_USER", res.data)
                     this.$store.commit(types.MUTATE_LOADER_OFF)
+                    this.$toast.success("announcement added successfully!!!")
                 }).catch(err => {
                     console.log(err.response);
                     reject(err.response)
@@ -121,6 +122,7 @@ export default {
                 this.$store.commit(types.MUTATE_LOADER_ON);
                 axios.get(`/config/selecttodisplay/${this.$store.state.Auth.user.company_code}?id=${this.selected[0].id}`).then(res => {
                     console.log("res :::::", res);
+                    this.$toast.success("announcement set as default successfully!!!")
                     // this.$store.commit("SET_USER", res.data)
                     this.$store.commit(types.MUTATE_LOADER_OFF)
                 }).catch(err => {

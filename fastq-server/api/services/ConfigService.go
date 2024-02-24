@@ -3,6 +3,7 @@ package services
 import (
 	"context"
 	"database/sql"
+	"fmt"
 	"log"
 	"time"
 
@@ -165,6 +166,13 @@ func (c *configService) GetAllConfService(id string) (models.AllConfig, error) {
 	// tc.UpdatedAt = tm
 
 	return GetAllConf(context.TODO(), c.db, id)
+}
+func (c *configService) GetServerByIDService(id string) (models.ServerDetails, error) {
+	// t := time.Now()
+	// tm := t.Format("2006-01-02 15:04:05")
+	// tc.UpdatedAt = tm
+
+	return GetServerDetailsBycompany(id, c.db)
 }
 
 func AddVideo(ctx context.Context, db *sql.DB, newVideo models.Video) (sql.Result, error) {
@@ -882,4 +890,24 @@ func GetAllConf(ctx context.Context, db *sql.DB, id string) (models.AllConfig, e
 	}
 	allconf.SchedularConf = schedular
 	return allconf, nil
+}
+func GetServerDetailsBycompany(ID string, db *sql.DB) (models.ServerDetails, error) {
+
+	// Prepare the query
+	query := "SELECT server_ip, server_cpu, server_disk_id, id FROM server_details WHERE id = ?"
+
+	// Execute the query
+	row := db.QueryRow(query, ID)
+
+	// Scan the result into a ServerDetails struct
+	var serverDetails models.ServerDetails
+	err := row.Scan(&serverDetails.ServerIP, &serverDetails.ServerCPU, &serverDetails.ServerDiskId, &serverDetails.Id)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			// No rows were returned
+			return models.ServerDetails{}, fmt.Errorf("no server details found for server IP: %s", ID)
+		}
+		return models.ServerDetails{}, err
+	}
+	return serverDetails, nil
 }

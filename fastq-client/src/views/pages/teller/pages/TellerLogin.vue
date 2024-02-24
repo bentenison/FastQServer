@@ -357,7 +357,7 @@ export default {
 
 #lock {
     //   background-image: url("https://picsum.photos/200/300");
-    background-image: url("https://source.unsplash.com/user/wsanter");
+    background-image: url("../../../../assets/paper.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
