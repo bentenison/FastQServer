@@ -50,10 +50,10 @@ func main() {
 		log.Fatalf("Unable to initialize data sources: %v\n", err)
 	}
 
-	// err = setupSQLAutomatic(context.Background(), ds.DB, "./Dump20240219_structures")
-	// if err != nil {
-	// 	log.Fatalf("Unable to initialize data sources: %v\n", err)
-	// }
+	err = setupSQLAutomatic(context.Background(), ds.DB, "./Dump20240219_structures")
+	if err != nil {
+		log.Fatalf("Unable to initialize data sources: %v\n", err)
+	}
 
 	router, err := inject(ds)
 

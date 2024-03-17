@@ -348,9 +348,17 @@ func (h *Handler) UpdateTicketUserHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, "OK")
 }
 func (h *Handler) GetTicketNumberHandler(c *gin.Context) {
+	service := c.Param("service")
+	if service == "" {
+		err := apperrors.NewExpectationFailed("id is required param!!")
+		c.JSON(err.Status(), gin.H{
+			"error": err,
+		})
+		return
+	}
 	ctx := c.Request.Context()
 	log.Println("handlers", h.TicketService)
-	result, err := h.TicketService.GetLastTicketNumberService(ctx)
+	result, err := h.TicketService.GetLastTicketNumberService(ctx, service)
 	if err != nil {
 		log.Println("error getting data :", err)
 		err := apperrors.NewExpectationFailed("error in getting ticket number from DB")

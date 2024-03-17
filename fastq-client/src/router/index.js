@@ -44,6 +44,12 @@ const routes = [
         meta: { RequiresAuth: true },
       },
       {
+        name: "Image Carousel",
+        path: "/carousel",
+        component: () => import("@/views/ads/adCarousel"),
+        meta: { RequiresAuth: true },
+      },
+      {
         name: "Announcement",
         path: "/announcement",
         component: () => import("@/views/ads/announcement"),
@@ -233,7 +239,7 @@ const routes = [
     name: "signage",
     component: () =>
       import(
-        /* webpackChunkName: "signup" */ "../views/digital-signage/SignageTemplate1.vue"
+        /* webpackChunkName: "signup" */ "../views/digital-signage/SignageTemplate2.vue"
       ),
     meta: { RequiresAuth: false },
   },

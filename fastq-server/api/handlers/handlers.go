@@ -135,7 +135,7 @@ func NewHandler(c *Config) {
 	g.POST("/ticket/updateticketstatus", h.UpdateTicketStatusHandler)
 	g.POST("/ticket/updatetickettransferto", h.UpdateTicketTransferedToHandler)
 	g.POST("/ticket/updateticketuser", h.UpdateTicketUserHandler)
-	g.GET("/ticket/getLastNumber", h.GetTicketNumberHandler)
+	g.GET("/ticket/getLastNumber/:service", h.GetTicketNumberHandler)
 	g.POST("/ticket/updateendtime", h.UpdateTicketEndTimeHandler)
 	g.POST("/ticket/gettickettoprocess", h.GetTicketToProcessHandler)
 	g.GET("/ticket/getwaiting", h.GetWaitingTicketsHandler)
@@ -143,6 +143,7 @@ func NewHandler(c *Config) {
 	g.GET("/ticket/getfinished/:id", h.GetFinishedTicketsHandler)
 	g.GET("/ticket/getlastcalled", h.GetLastCalledTicketHandler)
 	g.GET("/ticket/getlaststarted/:id", h.GetLastStartedTicketHandler)
+	g.GET("/ticket/getestimated/:id", h.GetEstimatedWaitingTimeHandler)
 
 	//?license handlers
 	// g.POST("/license/updateBranch", middleware.AuthUser(h.TokenService), h.UpdateLicenseBranchHandler)
@@ -154,6 +155,7 @@ func NewHandler(c *Config) {
 	g.GET("/app/checkLicense", h.CheckLicensehandler)
 	g.POST("/app/checkandgetcounter", h.CheckAndGetActiveCounterHandler)
 	g.POST("/counter/auth", h.AuthCounterHandler)
+	// g.POST("/counter/logout/:id", h.AuthCounterHandler)
 	// g.POST("/license/updateNumberLicense", middleware.AuthUser(h.TokenService))
 	//misc
 	g.GET("/app/getCompany/:id", h.GetCompanyFromApp)

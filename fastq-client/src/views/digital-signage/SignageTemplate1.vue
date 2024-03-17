@@ -50,7 +50,7 @@
                             <h4>Ticket</h4>
                         </div>
                     </div>
-                    <div v-for="(n, i) in activeClients" class="d-flex flex-column align-items-center">
+                    <div v-for="(n, i) in activeClients" class="d-flex flex-column align-items-center" :key="i">
                         <div class="col-md-12 d-flex flex-wrap">
                             <div class="col-md-6 text-left py-0 my-0">
                                 <h2 style="font-size: 3rem;">{{ n.CounterNumber }}</h2>
@@ -202,7 +202,7 @@ export default {
                     case "next":
                         // Vue.set(this.activeTickets, response.ticket_payload.CounterID, response);
                         // this.activeTickets.set(response.ticket_payload.CounterID, response)
-                        console.log("active tickets", this.$store.state.Auth.activeTickets);
+                        // console.log("active tickets", this.$store.state.Auth.activeTickets);
                         if (this.$store.state.Auth.activeTickets.length > 0) {
                             let ticketIndex = this.$store.state.Auth.activeTickets.findIndex(
                                 i => i.ticket_payload.CounterID === response.ticket_payload.CounterID);
@@ -231,7 +231,7 @@ export default {
                             if (index !== -1) {
                                 this.$store.commit("REMOVE_ACTIVE", index)
                             }
-                            console.log("Active ticket finished>>>>>>>>>>>", this.$store.state.Auth.activeTickets);
+                            // console.log("Active ticket finished>>>>>>>>>>>", this.$store.state.Auth.activeTickets);
                             // this.$forceUpdate();
                             break;
                         }
@@ -262,7 +262,7 @@ export default {
             if (this.socket.readyState === WebSocket.OPEN) {
                 const data = 'Hello, Server!'; // Your message data
                 this.socket.send(data);
-                console.log('Sent message to server:', data);
+                // console.log('Sent message to server:', data);
             }
 
         },
@@ -272,7 +272,7 @@ export default {
                 if (this.id) {
                     this.$store.commit(types.MUTATE_LOADER_ON);
                     axios.get(`/app/getCompany/${this.id}`).then(res => {
-                        console.log("res :::::", res);
+                        // console.log("res :::::", res);
                         this.$store.commit("SET_USER", res.data)
                         this.$store.commit(types.MUTATE_LOADER_OFF)
                     }).catch(err => {
@@ -358,7 +358,7 @@ export default {
         },
         getAllConfigs() {
             axios.get(`/config/getallconfig/${this.$store.state.Auth.user.company_code}`).then(res => {
-                console.log("res :::::", res);
+                // console.log("res :::::", res);
                 this.allconf = res.data
                 this.allconf.schedular_conf.forEach(element => {
                     // console.log("single schedular", element);
@@ -379,7 +379,7 @@ export default {
             return new Promise((resolve, reject) => {
                 axios.get(`/app/getAllClients`).then(res => {
                     this.clients = res.data
-                    console.log("res >>>>>>>>>>:::::", res);
+                    // console.log("res >>>>>>>>>>:::::", res);
                     resolve(res.data)
                     // this.$store.commit("SET_USER", res.data)
                     // this.$store.commit(types.MUTATE_LOADER_OFF)
@@ -438,7 +438,7 @@ export default {
                 }
                 // console.log("object:::::::", payload);
                 axios.post(`/counter/getcounter`, payload).then(res => {
-                    console.log("res:::::", res);
+                    // console.log("res:::::", res);
                     // this.counter = res.data.message
                     resolve(res.data.message)
                     // this.$toast.success("branch added successfully.")
@@ -472,9 +472,9 @@ export default {
             this.GetAllClients().then(res => {
                 let temp = []
                 res.forEach(element => {
-                    console.log("element is", element);
+                    // console.log("element is", element);
                     this.getAllcounters(element.counter_id).then(counter => {
-                        console.log("Counters are,", counter);
+                        // console.log("Counters are,", counter);
                         temp.push(counter)
                     })
                 });

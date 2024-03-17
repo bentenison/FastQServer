@@ -108,6 +108,11 @@ export default {
             to: '/video-ads'
           },
           {
+            action: 'mdi-image-box',
+            title: 'Images',
+            to: '/carousel'
+          },
+          {
             action: 'mdi-book-clock',
             title: 'Video Schedular',
             to: '/video-schedular'

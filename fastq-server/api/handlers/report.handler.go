@@ -445,3 +445,20 @@ func (h *Handler) GetHourlyNoShow(c *gin.Context) {
 
 	c.JSON(http.StatusOK, times)
 }
+func (h *Handler) GetEstimatedWaitingTimeHandler(c *gin.Context) {
+	id := c.Param("id")
+	if id == "" {
+		err := apperrors.NewExpectationFailed("id is required param!!")
+		c.JSON(http.StatusExpectationFailed, gin.H{
+			"error": err,
+		})
+		return
+	}
+	times, err := h.ReportService.EstimatedWaitingTime(id)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Internal Server Error"})
+		return
+	}
+
+	c.JSON(http.StatusOK, times)
+}

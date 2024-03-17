@@ -1,5 +1,5 @@
 <template>
-    <div class="scrolling-ad" :style="{ animationDuration: animationDuration }">
+    <div class="scrolling-ad" :style="{ animationDuration: animationDuration }" style="width: 100%;">
       <span class="text-h5">{{ adText }}</span>
     </div>
   </template>

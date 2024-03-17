@@ -797,14 +797,14 @@ func updateAllTicketConfsByCompanyCode(db *sql.DB, companyCode string, updatedTi
         SET image_header = ?, image_url = ?, no_show_exp = ?, text_header = ?, 
             header_text = ?, hide_time = ?, print_duplicate = ?, date_format = ?, 
             print_position = ?, number_digits = ?, estimated_time = ?, pop_up_delay = ?, 
-            created_at = ?, updated_at = ?, updated_by = ?, id = ?, branch_code = ?, 
+            updated_at = ?, updated_by = ?, id = ?, branch_code = ?, 
             branch_name = ?, company_code = ?, company_name = ?
         WHERE company_code = ?
     `, updatedTicketConf.ImageHeader, updatedTicketConf.ImageURL, updatedTicketConf.NoShowExp,
 		updatedTicketConf.TextHeader, updatedTicketConf.HeaderText, updatedTicketConf.HideTime,
 		updatedTicketConf.PrintDuplicate, updatedTicketConf.DateFormat, updatedTicketConf.PrintPosition,
 		updatedTicketConf.NumberDigits, updatedTicketConf.EstimatedTime, updatedTicketConf.PopUpDelay,
-		updatedTicketConf.CreatedAt, updatedTicketConf.UpdatedAt, updatedTicketConf.UpdatedBy,
+		updatedTicketConf.UpdatedAt, updatedTicketConf.UpdatedBy,
 		updatedTicketConf.ID, updatedTicketConf.BranchCode, updatedTicketConf.BranchName,
 		updatedTicketConf.CompanyCode, updatedTicketConf.CompanyName, companyCode,
 	)
@@ -877,12 +877,12 @@ func GetAllConf(ctx context.Context, db *sql.DB, id string) (models.AllConfig, e
 		return allconf, err
 	}
 	allconf.AnnouncementConf = announcement
-	// ticketconf, err := selectOneTicketConfByCompanyCode(db, id)
-	// if err != nil {
-	// 	log.Println("error in getting ticket conf", err)
-	// 	return allconf, err
-	// }
-	// allconf.TicketConf = ticketconf
+	ticketconf, err := selectOneTicketConfByCompanyCode(db, id)
+	if err != nil {
+		log.Println("error in getting ticket conf", err)
+		// return allconf, err
+	}
+	allconf.TicketConf = ticketconf
 	schedular, err := getAllVideosSchedular(context.TODO(), db, id)
 	if err != nil {
 		log.Println("error in getting schedular conf", err)

@@ -7,6 +7,12 @@ import (
 	"github.com/bentenison/fastq-server/models"
 )
 
+type Customer struct {
+	ID            int
+	Name          string
+	NameAr        string
+	ContactNumber string
+}
 type sqlTicketRepo struct {
 	db *sql.DB
 }
@@ -204,8 +210,8 @@ func (q *sqlTicketRepo) GetTicketToProcess(ctx context.Context, arg models.GetTi
 	return &i, err
 }
 
-func (q *sqlTicketRepo) GetLastTicketNumber(ctx context.Context) (models.TicketNumber, error) {
-	row := q.db.QueryRowContext(ctx, `select ticket_number as number from ticket where date(created_at)=date(now()) and ticket_status = 0 order by created_at desc limit 1;`)
+func (q *sqlTicketRepo) GetLastTicketNumber(ctx context.Context, service string) (models.TicketNumber, error) {
+	row := q.db.QueryRowContext(ctx, `select ticket_number as number from ticket where date(created_at)=date(now()) and service = ? and ticket_status = 0 order by created_at desc limit 1;`, service)
 	var i models.TicketNumber
 	err := row.Scan(
 		&i.Number,
@@ -505,5 +511,41 @@ func (q *sqlTicketRepo) UpdateTicketUser(ctx context.Context, arg models.UpdateT
 		arg.UpdatedBy,
 		arg.ID,
 	)
+	return err
+}
+
+func (q *sqlTicketRepo) CreateCustomer(customer *Customer) (int64, error) {
+	result, err := q.db.Exec("INSERT INTO customer (name, name_ar, contact_number) VALUES (?, ?, ?)", customer.Name, customer.NameAr, customer.ContactNumber)
+	if err != nil {
+		return 0, err
+	}
+
+	id, err := result.LastInsertId()
+	if err != nil {
+		return 0, err
+	}
+
+	return id, nil
+}
+
+func (q *sqlTicketRepo) GetCustomer(id int) (*Customer, error) {
+	customer := &Customer{}
+	err := q.db.QueryRow("SELECT id, name, name_ar, contact_number FROM customer WHERE id = ?", id).
+		Scan(&customer.ID, &customer.Name, &customer.NameAr, &customer.ContactNumber)
+	if err != nil {
+		return nil, err
+	}
+
+	return customer, nil
+}
+
+func (q *sqlTicketRepo) UpdateCustomer(customer *Customer) error {
+	_, err := q.db.Exec("UPDATE customer SET name = ?, name_ar = ?, contact_number = ? WHERE id = ?",
+		customer.Name, customer.NameAr, customer.ContactNumber, customer.ID)
+	return err
+}
+
+func (q *sqlTicketRepo) DeleteCustomer(id int) error {
+	_, err := q.db.Exec("DELETE FROM customer WHERE id = ?", id)
 	return err
 }

@@ -1,20 +1,25 @@
 <template>
   <v-app-bar id="app-bar" fixed app color="#F5F5F5" flat height="60">
-    <v-btn class="mr-3" elevation="1" fab small @click="$eventBus.$emit('fabClicked')">
-      <v-icon v-if="false">
-        mdi-view-quilt
-      </v-icon>
+    <v-btn
+      class="mr-3"
+      elevation="1"
+      fab
+      small
+      @click="$eventBus.$emit('fabClicked')"
+    >
+      <v-icon v-if="false"> mdi-view-quilt </v-icon>
 
-      <v-icon v-else>
-        mdi-dots-vertical
-      </v-icon>
+      <v-icon v-else> mdi-dots-vertical </v-icon>
     </v-btn>
 
-    <v-toolbar-title class="hidden-sm-and-down font-weight-light" v-text="$route.name" />
+    <v-toolbar-title
+      class="hidden-sm-and-down font-weight-light"
+      v-text="$route.name"
+    />
 
     <v-spacer />
 
-    <v-text-field color="secondary" hide-details style="max-width: 165px;">
+    <v-text-field color="secondary" hide-details style="max-width: 165px">
       <template v-if="$vuetify.breakpoint.mdAndUp" v-slot:append-outer>
         <v-btn class="mt-n2" elevation="1" fab small>
           <v-icon>mdi-magnify</v-icon>
@@ -73,7 +78,12 @@
       </v-menu> -->
 
     <div class="text-center">
-      <v-menu v-model="menu" :close-on-content-click="true" :nudge-width="200" offset-x>
+      <v-menu
+        v-model="menu"
+        :close-on-content-click="true"
+        :nudge-width="200"
+        offset-x
+      >
         <template v-slot:activator="{ on, attrs }">
           <v-btn class="ml-2" min-width="0" text v-bind="attrs" v-on="on">
             <v-icon>mdi-account</v-icon>
@@ -84,14 +94,20 @@
             <v-list-item>
               <v-list-item-avatar>
                 <v-avatar color="red" class="text-center">
-                  <span class="white--text text-h5 text-center">{{ initials }}</span>
+                  <span class="white--text text-h5 text-center">{{
+                    initials
+                  }}</span>
                 </v-avatar>
               </v-list-item-avatar>
 
               <v-list-item-content>
-                <v-list-item-title>{{ $store.state.Auth.user.firstname }} {{ $store.state.Auth.user.lastname
-                }}</v-list-item-title>
-                <v-list-item-subtitle>{{ $store.state.Auth.user.company.toUpperCase() }}</v-list-item-subtitle>
+                <v-list-item-title
+                  >{{ $store.state.Auth.user.firstname }}
+                  {{ $store.state.Auth.user.lastname }}</v-list-item-title
+                >
+                <v-list-item-subtitle>{{
+                  $store.state.Auth.user.company.toUpperCase()
+                }}</v-list-item-subtitle>
               </v-list-item-content>
 
               <v-list-item-action>
@@ -106,30 +122,41 @@
 
           <v-list>
             <v-list-item>
-              <v-list-item-title><v-btn block text color="error" class="mt-1 text-md-button" @click="$router.push('/')"> <v-icon
-                    left>mdi-logout</v-icon>
+              <v-list-item-title
+                ><v-btn
+                  block
+                  text
+                  color="error"
+                  class="mt-1 text-md-button"
+                  @click="$router.push('/')"
+                >
+                  <v-icon left>mdi-logout</v-icon>
                   logout
-                </v-btn></v-list-item-title>
+                </v-btn></v-list-item-title
+              >
             </v-list-item>
 
             <v-list-item>
-
-              <v-list-item-title><v-btn block text color="primary" class="mt-1 text-md-button"
-                  @click="$router.push('/company')"> <v-icon left>mdi-card-account-details</v-icon>
+              <v-list-item-title
+                ><v-btn
+                  block
+                  text
+                  color="primary"
+                  class="mt-1 text-md-button"
+                  @click="$router.push('/company')"
+                >
+                  <v-icon left>mdi-card-account-details</v-icon>
                   profile
-                </v-btn></v-list-item-title>
+                </v-btn></v-list-item-title
+              >
             </v-list-item>
           </v-list>
 
           <v-card-actions>
             <v-spacer></v-spacer>
 
-            <v-btn text @click="menu = false">
-              Cancel
-            </v-btn>
-            <v-btn color="primary" text @click="menu = false">
-              Save
-            </v-btn>
+            <v-btn text @click="menu = false"> Cancel </v-btn>
+            <v-btn color="primary" text @click="menu = false"> Save </v-btn>
           </v-card-actions>
         </v-card>
       </v-menu>
@@ -140,26 +167,26 @@
 <script>
 // import EventBus from '@/plugins/eventBus';
 export default {
-
   data() {
     return {
-
-    }
+      menu: false,
+      fav: false,
+    };
   },
-  methods: {
-
-  },
+  methods: {},
   computed: {
     initials() {
-      const firstInitial = this.$store.state.Auth.user.firstname ? this.$store.state.Auth.user.firstname[0] : '';
-      const lastInitial = this.$store.state.Auth.user.lastname ? this.$store.state.Auth.user.lastname[0] : '';
+      const firstInitial = this.$store.state.Auth.user.firstname
+        ? this.$store.state.Auth.user.firstname[0]
+        : "";
+      const lastInitial = this.$store.state.Auth.user.lastname
+        ? this.$store.state.Auth.user.lastname[0]
+        : "";
       return `${firstInitial}${lastInitial}`.toUpperCase();
-    }
-  }
-
-}
+    },
+  },
+};
 </script>
 
 <style lang="sass" scoped>
-
 </style>

@@ -144,7 +144,7 @@ type TicketRepository interface {
 	UpdateTicketStatus(ctx context.Context, arg UpdateTicketStatusParams) error
 	UpdateTicketTransferedTo(ctx context.Context, arg UpdateTicketTransferedToParams) error
 	UpdateTicketUser(ctx context.Context, arg UpdateTicketUserParams) error
-	GetLastTicketNumber(ctx context.Context) (TicketNumber, error)
+	GetLastTicketNumber(ctx context.Context, service string) (TicketNumber, error)
 	UpdateTicketEndTime(ctx context.Context, arg UpdateTicketEndTimeParams) error
 	GetTicketToProcess(ctx context.Context, arg GetTicketParams) (*Ticket, error)
 }
@@ -163,7 +163,7 @@ type TicketService interface {
 	UpdateTicketStatusService(ctx context.Context, arg UpdateTicketStatusParams) error
 	UpdateTicketTransferedToService(ctx context.Context, arg UpdateTicketTransferedToParams) error
 	UpdateTicketUserService(ctx context.Context, arg UpdateTicketUserParams) error
-	GetLastTicketNumberService(ctx context.Context) (TicketNumber, error)
+	GetLastTicketNumberService(ctx context.Context, service string) (TicketNumber, error)
 	UpdateTicketEndTimeService(ctx context.Context, arg UpdateTicketEndTimeParams) error
 	GetTicketToProcessService(ctx context.Context, arg GetTicketParams) (*Ticket, error)
 	GetWaitingTicketsService(ctx context.Context) ([]*Ticket, error)
@@ -185,6 +185,7 @@ type LicenseService interface {
 	CheckAndGetActiveCounter(ActiveCounter) (ManageCounter, error)
 	AuthCounterUserService(ctr AuthCounterUser) (*ManageUser, error)
 	UpdateCounterUserService(arg string) error
+	CounterLogoutService(ctrId string, user ManageUser) error
 }
 type ConfigService interface {
 	AddVideoService(ctx context.Context, v Video) (sql.Result, error)

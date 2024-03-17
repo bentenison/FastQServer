@@ -17,7 +17,7 @@
                                 </v-icon>Upload</v-btn>
                         </div>
                         <div class="row col-md-12">
-                            <v-expansion-panels v-model="panel" :readonly="readonly" multiple flat>
+                            <v-expansion-panels v-model="panel" :readonly="readonly" multiple flat style="z-index:10" v-if="false">
                                 <v-expansion-panel>
                                     <v-expansion-panel-header class="grey--text">
                                         <p class="text-center h5">AUDIT TRAIL</p>
