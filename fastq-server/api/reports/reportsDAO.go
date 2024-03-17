@@ -2,6 +2,7 @@ package reports
 
 import (
 	"database/sql"
+	"fmt"
 	"log"
 	"strconv"
 	"time"
@@ -287,7 +288,7 @@ func (dao *ReportsDAO) GetTicketsWithUserInfo(companyCode string) ([]map[string]
 	// SELECT concat(u.firstname," ",u.lastname) AS user_name,c.counter_name,t.ticket_name, t.service, t.ticket_status,c.company_name FROM ticket t INNER JOIN manage_user u ON t.updated_by = u.id inner join manage_counters c on t.counter_id=c.id WHERE t.company_code = "nDmmyD0" and date(t.created_at)=date(now())
 	query := `SELECT concat(u.firstname," ",u.lastname) AS user_name,
 	c.counter_name,t.ticket_name, t.service, t.ticket_status,c.company_name,TIMESTAMPDIFF(SECOND, t.started_serving_at, t.end_serving_at) as time_taken
-	FROM ticket t INNER JOIN manage_user u ON t.updated_by = u.id inner join manage_counters c on t.counter_id=c.id WHERE t.company_code = ? `
+	FROM ticket t INNER JOIN manage_user u ON t.updated_by = u.id inner join manage_counters c on t.counter_id=c.id WHERE t.company_code = ? and year(end_serving_at) != '2017' `
 	rows, err := dao.DB.Query(query, companyCode)
 	if err != nil {
 		log.Println("Error executing query:", err)
@@ -491,7 +492,7 @@ func (dao *ReportsDAO) GetAverageServiceTimeByCounter(companyCode string) ([]mod
 
 // Query 17: Average Active Time of User in Minutes and Hours
 func (dao *ReportsDAO) GetAverageActiveTimeOfUser(companyCode string) ([]models.AverageActiveTimeOfUser, error) {
-	query := "SELECT u.username AS user_name, AVG(TIMESTAMPDIFF(SECOND, t.created_at, NOW())) as avg_active_time_seconds, AVG(TIMESTAMPDIFF(MINUTE, t.created_at, NOW())) as avg_active_time_minutes, AVG(TIMESTAMPDIFF(HOUR, t.created_at, NOW())) as avg_active_time_hours FROM ticket t INNER JOIN manage_user u ON t.updated_by = u.id WHERE t.company_code = ? GROUP BY u.username"
+	query := "SELECT u.username AS user_name, AVG(TIMESTAMPDIFF(SECOND, t.created_at, NOW())) as avg_active_time_seconds, AVG(TIMESTAMPDIFF(MINUTE, t.created_at, NOW())) as avg_active_time_minutes, AVG(TIMESTAMPDIFF(HOUR, t.created_at, NOW())) as avg_active_time_hours FROM ticket t INNER JOIN manage_user u ON t.updated_by = u.id WHERE t.company_code = ? and year(end_serving_at) != '2017' GROUP BY u.username"
 	rows, err := dao.DB.Query(query, companyCode)
 	if err != nil {
 		log.Println("Error executing query:", err)
@@ -515,7 +516,7 @@ func (dao *ReportsDAO) GetAverageActiveTimeOfUser(companyCode string) ([]models.
 
 // Query 18: Active Time of User per Day
 func (dao *ReportsDAO) GetActiveTimeOfUserPerDay(companyCode string) ([]models.ActiveTimeOfUserPerDay, error) {
-	query := "SELECT u.email AS user_name, DATE(t.started_serving_at) AS serving_date, MIN(t.started_serving_at) AS first_ticket_time, MAX(t.started_serving_at) AS last_ticket_time, TIMESTAMPDIFF(SECOND, MIN(t.started_serving_at), MAX(t.started_serving_at)) AS active_time_seconds, TIMESTAMPDIFF(MINUTE, MIN(t.started_serving_at), MAX(t.started_serving_at)) AS active_time_minutes, TIMESTAMPDIFF(HOUR, MIN(t.started_serving_at), MAX(t.started_serving_at)) AS active_time_hours FROM ticket t INNER JOIN manage_user u ON t.updated_by = u.id WHERE t.started_serving_at IS NOT NULL AND t.company_code = ? GROUP BY u.email, DATE(t.started_serving_at)"
+	query := "SELECT u.email AS user_name, DATE(t.started_serving_at) AS serving_date, MIN(t.started_serving_at) AS first_ticket_time, MAX(t.started_serving_at) AS last_ticket_time, TIMESTAMPDIFF(SECOND, MIN(t.started_serving_at), MAX(t.started_serving_at)) AS active_time_seconds, TIMESTAMPDIFF(MINUTE, MIN(t.started_serving_at), MAX(t.started_serving_at)) AS active_time_minutes, TIMESTAMPDIFF(HOUR, MIN(t.started_serving_at), MAX(t.started_serving_at)) AS active_time_hours FROM ticket t INNER JOIN manage_user u ON t.updated_by = u.id WHERE t.started_serving_at IS NOT NULL AND t.company_code = ? and year(end_serving_at) != '2017' GROUP BY u.email, DATE(t.started_serving_at)"
 	rows, err := dao.DB.Query(query, companyCode)
 	if err != nil {
 		log.Println("Error executing query:", err)
@@ -718,4 +719,42 @@ func (dao *ReportsDAO) GetHourlyTicketNoShowForToday(code string) ([]HourlyNoSho
 	}
 
 	return hourlyTicketStatsList, nil
+}
+func convertMinutesToHoursAndMinutes(minutes int) string {
+	hours := minutes / 60
+	remainingMinutes := minutes % 60
+	res := fmt.Sprintf("%v hour %v minutes", hours, remainingMinutes)
+	return res
+}
+func (dao *ReportsDAO) EstimatedWaitingTime(code string) (string, error) {
+	// Get the current date
+	// currentDate := time.Now().Format("2006-01-02")
+	rows, err := dao.DB.Query(`
+	SELECT 
+    AVG(TIMESTAMPDIFF(minute, created_at, end_serving_at)) AS average_waiting_time
+FROM 
+    ticket
+WHERE 
+    end_serving_at IS NOT NULL and date(created_at) = date(now()) and year(end_serving_at) != "2017" and company_code = ?
+	`, code)
+
+	if err != nil {
+		log.Println("Error executing query:", err)
+		return "", err
+	}
+	defer rows.Close()
+
+	var average_waiting_time string
+
+	for rows.Next() {
+		// var hourlyTicketStats HourlyNoShow
+		err := rows.Scan(&average_waiting_time)
+		if err != nil {
+			log.Println("Error scanning row:", err)
+			return "", err
+		}
+	}
+	avgTime, _ := strconv.ParseFloat(average_waiting_time, 64)
+	res := convertMinutesToHoursAndMinutes(int(avgTime))
+	return res, nil
 }

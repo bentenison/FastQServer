@@ -28,11 +28,11 @@
                         </li>
                     </ul>
                     <v-checkbox v-model="dsconf.confirmation_delay"
-                        label="Show Queue Ticket Confirmation Message Pop Up Delay (seconds)" color="primary"
+                        label="Show data entry form on teller" color="primary"
                         hide-details></v-checkbox>
-                    <v-checkbox v-model="dsconf.retain_q" label="Retain Called Queues on Display" color="primary"
-                        hide-details></v-checkbox>
-                    <v-checkbox v-model="dsconf.show_form" label="Show Customer Data Entry Form on Kiosk" color="primary"
+                    <!-- <v-checkbox v-model="dsconf.retain_q" label="Retain Called Queues on Display" color="primary"
+                        hide-details></v-checkbox> -->
+                    <v-checkbox v-model="dsconf.show_form" label="Show customer data entry form on Kiosk" color="primary"
                         hide-details></v-checkbox>
                     <div class="col-md-4 ml-3" v-if="false">
                         <v-checkbox v-model="name" label="Name" color="primary" hide-details></v-checkbox>
@@ -55,7 +55,9 @@
                     </div>
                     <v-checkbox v-model="dsconf.show_scroll" label="Show the scroll message" color="primary"
                         hide-details></v-checkbox>
-                    <v-checkbox v-model="dsconf.show_dt" label="Show the current date and time" color="primary"
+                    <v-checkbox v-model="dsconf.retain_q" label="Show image carousel on DS" color="primary"
+                        hide-details></v-checkbox>
+                    <v-checkbox v-model="dsconf.show_dt" label="Enable speech synthesis for calling ticket" color="primary"
                         hide-details></v-checkbox>
                     <v-checkbox v-model="dsconf.show_url" label="Show URL on DS" color="primary"
                         hide-details></v-checkbox>
@@ -67,8 +69,8 @@
                     <v-btn color="primary" class="mt-2" v-if="!createOne" @click="updateDSConf"><v-icon left>mdi-update</v-icon>Update
                         config</v-btn>
                 </v-card>
-                <div class="row col-md-12">
-                    <v-expansion-panels v-model="panel" :readonly="readonly" multiple flat>
+                <div class="row col-md-12" v-if="false">
+                    <v-expansion-panels v-model="panel" :readonly="readonly" multiple flat style="z-index:10" v-if="false">
                         <v-expansion-panel>
                             <v-expansion-panel-header class="grey--text">
                                 <p class="text-center h5">AUDIT TRAIL</p>

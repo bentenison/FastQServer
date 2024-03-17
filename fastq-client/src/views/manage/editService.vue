@@ -75,7 +75,7 @@
                 </v-card>
 
                 <div class="row col-md-12">
-                    <v-expansion-panels v-model="panel" multiple flat>
+                    <v-expansion-panels v-model="panel" multiple flat style="z-index:10">
                         <v-expansion-panel>
                             <v-expansion-panel-header class="grey--text">
                                 <p class="text-center h5">AUDIT TRAIL</p>

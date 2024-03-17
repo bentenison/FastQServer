@@ -132,11 +132,24 @@ func (l *licenseService) AuthCounterUserService(ctr models.AuthCounterUser) (*mo
 		return user, nil
 		// return &models.ManageUser{}, nil
 	}
+	if counter.UserID.String != "" {
+		return &models.ManageUser{}, errors.New("user is already logged into another counter")
+	}
 	if err != nil {
 		log.Println("user not present,", err)
-		return &models.ManageUser{}, errors.New("User is not present")
+		return &models.ManageUser{}, errors.New("user is not present")
 	}
 	return &models.ManageUser{}, errors.New("error user is logged in to other counter")
+}
+func (l *licenseService) CounterLogoutService(ctrId string, user models.ManageUser) error {
+	user.ID.String = ""
+	err := updateCounter(context.TODO(), user, ctrId, l.db)
+	if err != nil {
+		log.Print("error occured while updating counter", err)
+		return err
+	}
+	return nil
+	// return &models.ManageUser{}, nil
 }
 func (l *licenseService) ActivateCounterService(ctr models.ActiveCounter) (bool, error) {
 	info, err := os.Stat(filpathstr)
@@ -401,6 +414,9 @@ func checkUserAlreayLoggedIn(ctx context.Context, arg models.ManageUser, db *sql
 		&i.AssignService,
 		&i.TransferPriority,
 		&i.CancelQ,
+		&i.Activated,
+		&i.CpuId,
+		&i.DiskId,
 		&i.BranchCode,
 		&i.BranchName,
 		&i.CompanyName,

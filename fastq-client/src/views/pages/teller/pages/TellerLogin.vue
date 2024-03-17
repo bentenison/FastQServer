@@ -180,7 +180,7 @@ export default {
                         this.$toast.success("Counter activated on the system!!!")
                         this.$store.commit(types.MUTATE_LOADER_OFF)
                         // this.$forceUpdate()
-                        if (window){
+                        if (window) {
                             resolve(res.data)
                             window.reload()
                         }
@@ -302,7 +302,11 @@ export default {
                 }).catch(err => {
                     // console.log(err.response);
                     this.$store.commit(types.MUTATE_LOADER_OFF)
-                    this.$toast.error("error occured while authenticating counter!!!")
+                    if (err.response.status === 401) {
+                        this.$toast.error("user already logged into another counter!!")
+                    } else {
+                        this.$toast.error("error occured while authenticating counter!!!")
+                    }
                     reject(err.response)
                 })
             })

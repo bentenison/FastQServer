@@ -49,8 +49,8 @@ func (ts *ticketService) AddTicketService(ctx context.Context, arg models.AddTic
 func (ts *ticketService) DeleteTicketService(ctx context.Context, id string) (sql.Result, error) {
 	return ts.TicketRepo.DeleteTicket(ctx, id)
 }
-func (ts *ticketService) GetLastTicketNumberService(ctx context.Context) (models.TicketNumber, error) {
-	return ts.TicketRepo.GetLastTicketNumber(ctx)
+func (ts *ticketService) GetLastTicketNumberService(ctx context.Context, service string) (models.TicketNumber, error) {
+	return ts.TicketRepo.GetLastTicketNumber(ctx, service)
 }
 func (ts *ticketService) GetAllTicketsForDayService(ctx context.Context, arg models.GetAllTicketsForDayParams) ([]*models.Ticket, error) {
 	return ts.TicketRepo.GetAllTicketsForDay(ctx, arg)

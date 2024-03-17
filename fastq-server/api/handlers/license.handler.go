@@ -3,6 +3,7 @@ package handlers
 import (
 	"log"
 	"net/http"
+	"strings"
 
 	"github.com/bentenison/fastq-server/api/apperrors"
 	"github.com/bentenison/fastq-server/models"
@@ -100,17 +101,43 @@ func (h *Handler) AuthCounterHandler(c *gin.Context) {
 	}
 	counterUser, err := h.LicenseService.AuthCounterUserService(user)
 	if err != nil {
-		log.Println("error binding data :", err)
-		err := apperrors.NewInternal()
+		if strings.Contains(err.Error(), "user is already logged") {
+			c.JSON(http.StatusUnauthorized, gin.H{
+				"error": err.Error(),
+			})
+			return
+		} else {
+			log.Println("error binding data :", err)
+			err := apperrors.NewInternal()
+			c.JSON(err.Status(), gin.H{
+				"error": err,
+			})
+			return
+		}
+	}
+	c.JSON(http.StatusOK, counterUser)
+
+}
+func (h *Handler) CounterLogoutHandler(c *gin.Context) {
+	id := c.Param("id")
+	if id == "" {
+		err := apperrors.NewExpectationFailed("id is required param!!")
 		c.JSON(err.Status(), gin.H{
 			"error": err,
 		})
 		return
 	}
-	c.JSON(http.StatusOK, counterUser)
-
+	user := models.ManageUser{}
+	err := h.LicenseService.CounterLogoutService(id, user)
+	if err != nil {
+		log.Println("error occured while getting user by id", err)
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+		return
+	}
+	c.JSON(http.StatusOK, "OK")
 }
-
 func (h *Handler) UpdateLicenseHandler(c *gin.Context) {
 	var licensePayload models.LicensePayload
 	err := c.Bind(&licensePayload)
