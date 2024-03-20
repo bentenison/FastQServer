@@ -226,7 +226,7 @@ func checkLicense() error {
 		log.Println("unable to decrypt activation file, activate system", err)
 		return err
 	}
-	// log.Println("decrypted Data", decryptedData)
+	// log.Println("decrypted Data", string(decryptedData))
 
 	return nil
 }
