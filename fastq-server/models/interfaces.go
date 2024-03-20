@@ -186,6 +186,9 @@ type LicenseService interface {
 	AuthCounterUserService(ctr AuthCounterUser) (*ManageUser, error)
 	UpdateCounterUserService(arg string) error
 	CounterLogoutService(ctrId string, user ManageUser) error
+	CheckFirmNameInLicense(companyName string) (bool, error)
+	UpdateCompanyNameInLicense(companyName string) (bool, error)
+	DeleteCounterFromLicense(id string) (bool, error)
 }
 type ConfigService interface {
 	AddVideoService(ctx context.Context, v Video) (sql.Result, error)
@@ -211,4 +214,8 @@ type ConfigService interface {
 	GetAllAnnouncement(a string) ([]AnnouncementConfRes, error)
 	SelectAnnouncementToDisplay(id, code string) error
 	GetServerByIDService(id string) (ServerDetails, error)
+	GetServicesByCounterIDService(ID string) (CounterService, error)
+	GetAllAssignedServices() ([]CounterService, error)
+	AssignCounterServices(ctrSvc CounterService) error
+	UpdateAssignedServices(ctrSvc CounterService) error
 }

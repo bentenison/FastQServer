@@ -92,6 +92,9 @@ func (l *licenseService) CheckCounterActivationService(ctr models.ActiveCounter)
 		log.Println("unmarshal err, activate system", err)
 		return false, err
 	}
+	if license.Firm != ctr.BranchName {
+		return false, nil
+	}
 	for i, _ := range license.ActiveCounterPerBranch {
 		// license.ActiveCounterPerBranch[i].BranchId = ctr.BranchId
 		// license.ActiveCounterPerBranch[i].CounterId = ctr.CounterId
@@ -120,6 +123,15 @@ func (l *licenseService) AuthCounterUserService(ctr models.AuthCounterUser) (*mo
 	if err != nil {
 		log.Println("user not present,", err)
 		return &models.ManageUser{}, errors.New("User is not present")
+	}
+	ok, err := l.CheckFirmNameInLicense(user.CompanyName.String)
+	if err != nil {
+		log.Println("firm not present,", err)
+		return &models.ManageUser{}, errors.New("firm validation failed")
+	}
+	if !ok {
+		log.Println("firm not present,", err)
+		return &models.ManageUser{}, errors.New("firm validation failed")
 	}
 	counter, err := checkUserAlreayLoggedIn(context.TODO(), *user, l.db)
 	if err == sql.ErrNoRows || counter.UserID.String == "" {
@@ -172,6 +184,10 @@ func (l *licenseService) ActivateCounterService(ctr models.ActiveCounter) (bool,
 	if err != nil {
 		log.Println("unmarshal err, activate system", err)
 		return false, nil
+	}
+
+	if license.Firm != ctr.BranchName {
+		return false, errors.New("error while checking firm in license")
 	}
 	var activeCounter models.ActiveCounter
 	activeCounter.BranchId = ctr.BranchId
@@ -236,6 +252,113 @@ func (l *licenseService) ActivateCounterService(ctr models.ActiveCounter) (bool,
 		return false, nil
 	}
 	return true, nil
+}
+func (l *licenseService) UpdateCompanyNameInLicense(companyName string) (bool, error) {
+	info, err := os.Stat(filpathstr)
+	if err != nil {
+		log.Println("license file not present, activate system", err)
+		return false, nil
+	}
+	licenseBytes, err := os.ReadFile(filpathstr)
+	if err != nil {
+		log.Println("unable to read activation file, activate system", err)
+		return false, nil
+	}
+	decryptedData, err := helpers.DecryptData(licenseBytes, info.Name())
+	if err != nil {
+		log.Println("unable to decrypt activation file, activate system", err)
+		return false, nil
+	}
+	var license models.LicensePayload
+	err = json.Unmarshal(decryptedData, &license)
+	if err != nil {
+		log.Println("unmarshal err, activate system", err)
+		return false, nil
+	}
+	license.Firm = companyName
+	Lbytes, err := json.Marshal(license)
+	if err != nil {
+		log.Println("marshal err, activate system", err)
+		return false, nil
+	}
+	err = helpers.SaveDataToFile(filpathstr, Lbytes, true)
+	if err != nil {
+		log.Println("error activating counter", err)
+		return false, nil
+	}
+	return true, nil
+}
+func (l *licenseService) DeleteCounterFromLicense(id string) (bool, error) {
+	info, err := os.Stat(filpathstr)
+	if err != nil {
+		log.Println("license file not present, activate system", err)
+		return false, nil
+	}
+	licenseBytes, err := os.ReadFile(filpathstr)
+	if err != nil {
+		log.Println("unable to read activation file, activate system", err)
+		return false, nil
+	}
+	decryptedData, err := helpers.DecryptData(licenseBytes, info.Name())
+	if err != nil {
+		log.Println("unable to decrypt activation file, activate system", err)
+		return false, nil
+	}
+	var license models.LicensePayload
+	err = json.Unmarshal(decryptedData, &license)
+	if err != nil {
+		log.Println("unmarshal err, activate system", err)
+		return false, nil
+	}
+	for i, v := range license.ActiveCounterPerBranch {
+		if v.CounterId == id {
+			license.ActiveCounterPerBranch = append(license.ActiveCounterPerBranch[:i], license.ActiveCounterPerBranch[i+1:]...)
+			break
+		}
+	}
+	Lbytes, err := json.Marshal(license)
+	if err != nil {
+		log.Println("marshal err, activate system", err)
+		return false, nil
+	}
+	err = helpers.SaveDataToFile(filpathstr, Lbytes, true)
+	if err != nil {
+		log.Println("error activating counter", err)
+		return false, nil
+	}
+	err = deletesystem(context.Background(), id, l.db)
+	if err != nil {
+		log.Println("error deleting system", err)
+		return false, nil
+	}
+	return true, nil
+}
+func (l *licenseService) CheckFirmNameInLicense(companyName string) (bool, error) {
+	info, err := os.Stat(filpathstr)
+	if err != nil {
+		log.Println("license file not present, activate system", err)
+		return false, nil
+	}
+	licenseBytes, err := os.ReadFile(filpathstr)
+	if err != nil {
+		log.Println("unable to read activation file, activate system", err)
+		return false, nil
+	}
+	decryptedData, err := helpers.DecryptData(licenseBytes, info.Name())
+	if err != nil {
+		log.Println("unable to decrypt activation file, activate system", err)
+		return false, nil
+	}
+	var license models.LicensePayload
+	err = json.Unmarshal(decryptedData, &license)
+	if err != nil {
+		log.Println("unmarshal err, activate system", err)
+		return false, nil
+	}
+	if license.Firm == companyName {
+		return true, nil
+	}
+	return false, nil
 }
 func (l *licenseService) CheckLicensePresent() (bool, error) {
 	info, err := os.Stat(filpathstr)
@@ -316,6 +439,10 @@ func UpdateSystem(ctx context.Context, arg models.UpdateSystemParams, db *sql.DB
 }
 func InsetSystem(ctx context.Context, arg models.UpdateSystemParams, db *sql.DB) error {
 	_, err := db.ExecContext(ctx, InsertQuery(arg))
+	return err
+}
+func deletesystem(ctx context.Context, id string, db *sql.DB) error {
+	_, err := db.ExecContext(ctx, fmt.Sprintf("delete from systems where counter_id = %s;", id))
 	return err
 }
 func UpdateCounterActivation(ctx context.Context, arg models.CounterActivation, db *sql.DB) error {

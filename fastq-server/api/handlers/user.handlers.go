@@ -91,15 +91,15 @@ func (h *Handler) signinHandler(c *gin.Context) {
 		})
 		return
 	}
-	addr, _ := mail.ParseAddress(req.Email)
-	if addr == nil {
-		log.Println("error in parsing email address:", err)
-		err := apperrors.NewExpectationFailed(fmt.Sprintf("invalid email address %v provided", req.Email))
-		c.JSON(err.Status(), gin.H{
-			"error": err,
-		})
-		return
-	}
+	// addr, _ := mail.ParseAddress(req.Email)
+	// if addr == nil {
+	// 	log.Println("error in parsing email address:", err)
+	// 	err := apperrors.NewExpectationFailed(fmt.Sprintf("invalid email address %v provided", req.Email))
+	// 	c.JSON(err.Status(), gin.H{
+	// 		"error": err,
+	// 	})
+	// 	return
+	// }
 
 	ctx := c.Request.Context()
 	user := models.UserAccount{
@@ -130,19 +130,28 @@ func (h *Handler) signinHandler(c *gin.Context) {
 			return
 		}
 	}
-
-	tokens, err := h.TokenService.GeneratePairFromUser(ctx, &user, "")
+	ok, err := h.LicenseService.CheckFirmNameInLicense(user.Company)
 	if err != nil {
-		log.Println("error in creating user tokens:", err)
-		err := apperrors.NewServiceUnavailable()
-		c.JSON(err.Status(), gin.H{
-			"error": err,
+		log.Println("firm name validation failed", err)
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
 		})
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{
-		"message": tokens,
-	})
+	if ok {
+		tokens, err := h.TokenService.GeneratePairFromUser(ctx, &user, "")
+		if err != nil {
+			log.Println("error in creating user tokens:", err)
+			err := apperrors.NewServiceUnavailable()
+			c.JSON(err.Status(), gin.H{
+				"error": err,
+			})
+			return
+		}
+		c.JSON(http.StatusOK, gin.H{
+			"message": tokens,
+		})
+	}
 }
 func (h *Handler) branchLoginHandler(c *gin.Context) {
 	req := signUpReq{}

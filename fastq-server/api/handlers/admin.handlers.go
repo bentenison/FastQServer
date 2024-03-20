@@ -325,10 +325,25 @@ func (h *Handler) DeleteCounterHandler(c *gin.Context) {
 		})
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{
-		"message": result,
-	})
-
+	res, err := h.LicenseService.DeleteCounterFromLicense(id)
+	if err != nil {
+		err := apperrors.NewInternal()
+		c.JSON(err.Status(), gin.H{
+			"error": err,
+		})
+		return
+	}
+	if res {
+		c.JSON(http.StatusOK, gin.H{
+			"message": result,
+		})
+	} else {
+		err := apperrors.NewInternal()
+		c.JSON(err.Status(), gin.H{
+			"error": err,
+		})
+		return
+	}
 }
 func (h *Handler) GetAllCountersHandler(c *gin.Context) {
 	id := c.Param("code")

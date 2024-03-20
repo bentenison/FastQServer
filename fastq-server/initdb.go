@@ -108,8 +108,8 @@ const createTableSeven = `CREATE TABLE counter (
   );`
 const createTableEignt = `CREATE TABLE counterservices (
 	CounterServiceID int NOT NULL AUTO_INCREMENT,
-	CounterID int DEFAULT NULL,
-	ServiceID int DEFAULT NULL,
+	CounterID varchar(255) DEFAULT NULL,
+	ServiceID varchar(500) DEFAULT NULL,
 	PRIMARY KEY (CounterServiceID)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;`
 

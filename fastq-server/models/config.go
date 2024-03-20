@@ -260,3 +260,9 @@ type AllConfig struct {
 // 	`company_code`
 // 	PRIMARY KEY (`id`)
 //   ) ;
+
+type CounterService struct {
+	ID        int    `json:"CounterServiceID,omitempty"`
+	CounterID string `json:"CounterID,omitempty"`
+	ServiceID string `json:"ServiceID,omitempty"`
+}
