@@ -911,3 +911,86 @@ func GetServerDetailsBycompany(ID string, db *sql.DB) (models.ServerDetails, err
 	}
 	return serverDetails, nil
 }
+func (c *configService) GetServicesByCounterIDService(ID string) (models.CounterService, error) {
+	return GetServicesByCounterID(ID, c.db)
+}
+func (c *configService) GetAllAssignedServices() ([]models.CounterService, error) {
+	return GetAllServicesByCounterID(c.db)
+}
+func (c *configService) AssignCounterServices(ctrSvc models.CounterService) error {
+	return AddCounterServices(c.db, ctrSvc)
+}
+func (c *configService) UpdateAssignedServices(ctrSvc models.CounterService) error {
+	return UpdateCounterServices(c.db, ctrSvc)
+}
+func GetServicesByCounterID(ID string, db *sql.DB) (models.CounterService, error) {
+
+	// Prepare the query
+	query := "SELECT CounterServiceID, CounterID, ServiceID FROM counterservices WHERE CounterID = ?"
+
+	// Execute the query
+	row := db.QueryRow(query, ID)
+
+	// Scan the result into a ServerDetails struct
+	var serverDetails models.CounterService
+	err := row.Scan(&serverDetails.ID, &serverDetails.CounterID, &serverDetails.ServiceID)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			// No rows were returned
+			return models.CounterService{}, fmt.Errorf("no services assigned for counter ID : %s", ID)
+		}
+		return models.CounterService{}, err
+	}
+	return serverDetails, nil
+}
+func GetAllServicesByCounterID(db *sql.DB) ([]models.CounterService, error) {
+	// Prepare the query
+	query := "SELECT * FROM counterservices"
+
+	// Scan the result into a ServerDetails struct
+	var ctrSvc []models.CounterService
+	rows, err := db.Query(query)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		var ctrsvc models.CounterService
+		err := rows.Scan(
+			&ctrsvc.ID,
+			&ctrsvc.CounterID,
+			&ctrsvc.ServiceID,
+		)
+		if err != nil {
+			return nil, err
+		}
+		ctrSvc = append(ctrSvc, ctrsvc)
+	}
+
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+
+	return ctrSvc, nil
+}
+func AddCounterServices(db *sql.DB, ctrSvc models.CounterService) error {
+	query := "INSERT INTO counterservices ( CounterID, ServiceID) " +
+		"VALUES (?, ?)"
+	_, err := db.Exec(query,
+		ctrSvc.CounterID,
+		ctrSvc.ServiceID,
+	)
+	return err
+}
+func UpdateCounterServices(db *sql.DB, ctrSvc models.CounterService) error {
+	query := "update counterservices set ServiceID = ?" +
+		"where CounterID = ?"
+
+	_, err := db.Exec(query,
+		ctrSvc.ServiceID,
+		ctrSvc.CounterID,
+	)
+
+	return err
+}

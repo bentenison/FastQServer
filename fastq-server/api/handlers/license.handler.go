@@ -256,3 +256,115 @@ func (h *Handler) UpdateCounterUserHandler(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, "ok")
 }
+func (h *Handler) GetAssignedServices(c *gin.Context) {
+	id := c.Param("id")
+	if id == "" {
+		err := apperrors.NewExpectationFailed("id is required param!!")
+		c.JSON(err.Status(), gin.H{
+			"error": err,
+		})
+		return
+	}
+	res, err := h.ConfigService.GetServicesByCounterIDService(id)
+	if err != nil {
+		log.Println("error occured while getting user by id", err)
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+		return
+	}
+	c.JSON(http.StatusOK, res)
+}
+func (h *Handler) GetAllAssignedServices(c *gin.Context) {
+	res, err := h.ConfigService.GetAllAssignedServices()
+	if err != nil {
+		log.Println("error occured while getting user by id", err)
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+		return
+	}
+	c.JSON(http.StatusOK, res)
+}
+func (h *Handler) UpdateCounteervicesHandler(c *gin.Context) {
+	var counterService models.CounterService
+	err := c.Bind(&counterService)
+	if err != nil {
+		log.Println("error binding data :", err)
+		err := apperrors.NewExpectationFailed("invalid data provided")
+		c.JSON(err.Status(), gin.H{
+			"error": err,
+		})
+		return
+	}
+	err = h.ConfigService.UpdateAssignedServices(counterService)
+	if err != nil {
+		log.Println("error binding data :", err)
+		err := apperrors.NewInternal()
+		c.JSON(err.Status(), gin.H{
+			"error": err,
+		})
+		return
+	}
+	c.JSON(http.StatusOK, "ok")
+}
+func (h *Handler) AddCountervicesHandler(c *gin.Context) {
+	var counterService models.CounterService
+	err := c.Bind(&counterService)
+	if err != nil {
+		log.Println("error binding data :", err)
+		err := apperrors.NewExpectationFailed("invalid data provided")
+		c.JSON(err.Status(), gin.H{
+			"error": err,
+		})
+		return
+	}
+	err = h.ConfigService.AssignCounterServices(counterService)
+	if err != nil {
+		log.Println("error assigning services :", err)
+		err := apperrors.NewInternal()
+		c.JSON(err.Status(), gin.H{
+			"error": err,
+		})
+		return
+	}
+	c.JSON(http.StatusOK, "ok")
+}
+func (h *Handler) UpdateLicenseFirm(c *gin.Context) {
+	id := c.Param("id")
+	if id == "" {
+		err := apperrors.NewExpectationFailed("id is required param!!")
+		c.JSON(err.Status(), gin.H{
+			"error": err,
+		})
+		return
+	}
+	res, err := h.LicenseService.UpdateCompanyNameInLicense(id)
+	if err != nil {
+		log.Println("error occured while getting user by id", err)
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+		return
+	}
+	c.JSON(http.StatusOK, res)
+}
+func (h *Handler) CheckLicenseFirm(c *gin.Context) {
+	id := c.Param("id")
+	if id == "" {
+		err := apperrors.NewExpectationFailed("id is required param!!")
+		c.JSON(err.Status(), gin.H{
+			"error": err,
+		})
+		return
+	}
+	res, err := h.LicenseService.CheckFirmNameInLicense(id)
+	if err != nil {
+		log.Println("error occured while chcking firm in license", err)
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+		return
+	}
+	c.JSON(http.StatusOK, res)
+}

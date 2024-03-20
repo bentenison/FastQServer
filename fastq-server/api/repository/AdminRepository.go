@@ -314,7 +314,7 @@ func (q *sqlAdminRepo) AddCounter(ctx context.Context, arg models.AddCounterPara
 }
 
 const deleteCounter = `-- name: DeleteCounter :execresult
-delete from manage_counters
+update manage_counters set 
 where id = ?
 `
 
@@ -965,7 +965,7 @@ func (q *sqlAdminRepo) AddUser(ctx context.Context, arg models.AddUserParams) (s
 }
 
 const deleteUser = `-- name: DeleteUser :execresult
-delete from manage_user
+update manage_user set suspended = 1
 where id = ?
 `
 

@@ -4,7 +4,7 @@ import VueRouter from "vue-router";
 import store from "../store";
 import Index from "../views/Index.vue";
 import IndexT from "../views/pages/teller/IndexT.vue";
-import Test from "../views/Test.vue"
+import Test from "../views/Test.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -47,6 +47,12 @@ const routes = [
         name: "Image Carousel",
         path: "/carousel",
         component: () => import("@/views/ads/adCarousel"),
+        meta: { RequiresAuth: true },
+      },
+      {
+        name: "Assign Services",
+        path: "/assign/services",
+        component: () => import("@/views/manage/assignServices"),
         meta: { RequiresAuth: true },
       },
       {
@@ -169,7 +175,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: Test
+    component: Test,
   },
   {
     path: "/ticket",
@@ -255,6 +261,5 @@ const router = new VueRouter({
   // mode: "history",
   routes,
 });
-
 
 export default router;
