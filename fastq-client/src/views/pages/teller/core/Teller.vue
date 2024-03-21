@@ -124,10 +124,15 @@
         </div>
         <div class="col-md-9 h-100 mt-5">
           <v-card class="h-100" flat>
-            <div class="d-flex row p-2" v-if="false">
-              <div class="col-md-4">
+            <div
+              class="d-flex align-items-center justify-content-center row"
+              v-if="true"
+              style="margin-top: 50px"
+            >
+              <div class="col-md-4" >
                 <v-select
                   v-model="user"
+                  v-if="false"
                   :items="users"
                   item-text="name"
                   item-value=""
@@ -138,7 +143,7 @@
                 ></v-select>
               </div>
             </div>
-            <div class="container" style="margin-top: 60px">
+            <div class="container">
               <div class="row text-white justify-content-between py-2">
                 <v-card
                   class="col-md-2 pink accent-2 d-flex flex-column align-items-center text-white main-card"
@@ -615,12 +620,13 @@ export default {
         id: "",
         company_code: this.$store.state.Auth.user.company_code,
         branch_code: this.$store.state.Auth.user.company_code,
+        counter_id: this.$store.state.Auth.activeCounter.ID,
       };
       axios
         .post("/ticket/gettickettoprocess", payload)
         .then((res) => {
           // if (res.status)
-          // console.log("res::::: next", res);
+          console.log("res::::: next", res);
           if (res.data && res.data !== "NO_RESULT") {
             res.data.CounterID = this.$store.state.Auth.activeCounter.ID;
             res.data.StartedServingAt = this.convertDateToCustomFormat(
@@ -635,6 +641,10 @@ export default {
             this.sendMessage(res.data, "next");
             this.reUpdate();
             // })
+          } else {
+            this.$toast.info(
+              "No tickets for your assigned services!! Please Wait."
+            );
           }
 
           // this.noShow = res.data
@@ -752,7 +762,7 @@ export default {
         })
         .catch((err) => {
           console.log(err.response);
-          this.$toast.error("error occured while getting noshow ticket!!!");
+          // this.$toast.error("error occured while getting noshow ticket!!!");
         });
     },
     updateEndTime() {
@@ -772,7 +782,7 @@ export default {
         })
         .catch((err) => {
           console.log(err.response);
-          this.$toast.error("error occured while getting noshow ticket!!!");
+          // this.$toast.error("error occured while getting noshow ticket!!!");
         });
     },
     getnoshow() {
@@ -790,7 +800,7 @@ export default {
         })
         .catch((err) => {
           console.log(err.response);
-          this.$toast.error("error occured while getting noshow ticket!!!");
+          // this.$toast.error("error occured while getting noshow ticket!!!");
         });
     },
     getwaiting() {
@@ -808,7 +818,7 @@ export default {
         })
         .catch((err) => {
           console.log("error response in this", err.response);
-          this.$toast.error("error occured while getting waiting ticket!!!");
+          // this.$toast.error("error occured while getting waiting ticket!!!");
         });
     },
     getcompleted() {
@@ -870,6 +880,7 @@ export default {
     getAllUser() {
       let payload = {
         company_code: this.$store.state.Auth.user.company_code,
+        counter_id: this.$store.state.Auth.activeCounter.ID,
         branch_code: "",
       };
       axios

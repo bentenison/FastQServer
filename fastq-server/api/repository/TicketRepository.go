@@ -3,6 +3,7 @@ package repository
 import (
 	"context"
 	"database/sql"
+	"strings"
 
 	"github.com/bentenison/fastq-server/models"
 )
@@ -177,17 +178,60 @@ func (q *sqlTicketRepo) GetTicket(ctx context.Context, arg models.GetTicketParam
 	return &i, err
 }
 
-const getTicketToProcess = `-- name: GetTicket :one
+func (q *sqlTicketRepo) GetTicketToProcess(ctx context.Context, arg models.GetTicketParams) (*models.Ticket, error) {
+	var getTicketToProcess string
+	query := "SELECT CounterServiceID, CounterID, ServiceID FROM counterservices WHERE CounterID = ?"
+
+	// Execute the query
+	ctrrow := q.db.QueryRow(query, arg.CounterId)
+
+	// Scan the result into a ServerDetails struct
+	var serverDetails models.CounterService
+	err := ctrrow.Scan(&serverDetails.ID, &serverDetails.CounterID, &serverDetails.ServiceID)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			// No rows were returned
+			getTicketToProcess = `-- name: GetTicket :one
 select id, service, ticket_status, counter_id, transfered_to, transfered_by, customer_id, ticket_number, created_at, updated_at, updated_by, started_serving_at, end_serving_at, ticket_name, company_name, company_code, branch_code, branch_name
 from ticket
-where company_code = ?
-	and date(created_at)=date(now()) and ticket_status = 'CREATED' order by created_at asc limit 1;
-`
-
-func (q *sqlTicketRepo) GetTicketToProcess(ctx context.Context, arg models.GetTicketParams) (*models.Ticket, error) {
+where company_code = ? and date(created_at)=date(now()) and ticket_status = 'CREATED' order by created_at asc limit 1;`
+		}
+	}
+	if serverDetails.ServiceID != "" {
+		services := strings.Split(serverDetails.ServiceID, ",")
+		getTicketToProcess = "select id, service, ticket_status, counter_id, transfered_to, transfered_by, customer_id, ticket_number, created_at, updated_at, updated_by, started_serving_at, end_serving_at, ticket_name, company_name, company_code, branch_code, branch_name from ticket where service IN (" + strings.Join(strings.Split(strings.Repeat("?", len(services)), ""), ",") + ") AND company_code = ? and date(created_at)=date(now()) and ticket_status = 'CREATED' order by created_at asc limit 1;"
+		args := []interface{}{}
+		for _, v := range services {
+			args = append(args, v)
+		}
+		args = append(args, arg.CompanyCode)
+		row := q.db.QueryRowContext(ctx, getTicketToProcess, args...)
+		var i models.Ticket
+		err = row.Scan(
+			&i.ID,
+			&i.Service,
+			&i.TicketStatus,
+			&i.CounterID,
+			&i.TransferedTo,
+			&i.TransferedBy,
+			&i.CustomerID,
+			&i.TicketNumber,
+			&i.CreatedAt,
+			&i.UpdatedAt,
+			&i.UpdatedBy,
+			&i.StartedServingAt,
+			&i.EndServingAt,
+			&i.TicketName,
+			&i.CompanyName,
+			&i.CompanyCode,
+			&i.BranchCode,
+			&i.BranchName,
+		)
+		return &i, err
+	}
 	row := q.db.QueryRowContext(ctx, getTicketToProcess, arg.CompanyCode)
 	var i models.Ticket
-	err := row.Scan(
+	err = row.Scan(
 		&i.ID,
 		&i.Service,
 		&i.TicketStatus,

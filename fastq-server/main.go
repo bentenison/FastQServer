@@ -88,7 +88,7 @@ func main() {
 	if ip == "" {
 		log.Fatal("Server IP not fount")
 	}
-	services.UpdateServerDetailsService(ds.DB, ip)
+	err = services.UpdateServerDetailsService(ds.DB, ip)
 	if err != nil {
 		log.Fatalf("Failure to update server ip : %v\n", err)
 		return

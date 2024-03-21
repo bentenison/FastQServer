@@ -288,6 +288,14 @@ func (as *adminService) GetAllUsers(ctx context.Context, arg models.GetAllUsersP
 	}
 	return result, nil
 }
+func (as *adminService) GetAllUserByServices(ctx context.Context, arg models.GetAllUsersParams) ([]*models.ManageUser, error) {
+	result, err := as.AdminRepository.GetAllUsers(ctx, arg)
+	if err != nil {
+		log.Println("error while getting all user in DB", err)
+		return nil, err
+	}
+	return result, nil
+}
 func (as *adminService) GetUser(ctx context.Context, arg models.GetUserParams) (*models.ManageUser, error) {
 	result, err := as.AdminRepository.GetUser(ctx, arg)
 	if err != nil {
