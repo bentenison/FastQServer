@@ -193,6 +193,7 @@
             shaped
             hover
             color="primary"
+            :class="{ disabled: wait }"
           >
             <h1 class="text-center white--text p-1">
               {{ n.name }}
@@ -239,6 +240,7 @@ import EscPosEncoder from "../../../../node_modules/esc-pos-encoder/dist/esc-pos
 export default {
   data() {
     return {
+      wait: false,
       printCharacteristic: null,
       device: null,
       services: [],
@@ -466,12 +468,13 @@ export default {
             // data.id = element.ID
             this.services.push(data);
           });
+          console.log("services", this.services);
           // this.services = res.data
           // this.reset()
         })
         .catch((err) => {
           console.log(err.response);
-          this.$toast.error("error occured while getting all user!!!");
+          this.$toast.error("error occured while getting services!!!");
         });
     },
     async addTicket(ticket) {
@@ -482,31 +485,33 @@ export default {
       //     return;
       //   }
       // }
+      this.wait = true;
       this.lastticketNumber(ticket.name).then((ticketNumber) => {
         console.log("ticket number", ticketNumber);
-        this.lastNumber = ticketNumber;
+        let lastNumber = parseInt(ticketNumber);
         this.services.forEach((element) => {
-          if (this.lastNumber === "0") {
-            if ((element.name = ticket.name)) {
+          if (element.name === ticket.name) {
+            if (lastNumber === 0) {
               // console.log("element is", element);
-              this.lastNumber = element.numberStarts;
+              lastNumber = element.numberStarts;
               // console.log("name matched");
+            } else if (lastNumber > element.numberEnds) {
+              lastNumber = element.numberStarts;
+            } else {
+              lastNumber += 1;
             }
-          } else if (parseInt(this.lastNumber) >= element.numberEnds) {
-            this.lastNumber = element.numberStarts;
           }
         });
-        console.log("this.lastnumber", this.lastNumber);
+        console.log("this.lastnumber", lastNumber);
         this.dialog = true;
-        this.lastNumber++;
-        let ticketname = ticket.prefix + "-" + this.lastNumber;
+        let ticketname = ticket.prefix + "-" + lastNumber;
         let date1 = new Date();
         let date2 = new Date();
         // console.log("::::::::::::::::::::", this.lastNumber++);
         let ticketPayload = {
           service: ticket.name,
           ticket_status: "CREATED",
-          ticket_number: this.lastNumber.toString(),
+          ticket_number: lastNumber.toString(),
           started_serving_at: moment(date1).format("YYYY-MM-DD HH:mm:ss"),
           end_serving_at: moment(date2).format("YYYY-MM-DD HH:mm:ss"),
           ticket_name: ticketname,
@@ -518,6 +523,7 @@ export default {
           .post("/ticket/addticket", ticketPayload)
           .then((res) => {
             console.log("res:::::", res);
+            this.wait = false;
             // this.$toast.success("ticket added successfully.");
             if (window.electronAPI) {
               this.printElectronTicket(ticketPayload);
@@ -555,9 +561,9 @@ export default {
       ticketPayload.timeDate = moment(new Date()).format(
         "YYYY-MM-DD HH:mm:ss A"
       );
-      let printerconf = JSON.parse(this.allconf.ticket_conf.header_text) 
-      console.log("printer conf",printerconf);
-      ticketPayload.printer = printerconf.printerName
+      let printerconf = JSON.parse(this.allconf.ticket_conf.header_text);
+      console.log("printer conf", printerconf);
+      ticketPayload.printer = printerconf.printerName;
       this.waitingTickets().then((res) => {
         ticketPayload.Waiting = res;
         this.estimatedTime().then((avgTime) => {
@@ -617,7 +623,7 @@ export default {
           .get(`/ticket/getLastNumber/${name}`)
           .then((res) => {
             console.log("res:::::", res);
-            this.lastNumber = res.data.number;
+            // this.lastNumber = res.data.number;
             resolve(res.data.number);
             // this.$toast.success("branch added successfully.")
             // this.branch = {}
@@ -727,5 +733,11 @@ export default {
 }
 .time {
   text-shadow: 2px 4px 2px #0096a786;
+}
+.disabled {
+  pointer-events: none;
+  /* Disable click events */
+  opacity: 0.5;
+  /* Optionally, reduce opacity to visually indicate that it's disabled */
 }
 </style>

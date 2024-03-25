@@ -8,7 +8,9 @@ import (
 	"crypto/x509"
 	"crypto/x509/pkix"
 	"database/sql"
+	"encoding/json"
 	"encoding/pem"
+	"errors"
 	"fmt"
 	"io/fs"
 	"log"
@@ -29,6 +31,12 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"github.com/grandcat/zeroconf"
+	"github.com/joho/godotenv"
+)
+
+var (
+	dbHost = "localhost"
+	dbPort = "3306"
 )
 
 func main() {
@@ -43,18 +51,15 @@ func main() {
 	if !ok {
 		log.Fatal("error mysql not installed install it first!!!")
 	}
-
+	err = tempDBConn()
+	if err != nil {
+		log.Println("error while connecting to temp sl DB and creating DB")
+	}
 	// initialize data sources
 	ds, err := initDS()
 	if err != nil {
 		log.Fatalf("Unable to initialize data sources: %v\n", err)
 	}
-
-	err = setupSQLAutomatic(context.Background(), ds.DB, "./Dump20240219_structures")
-	if err != nil {
-		log.Fatalf("Unable to initialize data sources: %v\n", err)
-	}
-
 	router, err := inject(ds)
 
 	if err != nil {
@@ -183,6 +188,10 @@ func init() {
 	// mw := io.MultiWriter(os.Stdout, logfile)
 	log.SetFlags(log.LstdFlags | log.Lshortfile | log.LUTC)
 	log.SetOutput(logfile)
+	err = godotenv.Load("./.dev.env")
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 func StartPreperation() {
 
@@ -221,10 +230,31 @@ func checkLicense() error {
 		log.Println("unable to read activation file, activate system", err)
 		return err
 	}
-	_, err = helpers.DecryptData(licenseBytes, info.Name())
+	decryptedData, err := helpers.DecryptData(licenseBytes, info.Name())
 	if err != nil {
 		log.Println("unable to decrypt activation file, activate system", err)
 		return err
+	}
+	var license models.LicensePayload
+	err = json.Unmarshal(decryptedData, &license)
+	if err != nil {
+		log.Println("unmarshal err, activate system", err)
+		return errors.New("error while unmarshaling license")
+	}
+	if license.ExpirationInDays != "" {
+		now := time.Now()
+		t, err := time.Parse("2006-01-02 15:04:05", license.ExpirationInDays)
+		if err != nil {
+			log.Println("license time expiration not converting")
+		}
+		fmt.Println("You Are Using Demo Version of FASTQ")
+		ok := t.Before(now)
+		if ok {
+			fmt.Println("licence is expired")
+			return errors.New("error license is expired !! Updgrade your license")
+		} else {
+			fmt.Println("Your license will expire at", t)
+		}
 	}
 	// log.Println("decrypted Data", string(decryptedData))
 
@@ -388,4 +418,31 @@ func isMySQLInstalled() (bool, error) {
 		return false, nil
 	}
 	return err == nil, nil
+}
+
+func tempDBConn() error {
+	dbUser := os.Getenv("DEFAULT_SQL_DB_USER")
+	dbPassword := os.Getenv("DEFAULT_SQL_DB_PASS")
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/", dbUser, dbPassword, dbHost, dbPort)
+
+	// Open a connection to the MySQL server without specifying a database name
+	db, err := sql.Open("mysql", dsn)
+	if err != nil {
+		panic(err.Error())
+	}
+	defer db.Close()
+
+	// Ping the database to check if the connection is successful
+	err = db.Ping()
+	if err != nil {
+		panic(err.Error())
+	}
+	log.Println("Connected to the TEMP MySQL server!")
+	err = setupSQLAutomatic(context.Background(), db, "./Dump20240219_structures")
+	if err != nil {
+		log.Fatalf("Unable to initialize data sources: %v\n", err)
+		// return db
+		// You can now execute queries or perform other operations on the default database
+	}
+	return nil
 }
