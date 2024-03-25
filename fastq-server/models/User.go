@@ -46,6 +46,7 @@ type BranchAdmin struct {
 
 type LicensePayload struct {
 	Firm                     string          `json:"firm,omitempty" bson:"firm,omitempty"`
+	ExpirationInDays         string          `json:"expiration_in_days"`
 	AllowedBranches          int             `json:"allowedBranches,omitempty" bson:"allowedBranches,omitempty"`
 	AllowedCountersPerBranch int             `json:"allowedCountersPerBranch,omitempty" bson:"allowedCountersPerFirm,omitempty"`
 	ActivatedBranches        []ActiveBranch  `json:"activatedBranches,omitempty" bson:"activatedBranches,omitempty"`

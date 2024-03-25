@@ -1042,9 +1042,29 @@ export default {
           // this.$toast.error("error occured while getting connected clients!!!")
         });
     },
+    logout() {
+      console.log("object user logged out");
+      axios
+        .get(
+          `/license/updatecounteruser/${this.$store.state.Auth.activeCounter.ID}`
+        )
+        .then((res) => {
+          this.$toast.success("logged out!!!");
+          localStorage.clear();
+          sessionStorage.clear();
+          // window.close();
+          // this.$router.push("/teller/")
+        })
+        .catch((err) => {
+          // this.$toast.error("error logging out");
+          console.error(err);
+        });
+    },
   },
+
   beforeDestroy() {
     // Disconnect from the server when the component is destroyed
+    window.removeEventListener('beforeunload', this.handleWindowClose);
     if (this.socket) {
       this.socket.send("disconnect");
       this.socket.close();
@@ -1058,6 +1078,7 @@ export default {
     this.$eventBus.$off("float-mode-off");
   },
   mounted() {
+    window.addEventListener("beforeunload", this.logout);
     this.getlastongoingticket().then((res) => {
       this.reUpdate();
       this.getAllUser();
@@ -1078,6 +1099,10 @@ export default {
     });
     this.intervalId = setInterval(this.getwaiting, 2000);
     if (window.ipc) {
+      window.ipc.on("LOGOUT_USER", (res) => {
+        // alert("User Logout");
+        this.logout();
+      });
       // window.ipc.send("SERVER_IP", {})
       window.ipc.on("next-ticket", (res) => {
         console.log("from electron process", res);

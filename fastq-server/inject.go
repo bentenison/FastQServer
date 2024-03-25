@@ -13,14 +13,12 @@ import (
 	"github.com/bentenison/fastq-server/api/services"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
 )
 
 func inject(ds *dataSources) (*gin.Engine, error) {
 	// tokenRepository := repository.NewRedisTokenRepository(ds.RedisClient)
 	userRepository := repository.NewUserRepository(ds.DB)
 	ticketrepo := repository.NewTicketRepo(ds.DB)
-	godotenv.Load("./.env.dev")
 	privateKeyFile := os.Getenv("PRIV_KEY_FILE")
 	publicKeyFile := os.Getenv("PUB_KEY_FILE")
 	priv, err := ioutil.ReadFile(privateKeyFile)

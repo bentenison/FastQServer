@@ -357,7 +357,7 @@ func (h *Handler) GetTicketNumberHandler(c *gin.Context) {
 		return
 	}
 	ctx := c.Request.Context()
-	log.Println("handlers", h.TicketService)
+	// log.Println("handlers", h.TicketService)
 	result, err := h.TicketService.GetLastTicketNumberService(ctx, service)
 	if err != nil {
 		log.Println("error getting data :", err)

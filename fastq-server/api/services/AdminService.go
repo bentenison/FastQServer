@@ -238,6 +238,8 @@ func (as *adminService) GetService(ctx context.Context, arg models.GetServicePar
 	return result, nil
 }
 func (as *adminService) UpdateService(ctx context.Context, arg models.UpdateServiceParams) error {
+	const createdFormat = "2006-01-02 15:04:05"
+	arg.UpdatedAt = time.Now().Format(createdFormat)
 	err := as.AdminRepository.UpdateService(ctx, arg)
 	if err != nil {
 		log.Println("error while updating service in DB", err)
