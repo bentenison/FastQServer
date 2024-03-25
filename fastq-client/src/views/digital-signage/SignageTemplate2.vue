@@ -38,20 +38,33 @@
                 ></video>
                 <v-carousel
                   v-if="allconf.ds_conf && allconf.ds_conf.retain_q"
-                  style="width: 100%; border: 5px solid #ad1457"
+                  class="d-flex flex-column"
+                  style="
+                    width: 100%;
+                    border: 5px solid #ad1457;
+                    height: calc(100vh - 145px);
+                  "
                   continuous
                   cycle
                   hide-delimiters
-                  class="my-auto"
                 >
                   <v-carousel-item
                     v-for="(item, i) in imageData"
-                    :key="i"
-                    :src="`http://${$route.query.ip}:8090/uploaded/${item}`"
-                    class=""
                     reverse-transition="fade-transition"
                     transition="fade-transition"
-                  ></v-carousel-item>
+                    :key="i"
+                    class="mt-5"
+                  >
+                    <!-- class="d-flex align-items-center justify-content-center" -->
+                    <!-- :aspect-ratio="2" -->
+                    <v-img
+                      :src="`http://${$route.query.ip}:8090/uploaded/${item}`"
+                      :alt="item"
+                      class="mt-5"
+                      style="width: 100%; min-height: auto"
+                      contain
+                    />
+                  </v-carousel-item>
                 </v-carousel>
                 <embed
                   v-if="
@@ -181,6 +194,7 @@ export default {
       activeClients: [],
       activeTickets: [],
       allconf: null,
+      count: 0,
       days: [
         "Sunday",
         "Monday",
@@ -279,15 +293,32 @@ export default {
     },
     performTextToSpeech(text) {
       // Use Web Speech API or an external library for TTS
-      const synth = window.speechSynthesis;
-      const utterance = new SpeechSynthesisUtterance(text);
-      var voices = window.speechSynthesis.getVoices();
-      // var utterance = new SpeechSynthesisUtterance("Hello World");
-      utterance.rate = 0.7;
-      utterance.voice = voices[1];
+      let s = this.setSpeech();
+      s.then((voices) => {
+        var synthesis = window.speechSynthesis;
+        var utterance = new SpeechSynthesisUtterance(text);
 
-      // Speak the text
-      synth.speak(utterance);
+        // This overrides the text "Hello World" and is uttered instead
+        utterance.voice = voices[1];
+        // utterance.text = text;
+        utterance.pitch = 1.8;
+        utterance.rate = 0.9;
+        utterance.volume = 0.8;
+        console.log("Calling Once");
+        if (this.count == 0) {
+          synthesis.speak(utterance);
+          this.count++;
+        }
+      });
+      // const synth = window.speechSynthesis;
+      // const utterance = new SpeechSynthesisUtterance(text);
+      // var voices = window.speechSynthesis.getVoices();
+      // // var utterance = new SpeechSynthesisUtterance("Hello World");
+      // utterance.rate = 0.7;
+      // utterance.voice = voices[1];
+
+      // // Speak the text
+      // synth.speak(utterance);
     },
     // Other methods for your Vue component
     connectToServer() {
@@ -319,16 +350,20 @@ export default {
             // this.activeTickets.push(response)
             this.$store.commit("ADD_ACTIVE", response);
             // this.$forceUpdate();
-            if (this.allconf.ds_conf.show_dt) {
+            let allowVoice = this.allconf.ds_conf.show_dt;
+            if (allowVoice) {
               //   this.activeClients.forEach((client) => {
               let index = this.activeClients.findIndex(
                 (j) => response.ticket_payload.CounterID === j.ID
               );
+
               if (index !== -1) {
+                // if (this.count !== 1) {
                 this.callTicket(
                   response.ticket_payload.TicketName,
                   this.activeClients[index].CounterNumber
                 );
+                // }
               }
               //   });
             } else {
@@ -337,6 +372,7 @@ export default {
             // this.playSound();
             break;
           case "finish":
+            this.count = 0;
             // this.activeTickets = this.activeTickets.splice(this.activeTickets.findIndex(a => (a.ticket_payload.CounterID === response.ticket_payload.CounterID && a.ticket_payload.TicketName === response.ticket_payload.TicketName)), 1)
             this.playSound();
             if (this.$store.state.Auth.activeTickets.length > 0) {
@@ -648,6 +684,19 @@ export default {
     connect() {
       this.socket = new WebSocket(`ws://${this.$route.query.ip}:8090/ws`);
     },
+    setSpeech() {
+      return new Promise(function (resolve, reject) {
+        let synth = window.speechSynthesis;
+        let id;
+
+        id = setInterval(() => {
+          if (synth.getVoices().length !== 0) {
+            resolve(synth.getVoices());
+            clearInterval(id);
+          }
+        }, 10);
+      });
+    },
   },
   beforeMount() {
     // Disconnect from the server when the component is destroyed
@@ -711,5 +760,8 @@ export default {
 <style lang="scss" scoped>
 .gradient-card {
   background-image: linear-gradient(150deg, #ad1457 50%, #0097a7 35%);
+}
+.v-carousel .v-window-item {
+  height: 100% !important;
 }
 </style>

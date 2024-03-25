@@ -211,7 +211,7 @@ func (q *sqlTicketRepo) GetTicketToProcess(ctx context.Context, arg models.GetTi
 }
 
 func (q *sqlTicketRepo) GetLastTicketNumber(ctx context.Context, service string) (models.TicketNumber, error) {
-	row := q.db.QueryRowContext(ctx, `select ticket_number as number from ticket where date(created_at)=date(now()) and service = ? and ticket_status = 0 order by created_at desc limit 1;`, service)
+	row := q.db.QueryRowContext(ctx, `select ticket_number as number from ticket where date(created_at)=date(now()) and service = ? and ticket_status = 'CREATED' order by created_at desc limit 1;`, service)
 	var i models.TicketNumber
 	err := row.Scan(
 		&i.Number,

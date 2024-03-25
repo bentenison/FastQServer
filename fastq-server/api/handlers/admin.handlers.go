@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"context"
 	"fmt"
 	"log"
 	"mime/multipart"
@@ -587,12 +588,21 @@ func (h *Handler) UpdateServiceHandler(c *gin.Context) {
 	req := models.UpdateServiceParams{}
 
 	if err := c.Bind(&req); err != nil {
+		log.Println("error binding data", err)
 		err := apperrors.NewExpectationFailed("error binding service params!!")
 		c.JSON(err.Status(), gin.H{
 			"error": err,
 		})
 		return
 	}
+	err := h.AdminService.UpdateService(context.TODO(), req)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
+	c.JSON(http.StatusOK, "ok")
 }
 
 func (h *Handler) AddUserHandler(c *gin.Context) {

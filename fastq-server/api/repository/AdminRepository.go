@@ -861,6 +861,26 @@ func (q *sqlAdminRepo) GetService(ctx context.Context, arg models.GetServicePara
 	return &i, err
 }
 
+// const updateService = `-- name: UpdateService :exec
+// update manage_service
+// set name = ?,
+//
+//	code = ?,
+//	prefix = ?,
+//	number_starts = ?,
+//	number_ends = ?,
+//	hide = ?,
+//	show_display = ?,
+//	start_time = ?,
+//	end_time = ?,
+//	default_time = ?,
+//	workflow = ?,
+//	number_ends = ?,
+//	updated_at = ?,
+//	updated_by = ?
+//
+// where id = ?
+// `
 const updateService = `-- name: UpdateService :exec
 update manage_service
 set name = ?,
@@ -870,11 +890,8 @@ set name = ?,
     number_ends = ?,
     hide = ?,
     show_display = ?,
-    start_time = ?,
-    end_time = ?,
     default_time = ?,
     workflow = ?,
-    number_ends = ?,
     updated_at = ?,
     updated_by = ?
 where id = ?
@@ -889,11 +906,11 @@ func (q *sqlAdminRepo) UpdateService(ctx context.Context, arg models.UpdateServi
 		arg.NumberEnds,
 		arg.Hide,
 		arg.ShowDisplay,
-		arg.StartTime,
-		arg.EndTime,
+		// arg.StartTime,
+		// arg.EndTime,
 		arg.DefaultTime,
 		arg.Workflow,
-		arg.NumberEnds_2,
+		// arg.NumberEnds_2,
 		arg.UpdatedAt,
 		arg.UpdatedBy,
 		arg.ID,
