@@ -1,0 +1,1137 @@
+2024/05/09 14:35:01 main.go:43: initializing the FASTQ server
+2024/05/09 14:35:01 main.go:44: Starting server...
+2024/05/09 14:35:01 main.go:50: MySQL installed. Performing necessary actions...
+2024/05/09 14:35:01 main.go:440: Connected to the TEMP MySQL server!
+2024/05/09 14:35:01 initdb.go:443: DB checked fastq
+2024/05/09 14:35:01 initdb.go:389: true
+2024/05/09 14:35:01 db.go:22: Initializing data sources
+2024/05/09 14:35:01 db.go:49: connected to sql db successfully
+2024/05/09 14:35:01 main.go:202: Hostname ASUSVivobook
+2024/05/09 14:35:01 main.go:218: Server is running on port 9090
+2024/05/09 14:35:01 main.go:92: Server IP found 192.168.164.148
+2024/05/09 14:35:01 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 14:35:01 main.go:122: Generating self-signed certificates...
+2024/05/09 14:35:01 main.go:126: Certificates generated successfully.
+2024/05/09 14:38:39 ticket.handlers.go:477: data:::::: {   192.168.164.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/05/09 14:38:42 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 14:38:42 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 14:38:44 admin.handlers.go:46: Client Connected
+2024/05/09 14:38:47 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 14:38:48 admin.handlers.go:46: Client Connected
+2024/05/09 14:39:13 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 14:39:13 LicenseService.go:138: user not present, sql: no rows in result set
+2024/05/09 14:39:14 admin.handlers.go:46: Client Connected
+2024/05/09 14:39:14 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:14 ticket.handlers.go:418: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:14 ticket.handlers.go:432: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:14 ticket.handlers.go:396: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:14 admin.handlers.go:666: params::::: {nDmmyD0  12411d0d-5454-426d-adc2-2eba9ee0fdf1}
+2024/05/09 14:39:14 ticket.handlers.go:477: data:::::: {   192.168.164.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/05/09 14:39:16 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:18 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:19 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0 12411d0d-5454-426d-adc2-2eba9ee0fdf1}
+2024/05/09 14:39:20 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:22 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:23 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 14:39:24 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 14:39:24 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 14:39:41 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 14:39:41 LicenseService.go:138: user not present, sql: no rows in result set
+2024/05/09 14:39:41 admin.handlers.go:46: Client Connected
+2024/05/09 14:39:41 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:41 ticket.handlers.go:418: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:41 ticket.handlers.go:432: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:41 admin.handlers.go:666: params::::: {nDmmyD0  12411d0d-5454-426d-adc2-2eba9ee0fdf1}
+2024/05/09 14:39:41 ticket.handlers.go:396: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:41 ticket.handlers.go:477: data:::::: {   192.168.164.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/05/09 14:39:43 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:43 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0 12411d0d-5454-426d-adc2-2eba9ee0fdf1}
+2024/05/09 14:39:45 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:47 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:49 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:51 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:53 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:55 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:57 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:39:59 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:01 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:03 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:05 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:07 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:09 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:11 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:13 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:15 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:17 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:19 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:21 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:23 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:25 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:27 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:29 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:31 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:33 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:35 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:37 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:39 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:41 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:43 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:45 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:40:53 ticket.handlers.go:477: data:::::: {   192.168.164.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/05/09 14:41:18 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:19 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:20 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0 12411d0d-5454-426d-adc2-2eba9ee0fdf1}
+2024/05/09 14:41:20 admin.handlers.go:73: string { next {{{94bc058d-76a7-40b2-8c3d-8ef750595b83 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{1 true}} 2024-05-09 20:10:57 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 20:11:20 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{A-1 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 14:41:20 ticket.handlers.go:233: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 94bc058d-76a7-40b2-8c3d-8ef750595b83 12411d0d-5454-426d-adc2-2eba9ee0fdf1 }
+2024/05/09 14:41:20 ticket.handlers.go:281: data:::::: {STARTED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 94bc058d-76a7-40b2-8c3d-8ef750595b83}
+2024/05/09 14:41:20 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:20 ticket.handlers.go:418: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:20 ticket.handlers.go:396: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:20 ticket.handlers.go:432: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:21 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:23 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:25 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:27 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:29 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:31 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:33 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:35 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:37 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:39 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:41 admin.handlers.go:73: string { recall {{{94bc058d-76a7-40b2-8c3d-8ef750595b83 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{1 true}} 2024-05-09 20:10:57 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 20:11:20 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{A-1 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 14:41:41 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:43 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:45 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:47 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:49 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:51 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:53 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:55 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:57 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:41:59 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:01 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:03 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:05 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:07 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:09 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:11 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:13 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:15 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:17 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:19 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:21 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:23 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:25 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:27 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:29 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:31 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:33 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:35 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:37 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:39 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:41 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:43 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:45 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:47 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:49 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:51 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:42:53 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:43:30 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:43:40 admin.handlers.go:73: string { recall {{{94bc058d-76a7-40b2-8c3d-8ef750595b83 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{1 true}} 2024-05-09 20:10:57 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 20:11:20 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{A-1 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 14:43:44 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:43:44 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:43:44 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:43:44 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 14:43:44 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:43:44 admin.handlers.go:46: Client Connected
+2024/05/09 14:43:45 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:43:45 admin.handlers.go:46: Client Connected
+2024/05/09 14:43:47 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:43:49 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:43:51 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:43:53 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:43:54 admin.handlers.go:73: string { recall {{{94bc058d-76a7-40b2-8c3d-8ef750595b83 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{1 true}} 2024-05-09 20:10:57 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 20:11:20 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{A-1 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 14:43:55 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:43:57 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:43:59 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:01 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:03 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:05 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:07 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:09 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:11 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:16 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:16 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:16 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 14:44:16 admin.handlers.go:46: Client Connected
+2024/05/09 14:44:17 admin.handlers.go:46: Client Connected
+2024/05/09 14:44:17 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:19 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:21 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:23 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:25 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:25 admin.handlers.go:73: string { recall {{{94bc058d-76a7-40b2-8c3d-8ef750595b83 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{1 true}} 2024-05-09 20:10:57 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 20:11:20 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{A-1 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 14:44:27 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:29 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:31 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:33 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:35 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:37 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:40 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:40 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 14:44:40 admin.handlers.go:46: Client Connected
+2024/05/09 14:44:41 admin.handlers.go:46: Client Connected
+2024/05/09 14:44:41 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:43 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:45 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:46 admin.handlers.go:73: string { recall {{{94bc058d-76a7-40b2-8c3d-8ef750595b83 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{1 true}} 2024-05-09 20:10:57 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 20:11:20 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{A-1 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 14:44:47 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:49 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:51 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:53 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:55 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:57 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:44:59 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:00 admin.handlers.go:73: string { recall {{{94bc058d-76a7-40b2-8c3d-8ef750595b83 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{1 true}} 2024-05-09 20:10:57 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 20:11:20 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{A-1 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 14:45:01 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:03 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:05 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:07 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:09 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:11 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:12 admin.handlers.go:73: string { recall {{{94bc058d-76a7-40b2-8c3d-8ef750595b83 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{1 true}} 2024-05-09 20:10:57 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 20:11:20 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{A-1 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 14:45:13 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:15 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:17 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:19 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:21 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:23 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:25 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:27 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:29 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:31 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:33 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:35 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:37 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:39 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:41 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:43 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:45 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:47 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:49 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:51 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:53 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:55 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:57 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:45:59 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:01 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:03 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:05 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:07 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:09 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:11 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:13 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:15 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:17 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:19 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:21 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:23 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:25 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:27 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:29 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:31 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:33 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:35 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:37 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:39 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:41 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:43 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:45 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:47 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:49 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:51 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:53 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:55 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:57 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:46:59 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:01 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:03 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:05 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:07 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:09 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:11 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:13 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:15 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:17 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:19 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:21 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:23 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:25 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:27 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:29 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:31 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:33 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:35 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:37 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:39 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:41 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:43 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:45 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:47 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:49 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:51 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:53 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:55 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:57 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:47:59 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:01 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:03 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:05 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:07 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:09 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:11 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:13 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:15 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:17 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:19 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:21 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:23 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:25 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:27 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:29 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:31 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:33 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:35 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:37 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:39 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:41 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:43 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:45 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:47 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:49 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:50 admin.handlers.go:73: string { recall {{{94bc058d-76a7-40b2-8c3d-8ef750595b83 true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{1 true}} 2024-05-09 20:10:57 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 20:11:20 +0000 UTC 2024-05-09 20:10:57 +0000 UTC {{A-1 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 14:48:51 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:53 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:55 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:57 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:48:59 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:01 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:03 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:05 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:07 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:09 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:11 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:13 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:15 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:17 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:19 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:21 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:23 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:25 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:27 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:29 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:31 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:33 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:35 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:37 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:39 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:41 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:43 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:45 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:47 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:49 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:51 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:53 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:55 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:57 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:49:59 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:50:30 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:51:30 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:52:30 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:53:30 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 14:54:30 ticket.handlers.go:374: handlers &{0xc000086030 0xc000030dd0}
+2024/05/09 15:34:33 main.go:43: initializing the FASTQ server
+2024/05/09 15:34:33 main.go:44: Starting server...
+2024/05/09 15:34:33 main.go:50: MySQL installed. Performing necessary actions...
+2024/05/09 15:34:33 main.go:440: Connected to the TEMP MySQL server!
+2024/05/09 15:34:33 initdb.go:443: DB checked fastq
+2024/05/09 15:34:33 initdb.go:389: true
+2024/05/09 15:34:33 db.go:22: Initializing data sources
+2024/05/09 15:34:33 db.go:49: connected to sql db successfully
+2024/05/09 15:34:33 main.go:202: Hostname ASUSVivobook
+2024/05/09 15:34:33 main.go:218: Server is running on port 9090
+2024/05/09 15:34:33 main.go:92: Server IP found 192.168.164.148
+2024/05/09 15:34:33 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 15:34:33 main.go:122: Generating self-signed certificates...
+2024/05/09 15:34:33 main.go:126: Certificates generated successfully.
+2024/05/09 15:34:58 admin.handlers.go:46: Client Connected
+2024/05/09 15:35:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:35:42 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:35:42 admin.handlers.go:46: Client Connected
+2024/05/09 15:35:43 admin.handlers.go:46: Client Connected
+2024/05/09 15:36:05 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:36:05 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:36:07 admin.handlers.go:46: Client Connected
+2024/05/09 15:36:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:37:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:37:51 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:37:51 admin.handlers.go:46: Client Connected
+2024/05/09 15:37:53 admin.handlers.go:46: Client Connected
+2024/05/09 15:37:57 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:37:57 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:37:59 admin.handlers.go:46: Client Connected
+2024/05/09 15:38:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:39:08 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:39:08 admin.handlers.go:46: Client Connected
+2024/05/09 15:39:09 admin.handlers.go:46: Client Connected
+2024/05/09 15:39:14 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:39:14 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:39:16 admin.handlers.go:46: Client Connected
+2024/05/09 15:39:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:40:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:41:21 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:41:21 admin.handlers.go:46: Client Connected
+2024/05/09 15:41:22 admin.handlers.go:46: Client Connected
+2024/05/09 15:41:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:42:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:42:36 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:42:36 admin.handlers.go:46: Client Connected
+2024/05/09 15:42:37 admin.handlers.go:46: Client Connected
+2024/05/09 15:43:16 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:43:16 admin.handlers.go:46: Client Connected
+2024/05/09 15:43:17 admin.handlers.go:46: Client Connected
+2024/05/09 15:43:26 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:43:27 admin.handlers.go:46: Client Connected
+2024/05/09 15:43:28 admin.handlers.go:46: Client Connected
+2024/05/09 15:43:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:43:35 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:43:35 admin.handlers.go:46: Client Connected
+2024/05/09 15:43:36 admin.handlers.go:46: Client Connected
+2024/05/09 15:43:48 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:43:48 admin.handlers.go:46: Client Connected
+2024/05/09 15:43:49 admin.handlers.go:46: Client Connected
+2024/05/09 15:44:00 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:44:00 admin.handlers.go:46: Client Connected
+2024/05/09 15:44:01 admin.handlers.go:46: Client Connected
+2024/05/09 15:44:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:45:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:46:19 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:46:19 admin.handlers.go:46: Client Connected
+2024/05/09 15:46:20 admin.handlers.go:46: Client Connected
+2024/05/09 15:46:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:46:37 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:46:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:46:40 LicenseService.go:592: error while updating counters <nil>
+2024/05/09 15:47:00 ticket.handlers.go:477: data:::::: {   192.168.164.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/05/09 15:47:02 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 15:47:02 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 15:47:29 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 15:47:29 LicenseService.go:138: user not present, sql: no rows in result set
+2024/05/09 15:47:29 admin.handlers.go:46: Client Connected
+2024/05/09 15:47:29 admin.handlers.go:666: params::::: {nDmmyD0  12411d0d-5454-426d-adc2-2eba9ee0fdf1}
+2024/05/09 15:47:29 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:29 ticket.handlers.go:418: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:29 ticket.handlers.go:432: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:29 ticket.handlers.go:396: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:29 ticket.handlers.go:477: data:::::: {   192.168.164.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/05/09 15:47:31 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:33 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0 12411d0d-5454-426d-adc2-2eba9ee0fdf1}
+2024/05/09 15:47:33 admin.handlers.go:73: string { next {{{1be9f7b1-28ea-4d5c-9ac8-ae608a9f6fe0 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{200 true}} 2024-05-09 20:10:58 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 21:17:33 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{B-200 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 15:47:33 ticket.handlers.go:233: data:::::: {  340f771f-25f8-48db-ae12-6ccbecdad4de 1be9f7b1-28ea-4d5c-9ac8-ae608a9f6fe0 12411d0d-5454-426d-adc2-2eba9ee0fdf1 }
+2024/05/09 15:47:33 ticket.handlers.go:281: data:::::: {STARTED  340f771f-25f8-48db-ae12-6ccbecdad4de 1be9f7b1-28ea-4d5c-9ac8-ae608a9f6fe0}
+2024/05/09 15:47:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:33 ticket.handlers.go:418: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:33 ticket.handlers.go:432: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:33 ticket.handlers.go:396: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:35 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:37 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:41 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:43 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:45 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:47 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:49 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:51 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:53 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:55 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:57 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:47:59 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:01 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:03 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:05 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:07 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:09 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:11 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:13 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:15 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:17 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:19 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:21 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:23 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:25 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:27 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:29 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:31 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:48:35 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:49:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:49:59 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:49:59 admin.handlers.go:46: Client Connected
+2024/05/09 15:50:00 admin.handlers.go:46: Client Connected
+2024/05/09 15:50:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:50:40 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:50:41 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:50:43 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:50:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:50:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:50:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:50:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:50:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:50:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:50:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:50:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:50:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:50:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:50:45 admin.handlers.go:46: Client Connected
+2024/05/09 15:50:45 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:50:47 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:50:49 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:50:51 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:50:53 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:50:55 admin.handlers.go:73: string { recall {{{1be9f7b1-28ea-4d5c-9ac8-ae608a9f6fe0 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{200 true}} 2024-05-09 20:10:58 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 21:17:33 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{B-200 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 15:50:55 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:50:57 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:50:59 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:01 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:03 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:05 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:07 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:09 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:11 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:13 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:15 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:17 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:19 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:21 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:23 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:25 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:27 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:29 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:31 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:31 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:51:33 admin.handlers.go:46: Client Connected
+2024/05/09 15:51:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:35 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:37 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:41 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:43 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:45 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:47 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:49 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:51 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:53 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:55 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:57 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:51:59 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:52:01 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:52:03 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:52:05 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:52:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:52:52 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:52:52 admin.handlers.go:46: Client Connected
+2024/05/09 15:52:53 admin.handlers.go:46: Client Connected
+2024/05/09 15:53:02 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:03 admin.handlers.go:73: string { recall {{{1be9f7b1-28ea-4d5c-9ac8-ae608a9f6fe0 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{200 true}} 2024-05-09 20:10:58 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 21:17:33 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{B-200 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 15:53:03 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:05 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:07 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:09 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:11 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:13 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:15 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:17 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:19 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:22 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:22 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:53:22 admin.handlers.go:46: Client Connected
+2024/05/09 15:53:23 admin.handlers.go:46: Client Connected
+2024/05/09 15:53:23 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:25 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:27 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:29 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:31 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:35 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:37 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:41 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:43 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:45 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:53:45 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:53:45 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:53:45 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:46 admin.handlers.go:46: Client Connected
+2024/05/09 15:53:47 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:49 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:51 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:53 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:55 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:57 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:53:59 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:01 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:03 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:05 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:07 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:09 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:21 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:54:21 admin.handlers.go:46: Client Connected
+2024/05/09 15:54:22 admin.handlers.go:46: Client Connected
+2024/05/09 15:54:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:31 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:32 admin.handlers.go:73: string { recall {{{1be9f7b1-28ea-4d5c-9ac8-ae608a9f6fe0 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{200 true}} 2024-05-09 20:10:58 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 21:17:33 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{B-200 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 15:54:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:35 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:37 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:41 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:43 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:45 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:47 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:49 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:51 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:53 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:55 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:57 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:54:59 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:01 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:03 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:05 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:07 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:09 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:11 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:13 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:15 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:17 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:19 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:21 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:23 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:25 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:27 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:29 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:31 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:33 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:55:33 admin.handlers.go:46: Client Connected
+2024/05/09 15:55:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:34 admin.handlers.go:46: Client Connected
+2024/05/09 15:55:38 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:40 admin.handlers.go:73: string { recall {{{1be9f7b1-28ea-4d5c-9ac8-ae608a9f6fe0 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{200 true}} 2024-05-09 20:10:58 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 21:17:33 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{B-200 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 15:55:41 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:43 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:45 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:47 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:49 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:51 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:53 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:55 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:57 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:55:59 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:01 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:03 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:05 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:07 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:09 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:11 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:13 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:15 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:17 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:19 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:21 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:24 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:24 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 15:56:24 admin.handlers.go:46: Client Connected
+2024/05/09 15:56:25 admin.handlers.go:46: Client Connected
+2024/05/09 15:56:25 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:27 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:29 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:31 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:32 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:56:32 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:56:32 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:56:32 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 15:56:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:35 admin.handlers.go:46: Client Connected
+2024/05/09 15:56:35 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:37 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:45 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:46 admin.handlers.go:73: string { recall {{{1be9f7b1-28ea-4d5c-9ac8-ae608a9f6fe0 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{200 true}} 2024-05-09 20:10:58 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 21:17:33 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{B-200 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 15:56:47 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:49 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:51 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:53 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:55 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:57 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:56:59 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:01 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:03 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:05 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:07 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:09 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:11 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:13 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:15 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:17 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:19 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:21 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:23 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:25 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:27 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:29 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:31 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:35 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:37 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:41 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:43 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:45 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:57:47 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:58:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 15:59:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:04 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:00:04 admin.handlers.go:46: Client Connected
+2024/05/09 16:00:05 admin.handlers.go:46: Client Connected
+2024/05/09 16:00:08 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 16:00:08 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 16:00:10 admin.handlers.go:46: Client Connected
+2024/05/09 16:00:17 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:17 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:18 admin.handlers.go:73: string { recall {{{1be9f7b1-28ea-4d5c-9ac8-ae608a9f6fe0 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{200 true}} 2024-05-09 20:10:58 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 21:17:33 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{B-200 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 16:00:19 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:21 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:23 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:25 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:25 admin.handlers.go:73: string { recall {{{1be9f7b1-28ea-4d5c-9ac8-ae608a9f6fe0 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{200 true}} 2024-05-09 20:10:58 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 21:17:33 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{B-200 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 16:00:27 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:29 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:31 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:35 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:37 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:41 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:43 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:45 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:47 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:49 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:52 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:52 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:00:52 admin.handlers.go:46: Client Connected
+2024/05/09 16:00:53 admin.handlers.go:46: Client Connected
+2024/05/09 16:00:53 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:55 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:57 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:00:59 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:01 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:03 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:05 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:07 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:09 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:11 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:13 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:15 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:17 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:19 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:21 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:23 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:25 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:27 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:01:29 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:02:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:03:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:04:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:05:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:06:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:07:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:08:00 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:08:00 admin.handlers.go:46: Client Connected
+2024/05/09 16:08:01 admin.handlers.go:46: Client Connected
+2024/05/09 16:08:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:08:54 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:08:54 admin.handlers.go:46: Client Connected
+2024/05/09 16:08:56 admin.handlers.go:46: Client Connected
+2024/05/09 16:09:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:09:47 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:09:47 admin.handlers.go:46: Client Connected
+2024/05/09 16:09:48 admin.handlers.go:46: Client Connected
+2024/05/09 16:09:54 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 16:09:54 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 16:09:54 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 16:09:54 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 16:09:54 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 16:09:55 admin.handlers.go:46: Client Connected
+2024/05/09 16:10:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:11:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:12:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:13:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:14:21 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:14:21 admin.handlers.go:46: Client Connected
+2024/05/09 16:14:22 admin.handlers.go:46: Client Connected
+2024/05/09 16:14:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:14:43 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:14:43 admin.handlers.go:46: Client Connected
+2024/05/09 16:14:44 admin.handlers.go:46: Client Connected
+2024/05/09 16:15:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:16:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:17:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:18:15 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:18:15 admin.handlers.go:46: Client Connected
+2024/05/09 16:18:16 admin.handlers.go:46: Client Connected
+2024/05/09 16:18:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:18:40 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:18:40 admin.handlers.go:46: Client Connected
+2024/05/09 16:18:41 admin.handlers.go:46: Client Connected
+2024/05/09 16:19:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:20:21 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:20:21 admin.handlers.go:46: Client Connected
+2024/05/09 16:20:23 admin.handlers.go:46: Client Connected
+2024/05/09 16:20:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:20:55 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:20:55 admin.handlers.go:46: Client Connected
+2024/05/09 16:20:56 admin.handlers.go:46: Client Connected
+2024/05/09 16:21:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:21:34 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:21:34 admin.handlers.go:46: Client Connected
+2024/05/09 16:21:35 admin.handlers.go:46: Client Connected
+2024/05/09 16:22:17 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:22:17 admin.handlers.go:46: Client Connected
+2024/05/09 16:22:18 admin.handlers.go:46: Client Connected
+2024/05/09 16:22:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:22:53 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:22:53 admin.handlers.go:46: Client Connected
+2024/05/09 16:22:54 admin.handlers.go:46: Client Connected
+2024/05/09 16:23:08 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:23:08 admin.handlers.go:46: Client Connected
+2024/05/09 16:23:09 admin.handlers.go:46: Client Connected
+2024/05/09 16:23:30 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:23:30 admin.handlers.go:46: Client Connected
+2024/05/09 16:23:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:23:31 admin.handlers.go:46: Client Connected
+2024/05/09 16:24:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:24:55 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:24:55 admin.handlers.go:46: Client Connected
+2024/05/09 16:24:56 admin.handlers.go:46: Client Connected
+2024/05/09 16:25:16 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:25:17 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:25:18 admin.handlers.go:73: string { recall {{{1be9f7b1-28ea-4d5c-9ac8-ae608a9f6fe0 true}} {{Parts Inquiry true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{200 true}} 2024-05-09 20:10:58 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 21:17:33 +0000 UTC 2024-05-09 20:10:58 +0000 UTC {{B-200 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 16:25:19 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:25:21 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:25:23 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:25:25 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:25:27 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:25:29 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:25:31 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:25:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:25:35 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:25:37 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:25:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:33:32 admin.handlers.go:65: error in reading message websocket: close 1006 (abnormal closure): unexpected EOF
+2024/05/09 16:33:32 admin.handlers.go:65: error in reading message websocket: close 1006 (abnormal closure): unexpected EOF
+2024/05/09 16:33:32 admin.handlers.go:65: error in reading message websocket: close 1006 (abnormal closure): unexpected EOF
+2024/05/09 16:33:32 admin.handlers.go:65: error in reading message websocket: close 1006 (abnormal closure): unexpected EOF
+2024/05/09 16:33:32 admin.handlers.go:65: error in reading message websocket: close 1006 (abnormal closure): unexpected EOF
+2024/05/09 16:33:32 admin.handlers.go:65: error in reading message websocket: close 1006 (abnormal closure): unexpected EOF
+2024/05/09 16:33:32 admin.handlers.go:65: error in reading message websocket: close 1006 (abnormal closure): unexpected EOF
+2024/05/09 16:33:32 admin.handlers.go:65: error in reading message websocket: close 1006 (abnormal closure): unexpected EOF
+2024/05/09 16:33:32 admin.handlers.go:65: error in reading message websocket: close 1006 (abnormal closure): unexpected EOF
+2024/05/09 16:33:32 admin.handlers.go:65: error in reading message websocket: close 1006 (abnormal closure): unexpected EOF
+2024/05/09 16:33:32 admin.handlers.go:65: error in reading message websocket: close 1006 (abnormal closure): unexpected EOF
+2024/05/09 16:33:32 admin.handlers.go:65: error in reading message websocket: close 1006 (abnormal closure): unexpected EOF
+2024/05/09 16:33:32 admin.handlers.go:65: error in reading message websocket: close 1006 (abnormal closure): unexpected EOF
+2024/05/09 16:33:33 admin.handlers.go:65: error in reading message websocket: close 1006 (abnormal closure): unexpected EOF
+2024/05/09 16:33:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:33:35 admin.handlers.go:46: Client Connected
+2024/05/09 16:34:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:35:26 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:35:26 admin.handlers.go:46: Client Connected
+2024/05/09 16:35:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:35:54 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:35:55 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:35:57 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:35:59 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:01 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:03 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:05 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:07 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:22 ticket.handlers.go:477: data:::::: {   192.168.164.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/05/09 16:36:24 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 16:36:24 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 16:36:37 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 16:36:37 LicenseService.go:138: user not present, sql: no rows in result set
+2024/05/09 16:36:37 admin.handlers.go:46: Client Connected
+2024/05/09 16:36:37 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:37 ticket.handlers.go:418: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:37 ticket.handlers.go:432: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:37 ticket.handlers.go:396: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:37 admin.handlers.go:666: params::::: {nDmmyD0  12411d0d-5454-426d-adc2-2eba9ee0fdf1}
+2024/05/09 16:36:37 ticket.handlers.go:477: data:::::: {   192.168.164.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/05/09 16:36:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:39 ticket.handlers.go:111: data:::::: { nDmmyD0 nDmmyD0 12411d0d-5454-426d-adc2-2eba9ee0fdf1}
+2024/05/09 16:36:39 admin.handlers.go:73: string { next {{{54052ef5-313b-4928-acf5-274492de4cfd true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{2 true}} 2024-05-09 20:11:02 +0000 UTC 2024-05-09 20:11:02 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 22:06:39 +0000 UTC 2024-05-09 20:11:02 +0000 UTC {{A-2 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 16:36:39 ticket.handlers.go:233: data:::::: {  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 54052ef5-313b-4928-acf5-274492de4cfd 12411d0d-5454-426d-adc2-2eba9ee0fdf1 }
+2024/05/09 16:36:39 ticket.handlers.go:281: data:::::: {STARTED  3a49a4a5-dabf-4bf9-82db-c816c539ad9d 54052ef5-313b-4928-acf5-274492de4cfd}
+2024/05/09 16:36:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:39 ticket.handlers.go:418: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:39 ticket.handlers.go:432: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:39 ticket.handlers.go:396: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:41 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:43 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:45 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:47 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:49 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:51 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:53 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:55 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:57 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:36:59 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:01 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:03 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:05 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:07 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:09 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:11 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:13 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:15 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:17 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:19 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:21 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:23 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:25 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:27 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:29 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:32 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:32 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:37:32 admin.handlers.go:46: Client Connected
+2024/05/09 16:37:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:34 admin.handlers.go:46: Client Connected
+2024/05/09 16:37:35 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:37 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:37:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:01 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:38:01 admin.handlers.go:46: Client Connected
+2024/05/09 16:38:02 admin.handlers.go:46: Client Connected
+2024/05/09 16:38:09 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:09 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:10 admin.handlers.go:73: string { recall {{{54052ef5-313b-4928-acf5-274492de4cfd true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{2 true}} 2024-05-09 20:11:02 +0000 UTC 2024-05-09 20:11:02 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 22:06:39 +0000 UTC 2024-05-09 20:11:02 +0000 UTC {{A-2 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 16:38:11 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:13 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:15 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:17 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:19 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:21 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:23 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:25 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:27 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:29 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:31 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:35 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:37 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:41 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:43 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:45 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:47 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:49 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:51 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:53 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:55 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:57 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:38:59 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:01 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:03 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:05 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:07 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:09 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:11 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:13 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:39:13 admin.handlers.go:46: Client Connected
+2024/05/09 16:39:14 admin.handlers.go:46: Client Connected
+2024/05/09 16:39:21 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:21 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:22 admin.handlers.go:73: string { recall {{{54052ef5-313b-4928-acf5-274492de4cfd true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{2 true}} 2024-05-09 20:11:02 +0000 UTC 2024-05-09 20:11:02 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 22:06:39 +0000 UTC 2024-05-09 20:11:02 +0000 UTC {{A-2 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 16:39:23 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:25 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:27 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:29 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:31 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:35 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:37 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:41 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:43 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:45 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:47 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:49 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:51 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:53 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:55 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:57 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:39:59 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:01 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:03 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:05 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:07 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:09 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:11 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:13 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:15 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:17 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:19 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:21 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:30 admin.handlers.go:65: error in reading message invalid character 'd' looking for beginning of value
+2024/05/09 16:40:30 admin.handlers.go:46: Client Connected
+2024/05/09 16:40:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:31 admin.handlers.go:46: Client Connected
+2024/05/09 16:40:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:40 admin.handlers.go:73: string { recall {{{54052ef5-313b-4928-acf5-274492de4cfd true}} {{Parts Order true}} CREATED {{12411d0d-5454-426d-adc2-2eba9ee0fdf1 true}} {{ true}} {{ true}} {{ false}} {{2 true}} 2024-05-09 20:11:02 +0000 UTC 2024-05-09 20:11:02 +0000 UTC {{73ac3366-c04d-11ee-a5d5-ce47405e851e true}} 2024-05-09 22:06:39 +0000 UTC 2024-05-09 20:11:02 +0000 UTC {{A-2 true}} {{fastq solutions ltd true}} {{nDmmyD0 true}} {{ true}} {{ true}} {{ false}} {{ false}}}}
+2024/05/09 16:40:41 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:43 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:45 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:47 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:49 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:51 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:53 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:55 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:57 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:40:59 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:01 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:03 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:05 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:07 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:09 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:11 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:13 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:15 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:17 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:19 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:21 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:23 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:25 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:27 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:29 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:31 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:33 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:35 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:37 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:41:39 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:42:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:43:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:44:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:44:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 16:44:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 16:44:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 16:44:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 16:44:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 16:44:44 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/09 16:44:45 admin.handlers.go:46: Client Connected
+2024/05/09 16:44:46 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:44:46 ticket.handlers.go:418: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:44:46 ticket.handlers.go:432: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:44:46 ticket.handlers.go:396: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:44:46 admin.handlers.go:666: params::::: {nDmmyD0  12411d0d-5454-426d-adc2-2eba9ee0fdf1}
+2024/05/09 16:44:46 admin.handlers.go:46: Client Connected
+2024/05/09 16:44:47 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:44:50 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:44:52 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:44:54 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:44:56 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:44:58 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:00 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:02 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:04 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:06 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:08 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:10 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:12 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:14 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:16 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:18 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:20 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:22 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:24 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:26 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:28 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:32 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:34 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:36 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:38 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:40 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:42 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:44 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:45:46 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:46:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:47:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:48:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:49:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:50:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:51:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:52:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:53:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:54:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:55:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:56:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:57:30 ticket.handlers.go:374: handlers &{0xc00000a0b8 0xc000030ea0}
+2024/05/09 16:58:28 main.go:43: initializing the FASTQ server
+2024/05/09 16:58:28 main.go:44: Starting server...
+2024/05/09 16:58:28 main.go:50: MySQL installed. Performing necessary actions...
+2024/05/09 16:58:28 main.go:440: Connected to the TEMP MySQL server!
+2024/05/09 16:58:28 initdb.go:443: DB checked fastq
+2024/05/09 16:58:28 initdb.go:389: true
+2024/05/09 16:58:28 db.go:22: Initializing data sources
+2024/05/09 16:58:28 db.go:49: connected to sql db successfully
+2024/05/09 16:58:28 main.go:202: Hostname ASUSVivobook
+2024/05/09 16:58:28 main.go:218: Server is running on port 9090
+2024/05/09 16:58:28 main.go:92: Server IP found 192.168.164.148
+2024/05/09 16:58:29 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 16:58:29 main.go:122: Generating self-signed certificates...
+2024/05/09 16:58:29 main.go:126: Certificates generated successfully.
+2024/05/09 16:58:30 ticket.handlers.go:374: handlers &{0xc00000a050 0xc000030340}
+2024/05/09 16:59:13 main.go:43: initializing the FASTQ server
+2024/05/09 16:59:13 main.go:44: Starting server...
+2024/05/09 16:59:13 main.go:50: MySQL installed. Performing necessary actions...
+2024/05/09 16:59:13 main.go:440: Connected to the TEMP MySQL server!
+2024/05/09 16:59:13 initdb.go:443: DB checked fastq
+2024/05/09 16:59:13 initdb.go:389: true
+2024/05/09 16:59:13 db.go:22: Initializing data sources
+2024/05/09 16:59:13 db.go:49: connected to sql db successfully
+2024/05/09 16:59:13 main.go:202: Hostname ASUSVivobook
+2024/05/09 16:59:13 main.go:218: Server is running on port 9090
+2024/05/09 16:59:13 main.go:92: Server IP found 192.168.164.148
+2024/05/09 16:59:13 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/09 16:59:13 main.go:122: Generating self-signed certificates...
+2024/05/09 16:59:13 main.go:126: Certificates generated successfully.
+2024/05/09 16:59:30 ticket.handlers.go:374: handlers &{0xc000492048 0xc000030dd0}
+2024/05/09 17:00:38 ticket.handlers.go:374: handlers &{0xc000492048 0xc000030dd0}
+2024/05/09 17:01:30 ticket.handlers.go:374: handlers &{0xc000492048 0xc000030dd0}
+2024/05/09 17:02:30 ticket.handlers.go:374: handlers &{0xc000492048 0xc000030dd0}
+2024/05/09 17:03:30 ticket.handlers.go:374: handlers &{0xc000492048 0xc000030dd0}
+2024/05/10 14:36:25 TokenService.go:99: Unable to validate or parse idToken - Error: token is expired by 44h10m5s
+2024/05/10 14:36:41 UserService.go:68: &{73ac3366-c04d-11ee-a5d5-ce47405e851e admin@fastq.com ed0e8943a4c2cfe4abde83d2d759583c96935685e5152b552e87ddca7e892a16.dc1150457f5d60a7b43b64841b4c06aa33aa2ac276d228dea2601dde7daca85e Tanvir Shaikh fastq solutions ltd nDmmyD0 India IN 73ac3366-c04d-11ee-a5d5-ce47405e851e 2024-01-31T20:58:58Z 2024-01-31T20:58:58Z}
+2024/05/10 14:36:41 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/10 14:37:19 admin.handlers.go:573: params::::: {c41ff7cd-2eb3-4ca4-b242-9e6f545e2dff nDmmyD0}
+2024/05/10 14:37:48 admin.handlers.go:573: params::::: {c41ff7cd-2eb3-4ca4-b242-9e6f545e2dff nDmmyD0}
+2024/05/10 14:38:47 admin.handlers.go:573: params::::: {c41ff7cd-2eb3-4ca4-b242-9e6f545e2dff nDmmyD0}
+2024/05/10 14:38:50 admin.handlers.go:573: params::::: {c41ff7cd-2eb3-4ca4-b242-9e6f545e2dff nDmmyD0}
+2024/05/10 14:38:59 admin.handlers.go:573: params::::: {c41ff7cd-2eb3-4ca4-b242-9e6f545e2dff nDmmyD0}
+2024/05/10 14:39:15 admin.handlers.go:573: params::::: {c41ff7cd-2eb3-4ca4-b242-9e6f545e2dff nDmmyD0}
+2024/05/10 14:40:14 admin.handlers.go:573: params::::: {c41ff7cd-2eb3-4ca4-b242-9e6f545e2dff nDmmyD0}
+2024/05/10 14:40:36 admin.handlers.go:573: params::::: {c41ff7cd-2eb3-4ca4-b242-9e6f545e2dff nDmmyD0}
+2024/05/10 14:40:53 admin.handlers.go:573: params::::: {c41ff7cd-2eb3-4ca4-b242-9e6f545e2dff nDmmyD0}
+2024/05/10 14:41:52 admin.handlers.go:573: params::::: {c41ff7cd-2eb3-4ca4-b242-9e6f545e2dff nDmmyD0}
+2024/05/10 14:42:41 admin.handlers.go:573: params::::: {c41ff7cd-2eb3-4ca4-b242-9e6f545e2dff nDmmyD0}

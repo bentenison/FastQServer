@@ -1,0 +1,15 @@
+2024/05/11 15:35:08 main.go:43: initializing the FASTQ server
+2024/05/11 15:35:08 main.go:44: Starting server...
+2024/05/11 15:35:08 main.go:50: MySQL installed. Performing necessary actions...
+2024/05/11 15:35:08 main.go:440: Connected to the TEMP MySQL server!
+2024/05/11 15:35:08 initdb.go:443: DB checked fastq
+2024/05/11 15:35:08 initdb.go:389: true
+2024/05/11 15:35:08 db.go:22: Initializing data sources
+2024/05/11 15:35:08 db.go:49: connected to sql db successfully
+2024/05/11 15:35:08 main.go:202: Hostname ASUSVivobook
+2024/05/11 15:35:08 main.go:218: Server is running on port 9090
+2024/05/11 15:35:08 main.go:92: Server IP found 192.168.227.148
+2024/05/11 15:35:08 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/11 15:35:08 main.go:122: Generating self-signed certificates...
+2024/05/11 15:35:08 main.go:126: Certificates generated successfully.
+2024/05/11 15:41:33 TokenService.go:99: Unable to validate or parse idToken - Error: token is expired by 22h17m26s

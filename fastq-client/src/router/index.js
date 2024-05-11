@@ -250,6 +250,24 @@ const routes = [
     meta: { RequiresAuth: false },
   },
   {
+    path: "/dscontainer",
+    name: "Signagecontainer",
+    component: () =>
+      import(
+        /* webpackChunkName: "signup" */ "../views/digital-signage/SignageContainer.vue"
+      ),
+    meta: { RequiresAuth: false },
+  },
+  {
+    path: "/ticketprintcontainer",
+    name: "Ticketprintcontainer",
+    component: () =>
+      import(
+        /* webpackChunkName: "ticketcontainer" */ "../views/pages/ticket/PrintContainer.vue"
+      ),
+    meta: { RequiresAuth: false },
+  },
+  {
     path: "/:catchAll(.*)*",
     name: "NotFound",
     component: () =>

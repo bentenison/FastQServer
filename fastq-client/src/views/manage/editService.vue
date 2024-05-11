@@ -142,6 +142,17 @@
                     dense
                   ></v-text-field>
                 </v-col>
+                <v-col cols="12" sm="5" class="m-0 ml-md-3 p-0">
+                  <p class="h6 grey--text">Name Arabic</p>
+                  <v-text-field
+                    label=""
+                    v-model="service.Workflow"
+                    class="m-0 p-0"
+                    placeholder=""
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
                 <v-col cols="12" sm="12" class="">
                   <!-- <p class="h6 grey--text">Services</p> -->
                   <v-btn class="mr-3" color="primary" @click="updateService"
@@ -243,6 +254,7 @@ export default {
         show_display: this.service.ShowDisplay,
         default_time: parseInt(this.service.DefaultTime),
         id: this.service.ID,
+        workflow: this.service.Workflow,
       };
       axios
         .post(`/service/updateservice`, payload)

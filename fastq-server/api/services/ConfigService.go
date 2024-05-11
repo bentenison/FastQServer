@@ -123,6 +123,9 @@ func (c *configService) SelectAnnouncementToDisplay(id, code string) error {
 func (c *configService) UpdateAnnouncement(a string, speed int, text string) error {
 	return updateAnnouncement(c.db, a, speed, text)
 }
+func (c *configService) UpdateIPByCode(a models.ServerDetails) error {
+	return UpdateServerDetailsByCode(c.db, a)
+}
 func (c *configService) AddTicketConf(tc models.TicketConf) error {
 	tc.ID = uuid.NewString()
 	t := time.Now()
@@ -848,6 +851,12 @@ func UpdateServerDetails(db *sql.DB, sd models.ServerDetails) error {
 	query := "UPDATE server_details SET server_ip = ? WHERE server_cpu = ? and server_disk_id = ?"
 
 	_, err := db.Exec(query, sd.ServerIP, sd.ServerCPU, sd.ServerDiskId)
+	return err
+}
+func UpdateServerDetailsByCode(db *sql.DB, sd models.ServerDetails) error {
+	query := "UPDATE server_details SET server_ip = ? WHERE id = ?"
+
+	_, err := db.Exec(query, sd.ServerIP, sd.Id)
 	return err
 }
 

@@ -161,7 +161,8 @@
                   class="col-md-2 primary d-flex flex-column align-items-center text-white"
                   hover
                   ripple
-                  :class="{ disabled: true }"
+                  :class="{ disabled: false }"
+                  @click="recallTicket"
                 >
                   <v-icon size="48px" color="white"> mdi-volume-high </v-icon>
                   <h6>Recall</h6>
@@ -389,7 +390,9 @@
                       TRANSACTIONS: {{ finished.length }}
                     </v-card-title>
                   </v-toolbar>
-                  <div class="p-3">
+                  <div class="p-3"
+                  v-if="finished.length>0"
+                  >
                     <v-card
                       class="mt-3 p-2 d-flex align-items-center justify-content-between"
                       elevation="5"
@@ -425,9 +428,9 @@
         v-if="floating"
       >
         <div
-          class="d-flex flex-wrap align-items-center justify-content-between row w-100"
+          class="d-flex align-items-center justify-content-around row w-100"
         >
-          <div class="col-6 d-flex flex-wrap">
+          <div class="col-6 d-flex align-items-center justify-content-center flex-wrap">
             <h5 class="p-1">Current:</h5>
             <h2
               class="font-weight-bold px-2"
@@ -436,10 +439,10 @@
               {{ $store.state.Auth.activeTicket.TicketName || "NO TICKET" }}
             </h2>
           </div>
-          <div class="col-6 d-flex flex-wrap">
-            <div class="">
-              <p class="px-2 my-0">Processing Time :</p>
-              <div class="px-2 my-0">
+          <div class="col-6 d-flex flex-column align-items-center flex-wrap">
+            <div class="d-flex">
+              <p class="px-2 my-0 text-center">Processing Time :</p>
+              <div class="px-2 my-0 text-center">
                 <Stopwatch
                   :resetWhenStart="true"
                   :running="startTimer"
@@ -455,8 +458,8 @@
                 />
               </div>
             </div>
-            <div class="">
-              <p class="px-2 my-0">Waiting Time :</p>
+            <div class="d-flex align-items-center justify-content-center">
+              <p class="px-2 my-0 mr-5">Waiting Time :</p>
               <div class="px-2 my-0">
                 <Stopwatch
                   :resetWhenStart="true"
@@ -473,8 +476,8 @@
                 />
               </div>
             </div>
-            <div class="">
-              <p class="px-2 my-0">Total Time :</p>
+            <div class="d-flex">
+              <p class="px-2 my-0" style="margin-right:2.8rem">Total Time :</p>
               <div class="px-2 my-0">
                 <Stopwatch
                   :resetWhenStart="true"
@@ -498,11 +501,11 @@
               </div>
             </div>
           </div>
-          <div class="col-6 d-flex flex-wrap">
+          <div class="col-6 d-flex align-items-center justify-content-center flex-wrap">
             <h5 class="p-1">Waiting:</h5>
             <h2 class="font-weight-bold px-2">{{ waiting.length }}</h2>
           </div>
-          <div class="col-6 d-flex">
+          <div class="col-6 d-flex align-items-center justify-content-center">
             <v-card-title
               primary-title
               v-if="
@@ -518,14 +521,14 @@
               {{ $store.state.Auth.counterUser.Lastname.toUpperCase() }}
             </v-card-title>
           </div>
-          <div class="col-12 w-100 d-flex justify-content-center">
+          <div class="col-12 p-0 m-0 w-100 d-flex justify-content-center" v-if="true">
             <v-card class="w-90 d-flex px-2" elevation="6">
               <h5 class="p-2">LAST CALLED :</h5>
               <div
                 class="d-flex justify-content-around"
                 v-if="lastcalled !== 'NO_RESULT'"
               >
-                <div class="d-flex flex-column">
+                <div class="d-flex flex-column p-1">
                   <h1 class="font-weight-bold">{{ lastcalled.TicketName }}</h1>
                   <h6 class="font-weight-bold">{{ lastcalled.Service }}</h6>
                 </div>
@@ -606,7 +609,9 @@ export default {
 
       return differenceInSeconds;
     },
-
+    recallTicket(){
+      this.sendMessage(this.$store.state.Auth.activeTicket, "recall");
+    },
     getnextticket() {
       this.getlastongoingticket().then((res) => {
         console.log("last ongoing", res);
@@ -982,11 +987,13 @@ export default {
           action: action,
         };
         this.socket.send(JSON.stringify(payload));
+        return
         console.log("Sent message to server:", d);
       } else {
         this.socket = new WebSocket(`ws://${res.IP}:8090/ws`);
         this.connectToServer();
         this.sendMessage(d, action);
+        return
       }
     },
     reUpdate() {
