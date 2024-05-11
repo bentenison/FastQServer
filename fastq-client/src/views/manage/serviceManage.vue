@@ -33,6 +33,11 @@
                                     <v-text-field label="name" class="m-0 p-0" placeholder="" v-model="service.name"
                                         outlined dense></v-text-field>
                                 </v-col>
+                                <v-col cols="12" sm="3" class="m-0 p-0 ml-2">
+                                    <p class="h6 grey--text">Name (Arabic)</p>
+                                    <v-text-field label="name arabic" class="m-0 p-0" placeholder="" v-model="service.workflow"
+                                        outlined dense></v-text-field>
+                                </v-col>
                                 <v-col cols="12" sm="3" class="">
                                     <v-checkbox v-model="service.hide" label="Hide This Transaction" color="primary"
                                         class="ml-md-5" :value="true" hide-details></v-checkbox>

@@ -311,6 +311,7 @@ type AddUserParams struct {
 type GetAllUsersParams struct {
 	CompanyCode string `json:"company_code,omitempty"`
 	BranchCode  string `json:"branch_code,omitempty"`
+	CounterId   string `json:"counter_id,omitempty"`
 }
 
 type GetUserParams struct {
@@ -390,6 +391,7 @@ type GetTicketParams struct {
 	ID          string `json:"id,omitempty"`
 	CompanyCode string `json:"company_code,omitempty"`
 	BranchCode  string `json:"branch_code,omitempty"`
+	CounterId   string `json:"counter_id,omitempty"`
 }
 
 type GetTicketsByBranchParams struct {

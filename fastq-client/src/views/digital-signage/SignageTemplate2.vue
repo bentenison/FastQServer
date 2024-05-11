@@ -187,6 +187,7 @@ export default {
   },
   data() {
     return {
+      customization: null,
       id: null,
       socket: null,
       interval: null,
@@ -280,8 +281,11 @@ export default {
     callTicket(ticketNumber, counterNumber) {
       // Send a request to the server for text-to-speech
       // Handle the TTS response and call the TTS function
+      // this.performTextToSpeech(
+      //   `Ticket number ${ticketNumber} is now ready on counter ${counterNumber}.`
+      // );
       this.performTextToSpeech(
-        `Ticket number ${ticketNumber} is now ready on counter ${counterNumber}.`
+        `التذكرة رقم ${ticketNumber} جاهزة الآن في المنضدة ${counterNumber}.`
       );
     },
     add(client) {
@@ -299,11 +303,13 @@ export default {
         var utterance = new SpeechSynthesisUtterance(text);
 
         // This overrides the text "Hello World" and is uttered instead
+        console.log("voices", voices);
         utterance.voice = voices[1];
+        utterance.lang = "ar-kw";
         // utterance.text = text;
-        utterance.pitch = 1.8;
-        utterance.rate = 0.9;
-        utterance.volume = 0.8;
+        utterance.pitch = 2;
+        utterance.rate = 0.4;
+        utterance.volume = 5;
         console.log("Calling Once");
         if (this.count == 0) {
           synthesis.speak(utterance);
@@ -359,6 +365,7 @@ export default {
 
               if (index !== -1) {
                 // if (this.count !== 1) {
+                this.count = 0;
                 this.callTicket(
                   response.ticket_payload.TicketName,
                   this.activeClients[index].CounterNumber
@@ -391,6 +398,19 @@ export default {
               // console.log("Active ticket finished>>>>>>>>>>>", this.$store.state.Auth.activeTickets);
               // this.$forceUpdate();
               break;
+            }
+          case "recall":
+            let index = this.activeClients.findIndex(
+              (j) => response.ticket_payload.CounterID === j.ID
+            );
+
+            if (index !== -1) {
+              this.count = 0;
+              // if (this.count !== 1) {
+              this.callTicket(
+                response.ticket_payload.TicketName,
+                this.activeClients[index].CounterNumber
+              );
             }
 
           default:
@@ -697,21 +717,44 @@ export default {
         }, 10);
       });
     },
+    getcustomizations() {
+      return new Promise((resolve, reject) => {
+        // this.id = this.$route.query.company;
+        // if (this.id) {
+        this.$store.commit(types.MUTATE_LOADER_ON);
+        axios
+          .get(`/customize/getcustomizations`)
+          .then((res) => {
+            this.customization = res.data;
+            console.log("object,cust", this.customization);
+            this.$store.commit(types.MUTATE_LOADER_OFF);
+          })
+          .catch((err) => {
+            console.log(err.response);
+            reject(err.response);
+            this.$store.commit(types.MUTATE_LOADER_OFF);
+            this.$toast.error("error occured while getting company!!!");
+          });
+        // }
+      });
+    },
   },
-  beforeMount() {
+
+  beforeDestroy() {
     // Disconnect from the server when the component is destroyed
     if (this.socket) {
-      // this.socket.send("disconnect")
+      this.socket.send("disconnect");
       this.socket.close();
       // console.log('Disconnected from WebSocket server');
       clearInterval(this.interval);
     }
   },
   mounted() {
+    this.getcustomizations();
     this.initVideos();
     this.getCompany();
     this.connect();
-
+    // this.callTicket("A002","2")
     this.connectToServer();
     // this.getConnected()
     // console.log("object", this.clients);
@@ -753,6 +796,7 @@ export default {
   },
   created() {
     // this.callTicket("A-12", "3");
+    // responsiveVoice.speak("Hello World")
   },
 };
 </script>

@@ -192,6 +192,7 @@ func NewHandler(c *Config) {
 	g.GET("/config/getticketconf/:id", h.GetTicketConfHandler)
 	g.GET("/config/getallconfig/:id", h.GetAllConfigHandler)
 	g.GET("/config/getServer/:id", h.GetServerByIDHandler)
+	g.POST("/config/updateIp", h.UpdateServerIPByCodeHandler)
 
 	// Reports Handlers
 	g.GET("/report/tickets-by-service/:id", h.GetTicketsByService)
@@ -218,4 +219,8 @@ func NewHandler(c *Config) {
 	g.GET("/report/ticket-today-created/:id", h.GetHourlyCreated)
 	g.GET("/report/ticket-today-finished/:id", h.GetHourlyFinished)
 	g.GET("/report/ticket-today-noshow/:id", h.GetHourlyNoShow)
+	///Client Customizations from here
+	g.GET("/customize/changelanguage/:id", h.ChangeLanguageHandler)
+	g.GET("/customize/changetemplate/:id", h.ChangeTemplateHandler)
+	g.GET("/customize/getcustomizations", h.GetCustomizationHandler)
 }

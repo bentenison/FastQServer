@@ -218,4 +218,5 @@ type ConfigService interface {
 	GetAllAssignedServices() ([]CounterService, error)
 	AssignCounterServices(ctrSvc CounterService) error
 	UpdateAssignedServices(ctrSvc CounterService) error
+	UpdateIPByCode(a ServerDetails) error
 }

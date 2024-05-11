@@ -1,0 +1,59 @@
+2024/05/10 16:23:05 main.go:43: initializing the FASTQ server
+2024/05/10 16:23:05 main.go:44: Starting server...
+2024/05/10 16:23:05 main.go:50: MySQL installed. Performing necessary actions...
+2024/05/10 16:23:05 main.go:440: Connected to the TEMP MySQL server!
+2024/05/10 16:23:05 initdb.go:443: DB checked fastq
+2024/05/10 16:23:05 initdb.go:389: true
+2024/05/10 16:23:05 db.go:22: Initializing data sources
+2024/05/10 16:23:05 db.go:49: connected to sql db successfully
+2024/05/10 16:23:05 main.go:202: Hostname ASUSVivobook
+2024/05/10 16:23:05 main.go:218: Server is running on port 9090
+2024/05/10 16:23:05 main.go:92: Server IP found 192.168.164.148
+2024/05/10 16:23:06 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/10 16:23:06 main.go:122: Generating self-signed certificates...
+2024/05/10 16:23:06 main.go:126: Certificates generated successfully.
+2024/05/10 16:24:03 ticket.handlers.go:477: data:::::: {   192.168.164.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/05/10 16:33:53 TokenService.go:99: Unable to validate or parse idToken - Error: token is expired by 1h7m12s
+2024/05/10 16:34:06 UserService.go:68: &{73ac3366-c04d-11ee-a5d5-ce47405e851e admin@fastq.com ed0e8943a4c2cfe4abde83d2d759583c96935685e5152b552e87ddca7e892a16.dc1150457f5d60a7b43b64841b4c06aa33aa2ac276d228dea2601dde7daca85e Tanvir Shaikh fastq solutions ltd nDmmyD0 India IN 73ac3366-c04d-11ee-a5d5-ce47405e851e 2024-01-31T20:58:58Z 2024-01-31T20:58:58Z}
+2024/05/10 16:34:07 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/10 16:34:16 admin.handlers.go:573: params::::: {dfdbd6e3-cb7b-4b40-8525-38c3a41229d4 nDmmyD0}
+2024/05/10 16:35:04 admin.handlers.go:573: params::::: {c41ff7cd-2eb3-4ca4-b242-9e6f545e2dff nDmmyD0}
+2024/05/10 16:35:17 admin.handlers.go:573: params::::: {68ef1c02-2d81-4f00-b547-e5dddbd5bcc1 nDmmyD0}
+2024/05/10 16:36:02 admin.handlers.go:573: params::::: {1b1ebee1-6986-4904-b002-9e0e7f1c2c0e nDmmyD0}
+2024/05/10 16:36:47 admin.handlers.go:573: params::::: {73062733-41e6-426f-9c7a-053eb1e4a724 nDmmyD0}
+2024/05/10 16:44:02 main.go:43: initializing the FASTQ server
+2024/05/10 16:44:02 main.go:44: Starting server...
+2024/05/10 16:44:02 main.go:50: MySQL installed. Performing necessary actions...
+2024/05/10 16:44:02 main.go:440: Connected to the TEMP MySQL server!
+2024/05/10 16:44:02 initdb.go:443: DB checked fastq
+2024/05/10 16:44:02 initdb.go:389: true
+2024/05/10 16:44:02 db.go:22: Initializing data sources
+2024/05/10 16:44:02 db.go:49: connected to sql db successfully
+2024/05/10 16:44:02 main.go:202: Hostname ASUSVivobook
+2024/05/10 16:44:02 main.go:218: Server is running on port 9090
+2024/05/10 16:44:02 main.go:92: Server IP found 192.168.164.148
+2024/05/10 16:44:03 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/10 16:44:03 main.go:122: Generating self-signed certificates...
+2024/05/10 16:44:03 main.go:126: Certificates generated successfully.
+2024/05/10 16:56:20 main.go:43: initializing the FASTQ server
+2024/05/10 16:56:20 main.go:44: Starting server...
+2024/05/10 16:56:20 main.go:50: MySQL installed. Performing necessary actions...
+2024/05/10 16:56:20 main.go:440: Connected to the TEMP MySQL server!
+2024/05/10 16:56:20 initdb.go:443: DB checked fastq
+2024/05/10 16:56:20 initdb.go:389: true
+2024/05/10 16:56:20 db.go:22: Initializing data sources
+2024/05/10 16:56:20 db.go:49: connected to sql db successfully
+2024/05/10 16:56:20 main.go:202: Hostname ASUSVivobook
+2024/05/10 16:56:20 main.go:218: Server is running on port 9090
+2024/05/10 16:56:20 main.go:92: Server IP found 192.168.164.148
+2024/05/10 16:56:21 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/10 16:56:21 main.go:122: Generating self-signed certificates...
+2024/05/10 16:56:21 main.go:126: Certificates generated successfully.
+2024/05/10 16:58:53 ticket.handlers.go:477: data:::::: {   192.168.164.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/05/10 17:00:31 admin.handlers.go:46: Client Connected
+2024/05/10 17:00:35 admin.handlers.go:65: error in reading message websocket: close 1001 (going away)
+2024/05/10 17:00:35 admin.handlers.go:46: Client Connected
+2024/05/10 17:00:55 admin.handlers.go:65: error in reading message read tcp 192.168.164.148:8090->192.168.164.148:53550: wsarecv: An existing connection was forcibly closed by the remote host.
+2024/05/10 17:14:40 ticket.handlers.go:477: data:::::: {   192.168.164.148 178BFBFF008A0F00 0025_38E5_31A7_8005. false false  }
+2024/05/10 17:14:41 filehelper.go:129: Filename license_FASTQ Solutions.json
+2024/05/10 17:14:41 filehelper.go:129: Filename license_FASTQ Solutions.json

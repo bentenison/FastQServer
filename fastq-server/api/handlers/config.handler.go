@@ -535,3 +535,28 @@ func (h *Handler) GetServerByIDHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, res)
 
 }
+func (h *Handler) UpdateServerIPByCodeHandler(c *gin.Context) {
+	req := models.ServerDetails{}
+	err := c.Bind(&req)
+	// log.Println("data::::::", req)
+	if err != nil {
+		log.Println("error binding data :", err)
+		err := apperrors.NewExpectationFailed("invalid data provided")
+		c.JSON(http.StatusExpectationFailed, gin.H{
+			"error": err,
+		})
+		return
+	}
+	// ctx := c.Request.Context()
+	err = h.ConfigService.UpdateIPByCode(req)
+	if err != nil {
+		log.Println("error getting data :", err)
+
+		c.JSON(http.StatusExpectationFailed, gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
+	c.JSON(http.StatusOK, "OK")
+
+}
