@@ -167,11 +167,11 @@ export default {
               title: 'Services',
               to: '/manage/services'
             },
-            {
-              action: 'mdi-account-wrench-outline',
-              title: 'Assign Services',
-              to: '/assign/services'
-            },
+            // {
+            //   action: 'mdi-account-wrench-outline',
+            //   title: 'Assign Services',
+            //   to: '/assign/services'
+            // },
             {
               action: 'mdi-content-save',
               title: 'Counters',

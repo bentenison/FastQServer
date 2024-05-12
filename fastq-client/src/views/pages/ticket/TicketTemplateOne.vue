@@ -461,8 +461,15 @@ export default {
       //     return;
       //   }
       // }
+      console.log("Ticket is",ticket);
       this.wait = true;
-      this.lastticketNumber(ticket.name).then((ticketNumber) => {
+      let serviceName = null
+      if (this.customization.ticket_language === "en-US") {
+        serviceName = ticket.name;
+        } else {
+            serviceName = ticket.arabic_name;
+        }
+      this.lastticketNumber(serviceName).then((ticketNumber) => {
         console.log("ticket number", ticketNumber);
         let lastNumber = parseInt(ticketNumber);
         this.services.forEach((element) => {

@@ -209,6 +209,7 @@ export default {
       let counterSvc = {};
       this.selectedServices.forEach((svc) => {
         svcs.push(svc.Name);
+        svcs.push(svc.Workflow);
       });
       counterSvc.CounterID = this.selectedCounter.id;
       counterSvc.ServiceID = svcs.toString();
