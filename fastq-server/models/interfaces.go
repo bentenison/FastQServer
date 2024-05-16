@@ -90,6 +90,7 @@ type AdminService interface {
 	UpdateUserPassword(ctx context.Context, arg UpdateUserPasswordParams) error
 	UpdateUserService(ctx context.Context, arg UpdateUserParams) error
 	SetActiveService(ip string, active bool) error
+	UpdateInterchangeCounterService(ctx context.Context, arg UpdateInterchangedCounters) error
 }
 
 type AdminRepository interface {
@@ -189,6 +190,8 @@ type LicenseService interface {
 	CheckFirmNameInLicense(companyName string) (bool, error)
 	UpdateCompanyNameInLicense(companyName string) (bool, error)
 	DeleteCounterFromLicense(id string) (bool, error)
+	InterChangeCountersInLicenseService(ctrOPayload InterchangePayload) (bool, error)
+	InterchangeSystemsCounterService(ctrId, ctrname string) error
 }
 type ConfigService interface {
 	AddVideoService(ctx context.Context, v Video) (sql.Result, error)
@@ -219,4 +222,5 @@ type ConfigService interface {
 	AssignCounterServices(ctrSvc CounterService) error
 	UpdateAssignedServices(ctrSvc CounterService) error
 	UpdateIPByCode(a ServerDetails) error
+	DeleteCounterServices(ctrSvcId string) error
 }

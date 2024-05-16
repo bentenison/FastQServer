@@ -1,46 +1,46 @@
 <template>
   <v-app>
     <div class="container-fluid bg-transparent">
-      <div class="row d-flex justify-content-between">
-        <div class="wrapper col-7 p-0 m-0 d-flex">
-          <div class="col-4 col-md-2 col-lg-2 text-center">
-            <a class="navbar-brand m-0" href="#">
-              <img
-                src="https://www.moi.gov.kw/main/images/assets/common/logo-moi.svg"
-                style="height: 120px"
-              />
-            </a>
-          </div>
-          <div class="col-1 align-self-center">
-            <div class="row">
-              <div class="col text-center">
+      <div class="row">
+        <div
+          class="col-3 temp_primary m-0 p-0 align-self-center h-100 w-100 d-flex justify-content-center"
+        >
+          <h1 class="">{{ time }}</h1>
+        </div>
+        <div class="col-6 d-flex justify-content-center">
+          <div class="wrapper p-0 m-0 d-flex">
+            <div class="col-4 col-md-2 col-lg-2 text-center mr-5">
+              <a class="navbar-brand m-0" href="#">
                 <img
-                  src="https://www.moi.gov.kw/main/images/assets/common/en/state-of-kuwait.svg"
-                  class="text-center main-header-title-en"
+                  src="https://www.moi.gov.kw/main/images/assets/common/logo-moi.svg"
+                  style="height: 120px"
                 />
-              </div>
+              </a>
             </div>
-            <div class="row">
-              <div class="col text-center">
-                <img
-                  src="https://www.moi.gov.kw/main/images/assets/common/en/ministry-of-interior.svg"
-                  class="text-center main-header-title-en"
-                />
+            <div class="col-1 align-self-center ml-3">
+              <div class="row">
+                <div class="col text-center">
+                  <img
+                    src="https://www.moi.gov.kw/main/images/assets/common/en/state-of-kuwait.svg"
+                    class="text-center main-header-title-en"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col text-center">
+                  <img
+                    src="https://www.moi.gov.kw/main/images/assets/common/en/ministry-of-interior.svg"
+                    class="text-center main-header-title-en"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-5 align-self-center">
-          <div
-            class="row d-flex flex-column justify-content-center align-items-center"
-          >
-            <div class="col-12 text-center temp_primary m-0 p-0">
-              <h1>Time is : {{ time }}</h1>
-            </div>
-            <div class="col-12 text-center temp_primary m-0 p-0">
-              <h1>Date is : {{ date }}</h1>
-            </div>
-          </div>
+        <div
+          class="col-3 temp_primary m-0 p-0 align-self-center h-100 w-100 d-flex justify-content-center"
+        >
+          <h1>{{ date }}</h1>
         </div>
       </div>
     </div>
@@ -461,14 +461,14 @@ export default {
       //     return;
       //   }
       // }
-      console.log("Ticket is",ticket);
+      console.log("Ticket is", ticket);
       this.wait = true;
-      let serviceName = null
+      let serviceName = null;
       if (this.customization.ticket_language === "en-US") {
         serviceName = ticket.name;
-        } else {
-            serviceName = ticket.arabic_name;
-        }
+      } else {
+        serviceName = ticket.arabic_name;
+      }
       this.lastticketNumber(serviceName).then((ticketNumber) => {
         console.log("ticket number", ticketNumber);
         let lastNumber = parseInt(ticketNumber);
@@ -640,7 +640,7 @@ export default {
           console.log(err.response);
           // reject(err.response)
           // this.$store.commit(types.MUTATE_LOADER_OFF)
-        //   this.$toast.error("error occured while getting connected clients!!!");
+          //   this.$toast.error("error occured while getting connected clients!!!");
         });
     },
     getCompany() {
@@ -700,9 +700,7 @@ export default {
         "-" +
         this.zeroPadding(cd.getMonth() + 1, 2) +
         "-" +
-        this.zeroPadding(cd.getDate(), 2) +
-        " " +
-        this.week[cd.getDay()];
+        this.zeroPadding(cd.getDate(), 2)
     },
     zeroPadding(num, digit) {
       var zero = "";

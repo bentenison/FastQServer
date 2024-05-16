@@ -145,6 +145,12 @@ const routes = [
         component: () => import("@/views/manage/editSection"),
         meta: { RequiresAuth: true },
       },
+      {
+        name: "Edit Assigned Service",
+        path: "/edit/counterservice/:id",
+        component: () => import("@/views/manage/editassignedServices"),
+        meta: { RequiresAuth: true },
+      },
       // Pages
     ],
   },

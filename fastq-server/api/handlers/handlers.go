@@ -102,6 +102,7 @@ func NewHandler(c *Config) {
 	g.GET("/service/getAllassignedServices", h.GetAllAssignedServices)
 	g.POST("/service/updateassignedServices", h.UpdateCounteervicesHandler)
 	g.POST("/service/addassignedServices", h.AddCountervicesHandler)
+	g.GET("/service/deleteassignedServices/:id", h.DeleteCounterServicesHandler)
 	//? section handlers
 	g.POST("/section/addsection", middleware.AuthUser(h.TokenService), h.AddSectionHandler)
 	g.POST("/section/getsection", middleware.AuthUser(h.TokenService), h.GetSectionHandler)
@@ -120,6 +121,7 @@ func NewHandler(c *Config) {
 	g.POST("/counter/addcounter", middleware.AuthUser(h.TokenService), h.AddCounterHandler)
 	g.POST("/counter/getcounter", h.GetCounterHandler)
 	g.POST("/counter/updatecounter", h.UpdateCounterHandler)
+	g.POST("/counter/interchangeCounters", h.InterchangeCounterHandler)
 	g.GET("/counter/getAllcounter/:code", h.GetAllCountersHandler)
 	g.GET("/counter/getinactivecounter/:code", h.GetAllUnActivatedCountersHandler)
 	g.GET("/counter/deletecounter/:id", middleware.AuthUser(h.TokenService), h.DeleteCounterHandler)

@@ -932,10 +932,13 @@ func (c *configService) AssignCounterServices(ctrSvc models.CounterService) erro
 func (c *configService) UpdateAssignedServices(ctrSvc models.CounterService) error {
 	return UpdateCounterServices(c.db, ctrSvc)
 }
+func (c *configService) DeleteCounterServices(ctrSvcId string) error {
+	return DeleteCounterServicesById(c.db, ctrSvcId)
+}
 func GetServicesByCounterID(ID string, db *sql.DB) (models.CounterService, error) {
 
 	// Prepare the query
-	query := "SELECT CounterServiceID, CounterID, ServiceID FROM counterservices WHERE CounterID = ?"
+	query := "SELECT CounterServiceID, CounterID, ServiceID FROM counterservices WHERE CounterServiceID = ?"
 
 	// Execute the query
 	row := db.QueryRow(query, ID)
@@ -1000,6 +1003,13 @@ func UpdateCounterServices(db *sql.DB, ctrSvc models.CounterService) error {
 		ctrSvc.ServiceID,
 		ctrSvc.CounterID,
 	)
+
+	return err
+}
+func DeleteCounterServicesById(db *sql.DB, ctisvcid string) error {
+	query := "delete from counterservices " +
+		"where CounterServiceID = ?"
+	_, err := db.Exec(query, ctisvcid)
 
 	return err
 }

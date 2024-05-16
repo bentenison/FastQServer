@@ -43,7 +43,12 @@ type BranchAdmin struct {
 	UpdatedAt   string `json:"updated_at"`
 	Isdeleted   bool   `json:"isdeleted"`
 }
-
+type InterchangePayload struct {
+	SourceCounterId   string
+	DestCounterId     string
+	SourceCounterName string
+	DestCounterName   string
+}
 type LicensePayload struct {
 	Firm                     string          `json:"firm,omitempty" bson:"firm,omitempty"`
 	ExpirationInDays         string          `json:"expiration_in_days"`

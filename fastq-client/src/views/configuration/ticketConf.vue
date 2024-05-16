@@ -359,11 +359,11 @@ export default {
           })
           .catch((err) => {
             // console.log(err.response.data.error.includes("sql:"));
+            this.$store.commit(types.MUTATE_LOADER_OFF);
             if (err.response.data.error.includes("sql:")) {
               this.createOne = true;
             }
             // reject(err.response.data)
-            this.$store.commit(types.MUTATE_LOADER_OFF);
             this.$toast.error("error occured while getting ticket config!!!");
           });
         // }

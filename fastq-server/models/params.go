@@ -470,6 +470,10 @@ type UpdateCounterParams struct {
 	UpdatedBy        string `json:"updated_by,omitempty"`
 	ID               string `json:"id,omitempty"`
 }
+type UpdateInterchangedCounters struct {
+	SelectedCounter UpdateCounterParams `json:"selected_counter,omitempty"`
+	ExistedCounter  UpdateCounterParams `json:"existed_counter,omitempty"`
+}
 
 type UpdateSectionParams struct {
 	Name         string `json:"name,omitempty"`
