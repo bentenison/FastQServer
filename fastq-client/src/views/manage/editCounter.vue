@@ -1,18 +1,23 @@
 <template>
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="row col-md-12 h-100">
-                <v-card class="col-md-12 h-auto" flat>
-
-                    <div class="row">
-                        <div class="col-md-12 mt-5">
-                            <h5 class="h4 grey--text">Edit Counter</h5>
-                            <v-col cols="12" sm="7" class="m-0 p-0">
-                                <p class="h6 grey--text">Branch</p>
-                                <v-text-field label="Code" class="m-0 p-0" v-model="counter.BranchName" placeholder=""
-                                    outlined dense></v-text-field>
-                            </v-col>
-                            <!-- <div class="row d-flex flex-wrap">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="row col-md-12 h-100">
+        <v-card class="col-md-12 h-auto" flat>
+          <div class="row">
+            <div class="col-md-12 mt-5">
+              <h5 class="h4 grey--text">Edit Counter</h5>
+              <v-col cols="12" sm="7" class="m-0 p-0">
+                <p class="h6 grey--text">Branch</p>
+                <v-text-field
+                  label="Code"
+                  class="m-0 p-0"
+                  v-model="counter.BranchName"
+                  placeholder=""
+                  outlined
+                  dense
+                ></v-text-field>
+              </v-col>
+              <!-- <div class="row d-flex flex-wrap">
                                 <v-col cols="12" sm="4" class="pr-1 m-0 col-md-4 col-sm-6">
                                     <v-select :items="items" label="Section" solo></v-select>
                                 </v-col>
@@ -24,23 +29,35 @@
                                     </v-btn>
                                 </v-col>
                             </div> -->
-                            <div class="row d-flex flex-wrap">
-                                <!-- <v-col cols="12" sm="4" class="">
+              <div class="row d-flex flex-wrap">
+                <!-- <v-col cols="12" sm="4" class="">
                                     <p class="h6 grey--text">User:</p>
                                     <v-text-field label="" class="m-0 p-0" placeholder="" outlined dense></v-text-field>
                                 </v-col> -->
-                                <v-col cols="12" sm="4" class="">
-                                    <p class="h6 grey--text">Counter Number:</p>
-                                    <v-text-field label="" v-model="counter.CounterNumber" class="m-0 p-0" placeholder=""
-                                        outlined dense></v-text-field>
-                                </v-col>
-                                <v-col cols="12" sm="4" class="">
-                                    <p class="h6 grey--text">Counter Name:</p>
-                                    <v-text-field label="" v-model="counter.CounterName" class="m-0 p-0" placeholder=""
-                                        outlined dense></v-text-field>
-                                </v-col>
-                            </div>
-                            <!-- <div class="row d-flex flex-wrap">
+                <v-col cols="12" sm="4" class="">
+                  <p class="h6 grey--text">Counter Number:</p>
+                  <v-text-field
+                    label=""
+                    v-model="counter.CounterNumber"
+                    class="m-0 p-0"
+                    placeholder=""
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
+                <v-col cols="12" sm="4" class="">
+                  <p class="h6 grey--text">Counter Name:</p>
+                  <v-text-field
+                    label=""
+                    v-model="counter.CounterName"
+                    class="m-0 p-0"
+                    placeholder=""
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
+              </div>
+              <!-- <div class="row d-flex flex-wrap">
 
                                 <v-col cols="12" sm="4" class="">
                                     <v-checkbox v-model="ex4" label="All Queue numbers for this counter are clickable."
@@ -73,106 +90,210 @@
                                         color="primary" value="Payment"></v-checkbox>
                                 </v-col>
                             </div> -->
-                            <v-col cols="12" sm="12" class="">
-                                <!-- <p class="h6 grey--text">Services</p> -->
-                                <v-btn class="mr-3" color="primary" @click="updateCounter"><v-icon
-                                        left>mdi-content-save</v-icon>Save</v-btn>
-                                <v-btn color="warning"><v-icon left>mdi-restore</v-icon>Reset</v-btn>
-                            </v-col>
-
-                        </div>
-                    </div>
-                    <!-- <v-btn color="primary" class=""><v-icon left>mdi-content-save-all</v-icon>Save config</v-btn> -->
-                </v-card>
-
-                <div class="row col-md-12">
-                    <v-expansion-panels v-model="panel" :readonly="readonly" multiple flat style="z-index:10" v-if="false">
-                        <v-expansion-panel>
-                            <v-expansion-panel-header class="grey--text">
-                                <p class="text-center h5">AUDIT TRAIL</p>
-                            </v-expansion-panel-header>
-                            <v-expansion-panel-content>
-                                <DataTables />
-                            </v-expansion-panel-content>
-                        </v-expansion-panel>
-                    </v-expansion-panels>
-                </div>
+              <v-col cols="12" sm="12" class="">
+                <!-- <p class="h6 grey--text">Services</p> -->
+                <v-btn class="mr-3" color="primary" @click="updateCounter"
+                  ><v-icon left>mdi-content-save</v-icon>Save</v-btn
+                >
+                <v-btn color="warning"
+                  ><v-icon left>mdi-restore</v-icon>Reset</v-btn
+                >
+              </v-col>
             </div>
+          </div>
+          <!-- <v-btn color="primary" class=""><v-icon left>mdi-content-save-all</v-icon>Save config</v-btn> -->
+        </v-card>
+        <v-dialog v-model="show" max-width="500px">
+          <v-card>
+            <v-card-title class="text-h5"
+              >The counter you are trying to update already exits.Interchange
+              both counter numbers?</v-card-title
+            >
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="green darken-1" text @click="show = false"
+                >Cancel</v-btn
+              >
+              <v-btn
+                color="red darken-1"
+                text
+                @click="updateSimilarCounters(interchangedData)"
+                >OK</v-btn
+              >
+              <v-spacer></v-spacer>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+        <div class="row col-md-12">
+          <v-expansion-panels
+            v-model="panel"
+            :readonly="readonly"
+            multiple
+            flat
+            style="z-index: 10"
+            v-if="false"
+          >
+            <v-expansion-panel>
+              <v-expansion-panel-header class="grey--text">
+                <p class="text-center h5">AUDIT TRAIL</p>
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <DataTables />
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-import axios from 'axios';
-import DataTables from '../tables/dataTables.vue';
-import EditTable from '../tables/editTable.vue';
+import axios from "axios";
+import DataTables from "../tables/dataTables.vue";
+import EditTable from "../tables/editTable.vue";
 
 export default {
-    data() {
-        return {
-            panel: "",
-            readonly: true,
-            counter: null,
-            id: null,
-            items: ["India", "America", "Europe", "Japan"]
-        };
+  data() {
+    return {
+      show: false,
+      panel: "",
+      readonly: true,
+      counter: null,
+      id: null,
+      items: ["India", "America", "Europe", "Japan"],
+      tableData: [],
+      currentCounterNumber: null,
+      existedCounter: null,
+      interchangedData: {},
+    };
+  },
+  components: { DataTables, EditTable },
+  methods: {
+    deleteCounter() {
+      axios
+        .get(`/counter/deletecounter/${this.id}`)
+        .then((res) => {
+          console.log("res:::::", res);
+          this.$toast.success("counter deleted successfully.");
+        })
+        .catch((err) => {
+          console.log(err.response);
+          this.$toast.error("error occured while deleting user!!!");
+        });
     },
-    components: { DataTables, EditTable },
-    methods: {
-        deleteCounter() {
-            axios.get(`/counter/deletecounter/${this.id}`).then(res => {
-                console.log("res:::::", res);
-                this.$toast.success("counter deleted successfully.")
-            }).catch(err => {
-                console.log(err.response);
-                this.$toast.error("error occured while deleting user!!!")
-            })
-        },
-        getcounter() {
-            let payload = {
-                id: this.id,
-                company_code: this.$store.state.Auth.user.company_code,
-                branch_code: this.$store.state.Auth.user.company_code,
-            }
-            // console.log("object:::::::", payload);
-            axios.post(`/counter/getcounter`, payload).then(res => {
-                console.log("res:::::", res);
-                this.counter = res.data.message
-                // this.$toast.success("branch added successfully.")
-            }).catch(err => {
-                console.log(err.response);
-                this.$toast.error("error occured while getting counter!!!")
-            })
-        },
-        updateCounter() {
-            let payload = {
-                id: this.id,
-                counter_name: this.counter.CounterName,
-                counter_number: this.counter.CounterNumber,
-                branch_code: this.$store.getters.getUser.company_code,
-                branch_name: this.$store.getters.getUser.company,
-                company_code: this.$store.getters.getUser.company_code,
-                company_name: this.$store.getters.getUser.company,
-                created_by: this.$store.state.Auth.user.id,
-                updated_by: this.$store.state.Auth.user.id,
-            }
-            axios.post(`/counter/updatecounter`, payload).then(res => {
-                console.log("res:::::", res);
-                this.$toast.success("counter updated successfully.")
+    getAllCounters() {
+      // console.log("store>>>>>>>>>>>>>>>>>>>",);
+      this.tableData = [];
+      axios
+        .get(
+          `/counter/getAllcounter/${this.$store.getters.getUser.company_code}`
+        )
+        .then((res) => {
+          //   console.log(">>>>>>>>>>>>>>>>>", res);
+          res.data.message.forEach((element) => {
+            let data = {};
+            data.counterNumber = element.CounterNumber;
+            data.counterName = element.CounterName;
+            data.branchCode = element.BranchCode;
+            data.branchName = element.BranchName;
+            data.date = element.CreatedAt;
+            data.id = element.ID;
+            this.tableData.push(data);
+          });
 
-            }).catch(err => {
-                console.log(err.response);
-                this.$toast.error("error occured while updating counter!!!")
-            })
-        },
+          this.$toast.success("counters fetched successfully.");
+          // this.connection.send("Hello World !!!")
+        })
+        .catch((err) => {
+          console.log(err.response);
+          this.$toast.error("error occured while getting counters!!!");
+        });
     },
-    mounted() {
-        this.getcounter()
+    getcounter() {
+      let payload = {
+        id: this.id,
+        company_code: this.$store.state.Auth.user.company_code,
+        branch_code: this.$store.state.Auth.user.company_code,
+      };
+      // console.log("object:::::::", payload);
+      axios
+        .post(`/counter/getcounter`, payload)
+        .then((res) => {
+          //   console.log("res:::::", res);
+          this.counter = res.data.message;
+          this.currentCounterNumber = this.counter.CounterNumber;
+          // this.$toast.success("branch added successfully.")
+        })
+        .catch((err) => {
+          console.log(err.response);
+          this.$toast.error("error occured while getting counter!!!");
+        });
     },
-    created() {
-        this.id = this.$route.params.id
-    }
-}
+    updateCounter() {
+      let payload = {
+        id: this.id,
+        counter_name: this.counter.CounterName,
+        counter_number: this.counter.CounterNumber,
+        branch_code: this.$store.getters.getUser.company_code,
+        branch_name: this.$store.getters.getUser.company,
+        company_code: this.$store.getters.getUser.company_code,
+        company_name: this.$store.getters.getUser.company,
+        created_by: this.$store.state.Auth.user.id,
+        updated_by: this.$store.state.Auth.user.id,
+      };
+      for (let index = 0; index < this.tableData.length; index++) {
+        const element = this.tableData[index];
+        if (
+          element.counterNumber === this.counter.CounterNumber &&
+          this.counter.CounterNumber !== this.currentCounterNumber
+        ) {
+          payload.counter_name = "Counter-" + this.counter.CounterNumber;
+          //   let interchangedData = {};
+          this.interchangedData.selected_counter = payload;
+          this.interchangedData.existed_counter = element;
+          this.interchangedData.existed_counter.counter_number =
+            this.currentCounterNumber;
+          this.interchangedData.existed_counter.counter_name =
+            "Counter-" + this.currentCounterNumber;
+          this.show = true;
+          return;
+        }
+      }
+      axios
+        .post(`/counter/updatecounter`, payload)
+        .then((res) => {
+          //   console.log("res:::::", res);
+          this.$toast.success("counter updated successfully.");
+        })
+        .catch((err) => {
+          console.log(err.response);
+          this.$toast.error("error occured while updating counter!!!");
+        });
+    },
+    updateSimilarCounters(payload) {
+      axios
+        .post(`/counter/interchangeCounters`, payload)
+        .then((res) => {
+          //   console.log("res:::::", res);
+          this.show = false;
+          window.location.reload();
+          this.$toast.success("counter updated successfully.");
+        })
+        .catch((err) => {
+          console.log(err.response);
+          this.$toast.error("error occured while updating counter!!!");
+        });
+    },
+  },
+  mounted() {
+    this.getcounter();
+    this.getAllCounters();
+  },
+  created() {
+    this.id = this.$route.params.id;
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>

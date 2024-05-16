@@ -5,51 +5,51 @@
       :src="`http://${this.ip}:8090/uploaded/${allconf.audio_conf.bell_name}`"
     ></audio>
     <div class="container-fluid bg-transparent">
-      <div class="row d-flex justify-content-between">
-        <div class="wrapper col-7 p-0 m-0 d-flex">
-          <div class="col-4 col-md-2 col-lg-2 text-center">
-            <a class="navbar-brand m-0" href="#">
-              <img
-                src="https://www.moi.gov.kw/main/images/assets/common/logo-moi.svg"
-                style="height: 120px"
-              />
-            </a>
-          </div>
-          <div class="col-1 align-self-center">
-            <div class="row">
-              <div class="col text-center">
+      <div class="row">
+        <div
+          class="col-3 temp_primary m-0 p-0 align-self-center h-100 w-100 d-flex justify-content-center"
+        >
+          <h1 class="">{{ time }}</h1>
+        </div>
+        <div class="col-6 d-flex justify-content-center">
+          <div class="wrapper p-0 m-0 d-flex">
+            <div class="col-4 col-md-2 col-lg-2 text-center mr-5">
+              <a class="navbar-brand m-0" href="#">
                 <img
-                  src="https://www.moi.gov.kw/main/images/assets/common/en/state-of-kuwait.svg"
-                  class="text-center main-header-title-en"
+                  src="https://www.moi.gov.kw/main/images/assets/common/logo-moi.svg"
+                  style="height: 120px"
                 />
-              </div>
+              </a>
             </div>
-            <div class="row">
-              <div class="col text-center">
-                <img
-                  src="https://www.moi.gov.kw/main/images/assets/common/en/ministry-of-interior.svg"
-                  class="text-center main-header-title-en"
-                />
+            <div class="col-1 align-self-center">
+              <div class="row">
+                <div class="col text-center">
+                  <img
+                    src="https://www.moi.gov.kw/main/images/assets/common/en/state-of-kuwait.svg"
+                    class="text-center main-header-title-en"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col text-center">
+                  <img
+                    src="https://www.moi.gov.kw/main/images/assets/common/en/ministry-of-interior.svg"
+                    class="text-center main-header-title-en"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-5 align-self-center">
-          <div
-            class="row d-flex flex-column justify-content-center align-items-center"
-          >
-            <div class="col-12 text-center temp_primary m-0 p-0">
-              <h1>Time is : {{ time }}</h1>
-            </div>
-            <div class="col-12 text-center temp_primary m-0 p-0">
-              <h1>Date is : {{ date }}</h1>
-            </div>
-          </div>
+        <div
+          class="col-3 temp_primary m-0 p-0 align-self-center h-100 w-100 d-flex justify-content-center"
+        >
+          <h1>{{ date }}</h1>
         </div>
       </div>
     </div>
     <v-main>
-      <div class="row mt-5">
+      <div class="row mt-2">
         <div class="col-md-12 d-flex align-items-center justify-content-center">
           <div class="card px-5 bg_primary">
             <h1>Ticket #</h1>
@@ -64,9 +64,9 @@
             class="card px-5 d-flex align-items-center justify-content-center bg_primary mr-4"
             style="height: 7rem; min-width: 25rem"
           >
-          <!-- :class="count > 0 ? 'anim' : ''" -->
+            <!-- :class="count > 0 ? 'anim' : ''" -->
             <h1
-            class="text"
+              class="text"
               v-if="
                 $store.state.Auth.activeTickets &&
                 $store.state.Auth.activeTickets.findIndex(
@@ -85,12 +85,10 @@
           </div>
           <div
             class="card second d-flex align-items-center justify-content-center bg_primary text-transparent"
-            style="width: 7rem; height: 7rem; border-radius: 50%"
+            style="width: 8rem; height: 8rem; border-radius: 50%"
           >
-          <!-- :class="count > 0 ? 'anim' : ''" -->
-            <h1
-              class="font-weight-bold py-2 text"
-            >
+            <!-- :class="count > 0 ? 'anim' : ''" -->
+            <h1 class="font-weight-bold py-4 p-4 text">
               {{ n.CounterNumber }}
             </h1>
           </div>
@@ -98,6 +96,17 @@
       </div>
     </v-main>
     <!-- <v-footer fixed height="64px" tag="footer"> </v-footer> -->
+    <v-footer fixed bottoms height="64px" elevation="4" padless>
+      <v-row>
+        <v-col>
+          <ScrollingAd
+            v-if="allconf.announcement_conf && allconf.ds_conf.show_scroll"
+            :ad-text="allconf.announcement_conf.announce_text"
+            :scroll-speed="allconf.announcement_conf.speed"
+          />
+        </v-col>
+      </v-row>
+    </v-footer>
   </v-app>
 </template>
 <script>
@@ -191,20 +200,33 @@ export default {
         var utterance = new SpeechSynthesisUtterance(text);
 
         // This overrides the text "Hello World" and is uttered instead
-        // console.log("voices", voices);
-        voices.forEach((v) => {
-          if (v.lang.includes(this.customization.tts_languag)) {
-            utterance.voice = v;
+        console.log("voices", voices);
+        console.log("customization", this.customization);
+        for (let index = 0; index < voices.length; index++) {
+          const element = voices[index];
+          if (this.customization.tts_language.split("-", 1)[0] === "ar") {
+            if (
+              element.lang.includes(
+                this.customization.tts_language.split("-", 1)[0]
+              )
+            ) {
+              console.log(element);
+              utterance.voice = element;
+              utterance.rate = 0.5;
+              // break;
+            }
+          } else {
+            break;
           }
-        });
+        }
         if (this.customization.tts_language === "en-US") {
           utterance.lang = "en-us";
+          utterance.rate = 0.4;
         } else {
           utterance.lang = "ar-kw";
         }
         // utterance.text = text;
         utterance.pitch = 2;
-        utterance.rate = 0.4;
         utterance.volume = 5;
         console.log("Calling Once");
         if (this.count == 0) {
@@ -552,9 +574,7 @@ export default {
         "-" +
         this.zeroPadding(cd.getMonth() + 1, 2) +
         "-" +
-        this.zeroPadding(cd.getDate(), 2) +
-        " " +
-        this.week[cd.getDay()];
+        this.zeroPadding(cd.getDate(), 2);
     },
     zeroPadding(num, digit) {
       var zero = "";
@@ -678,7 +698,7 @@ export default {
 .text {
   font-size: clamp(4rem, 7vw, 8rem);
 }
-.anim{
+.anim {
   animation: color-change 2s infinite;
 }
 @keyframes color-change {

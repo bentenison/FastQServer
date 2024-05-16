@@ -777,3 +777,39 @@ func (h *Handler) UpdateUserHandler(c *gin.Context) {
 		"message": true,
 	})
 }
+func (h *Handler) InterchangeCounterHandler(c *gin.Context) {
+	req := models.UpdateInterchangedCounters{}
+	// id := c.Param("destinationId")
+	// if id == "" {
+	// 	err := apperrors.NewExpectationFailed("code is required param!!")
+	// 	c.JSON(err.Status(), gin.H{
+	// 		"error": err,
+	// 	})
+	// 	return
+	// }
+	if err := c.Bind(&req); err != nil {
+		err := apperrors.NewExpectationFailed("error binding counter params!!")
+		c.JSON(err.Status(), gin.H{
+			"error": err,
+		})
+		return
+	}
+	err := h.AdminService.UpdateInterchangeCounterService(c.Request.Context(), req)
+	if err != nil {
+		err := apperrors.NewInternal()
+		c.JSON(err.Status(), gin.H{
+			"error": err,
+		})
+		return
+	}
+	var interchangePayload models.InterchangePayload
+	interchangePayload.SourceCounterId = req.SelectedCounter.ID
+	interchangePayload.SourceCounterName = req.SelectedCounter.CounterName
+	interchangePayload.DestCounterId = req.ExistedCounter.ID
+	interchangePayload.DestCounterName = req.ExistedCounter.CounterName
+	_, err = h.LicenseService.InterChangeCountersInLicenseService(interchangePayload)
+	c.JSON(http.StatusOK, gin.H{
+		"message": "OK",
+	})
+
+}

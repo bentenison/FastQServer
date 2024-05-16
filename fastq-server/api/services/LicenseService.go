@@ -380,6 +380,102 @@ func (l *licenseService) CheckLicensePresent() (bool, error) {
 
 	return true, nil
 }
+
+func (l *licenseService) InterChangeCountersInLicenseService(ctrOPayload models.InterchangePayload) (bool, error) {
+	info, err := os.Stat(filpathstr)
+	if err != nil {
+		log.Println("license file not present, activate system", err)
+		return false, nil
+	}
+	licenseBytes, err := os.ReadFile(filpathstr)
+	if err != nil {
+		log.Println("unable to read activation file, activate system", err)
+		return false, nil
+	}
+	decryptedData, err := helpers.DecryptData(licenseBytes, info.Name())
+	if err != nil {
+		log.Println("unable to decrypt activation file, activate system", err)
+		return false, nil
+	}
+	var license models.LicensePayload
+	err = json.Unmarshal(decryptedData, &license)
+	if err != nil {
+		log.Println("unmarshal err, activate system", err)
+		return false, nil
+	}
+
+	// if license.Firm != ctr.BranchName {
+	// 	return false, errors.New("error while checking firm in license")
+	// }
+	for i, _ := range license.ActiveCounterPerBranch {
+		// license.ActiveCounterPerBranch[i].BranchId = ctr.BranchId
+		// license.ActiveCounterPerBranch[i].CounterId = ctr.CounterId
+		if license.ActiveCounterPerBranch[i].CounterId == ctrOPayload.SourceCounterId {
+			license.ActiveCounterPerBranch[i].CounterName = ctrOPayload.SourceCounterName
+		}
+		if license.ActiveCounterPerBranch[i].CounterId == ctrOPayload.DestCounterId {
+			license.ActiveCounterPerBranch[i].CounterName = ctrOPayload.DestCounterName
+		}
+
+	}
+	Lbytes, err := json.Marshal(license)
+	if err != nil {
+		log.Println("marshal err, activate system", err)
+		return false, nil
+	}
+	err = helpers.SaveDataToFile(filpathstr, Lbytes, true)
+	if err != nil {
+		log.Println("error activating counter", err)
+		return false, nil
+	}
+	err = l.InterchangeSystemsCounterService(ctrOPayload.SourceCounterId, ctrOPayload.SourceCounterName)
+	if err != nil {
+		log.Println("error updating system", err)
+		return false, nil
+	}
+	err = l.InterchangeSystemsCounterService(ctrOPayload.DestCounterId, ctrOPayload.DestCounterName)
+	if err != nil {
+		log.Println("error updating system", err)
+		return false, nil
+	}
+	//insert syatem info in systemns
+	// system := models.UpdateSystemParams{}
+	// system.ServerIP = helpers.DiscoverService()
+	// if err != nil {
+	// 	log.Println("error getting IP", err)
+	// 	return false, err
+	// }
+	// system.ServerDiskId, err = helpers.GetHDDId()
+	// if err != nil {
+	// 	log.Println("error getting harddisk Id", err)
+	// 	return false, err
+	// }
+	// system.ServerCPU, err = helpers.GetCPUId()
+	// if err != nil {
+	// 	log.Println("error getting cpu Id", err)
+	// 	return false, err
+	// }
+	// system.ClientCPU = ctr.CpuId
+	// system.ClientDiskId = ctr.HardDiskId
+	// system.CounterId = ctr.CounterId
+	// system.CounterName = ctr.CounterName
+	// err = InsetSystem(context.TODO(), system, l.db)
+	// if err != nil {
+	// 	log.Println("error inserting system", err)
+	// 	return false, nil
+	// }
+	// activation := models.CounterActivation{
+	// 	ClientCPU:    system.ClientCPU,
+	// 	ClientDiskId: system.ClientDiskId,
+	// 	Id:           ctr.CounterId,
+	// }
+	// err = UpdateCounterActivation(context.TODO(), activation, l.db)
+	// if err != nil {
+	// 	log.Println("error updating counter", err)
+	// 	return false, nil
+	// }
+	return true, nil
+}
 func (l *licenseService) CheckAndGetActiveCounter(arg models.ActiveCounter) (models.ManageCounter, error) {
 	info, err := CheckAndGetCounter(context.TODO(), arg, l.db)
 	if err != nil {
@@ -391,6 +487,14 @@ func (l *licenseService) CheckAndGetActiveCounter(arg models.ActiveCounter) (mod
 }
 func (l *licenseService) UpdateCounterUserService(arg string) error {
 	err := updateCounterUser(context.TODO(), arg, l.db)
+	if err != nil {
+		log.Println("update counter user error ", err)
+		return nil
+	}
+	return nil
+}
+func (l *licenseService) InterchangeSystemsCounterService(ctrId, ctrname string) error {
+	err := InterChangeCounterIdsInSystems(context.TODO(), ctrId, ctrname, l.db)
 	if err != nil {
 		log.Println("update counter user error ", err)
 		return nil
@@ -451,6 +555,10 @@ func UpdateCounterActivation(ctx context.Context, arg models.CounterActivation, 
 		arg.ClientDiskId,
 		arg.Id,
 	)
+	return err
+}
+func InterChangeCounterIdsInSystems(ctx context.Context, ctrId, ctrname string, db *sql.DB) error {
+	_, err := db.ExecContext(ctx, `update systems set counter_name =? where counter_id =?`, ctrname, ctrId)
 	return err
 }
 

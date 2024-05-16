@@ -3,7 +3,11 @@
     <div class="row h-100">
       <div class="row col-md-12 h-100">
         <v-card class="col-md-12 h-auto" flat>
-          <EditTable :data="tableData" :headers="headers" :name="'counterservice'" />
+          <EditTable
+            :data="tableData"
+            :headers="headers"
+            :name="'counterservice'"
+          />
 
           <h5 class="h4 grey--text mt-5">Assign Services to Counter</h5>
           <div class="row mt-2 d-flex align-items-center gap-3 ml-2">
@@ -118,6 +122,7 @@ export default {
               data.NumberEnds = element.NumberEnds;
               data.Hide = element.Hide;
               data.id = element.ID;
+              data.Service_Arabic = element.Workflow;
               this.services.push(data);
             });
             resolve();
@@ -165,19 +170,20 @@ export default {
       axios
         .get(`/service/getAllassignedServices`)
         .then((res) => {
-        //   console.log(">>>>>>>>>>>>>>>>>", res);
+          //   console.log(">>>>>>>>>>>>>>>>>", res);
           res.data.forEach((element) => {
             let data = {};
             // console.log("element", element);
             this.counters.forEach((counter) => {
-            //   console.log("counter", counter);
+              //   console.log("counter", counter);
               if (counter.id === element.CounterID) {
                 data.counterNumber = counter.counterNumber;
                 data.counterName = counter.counterName;
                 data.services = element.ServiceID;
+                data.id = element.CounterServiceID
               }
             });
-            console.log("DAaya >>>>>>>>>>>>", data);
+            // console.log("DAaya >>>>>>>>>>>>", data);
             this.tableData.push(data);
           });
 
@@ -195,7 +201,7 @@ export default {
           `/service/assignService/${this.$store.getters.getUser.company_code}`
         )
         .then((res) => {
-        //   console.log(">>>>>>>>>>>>>>>>>", res);
+          //   console.log(">>>>>>>>>>>>>>>>>", res);
           this.$toast.success("counter services fetched successfully.");
           // this.connection.send("Hello World !!!")
         })
@@ -209,11 +215,13 @@ export default {
       let counterSvc = {};
       this.selectedServices.forEach((svc) => {
         svcs.push(svc.Name);
-        svcs.push(svc.Workflow);
+        svcs.push(svc.Service_Arabic);
       });
       counterSvc.CounterID = this.selectedCounter.id;
       counterSvc.ServiceID = svcs.toString();
-    //   console.log("assigned services", counterSvc);
+      console.log("object,", counterSvc);
+      // return;
+      //   console.log("assigned services", counterSvc);
       axios
         .post("/service/addassignedServices", counterSvc)
         .then((res) => {
@@ -222,6 +230,7 @@ export default {
           //   this.branch = {};
           this.selectedCounter = null;
           this.selectedServices = null;
+          this.getAllAssignedServices()
         })
         .catch((err) => {
           console.log(err.response);
@@ -234,7 +243,7 @@ export default {
       axios
         .post("/service/updateassignedServices", this.branch)
         .then((res) => {
-        //   console.log("res:::::", res);
+          //   console.log("res:::::", res);
           this.$toast.success("services updated successfully.");
           this.branch = {};
         })

@@ -560,3 +560,25 @@ func (h *Handler) UpdateServerIPByCodeHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, "OK")
 
 }
+func (h *Handler) DeleteCounterServicesHandler(c *gin.Context) {
+	id := c.Param("id")
+	if id == "" {
+		err := apperrors.NewExpectationFailed("id is required param!!")
+		c.JSON(http.StatusExpectationFailed, gin.H{
+			"error": err,
+		})
+		return
+	}
+	// ctx := c.Request.Context()
+	err := h.ConfigService.DeleteCounterServices(id)
+	if err != nil {
+		log.Println("error getting data :", err)
+
+		c.JSON(http.StatusExpectationFailed, gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
+	c.JSON(http.StatusOK, "OK")
+
+}

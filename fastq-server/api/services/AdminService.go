@@ -153,6 +153,25 @@ func (as *adminService) UpdateCounterService(ctx context.Context, arg models.Upd
 	}
 	return nil
 }
+func (as *adminService) UpdateInterchangeCounterService(ctx context.Context, arg models.UpdateInterchangedCounters) error {
+	// arg.ID = uuid.NewString()
+	const createdFormat = "2006-01-02 15:04:05"
+	// arg.CreatedAt = time.Now().Format(createdFormat)
+	arg.SelectedCounter.UpdatedAt = time.Now().Format(createdFormat)
+	// var SelectedCounter models.UpdateCounterParams
+	err := as.AdminRepository.UpdateCounter(ctx, arg.SelectedCounter)
+	if err != nil {
+		log.Println("error while updating counter in DB", err)
+		return err
+	}
+	arg.ExistedCounter.UpdatedAt = time.Now().Format(createdFormat)
+	err = as.AdminRepository.UpdateCounter(ctx, arg.ExistedCounter)
+	if err != nil {
+		log.Println("error while updating counter in DB", err)
+		return err
+	}
+	return nil
+}
 
 // ? section service
 func (as *adminService) AddSectionService(ctx context.Context, arg models.AddSectionParams) (sql.Result, error) {

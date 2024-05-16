@@ -68,7 +68,7 @@ func (dao *ReportsDAO) GetTicketsByStatus(companyCode string) (map[string]int, e
 	return result, nil
 }
 func (dao *ReportsDAO) GetAllWaitingTickets(companyCode string) (string, error) {
-	query := "SELECT COUNT(*) as total_tickets FROM ticket WHERE company_code = ? AND DATE(created_at) = curdate()"
+	query := "SELECT COUNT(*) as total_tickets FROM ticket WHERE company_code = ? AND DATE(created_at) = curdate() and ticket_status = 'CREATED'"
 	rows, err := dao.DB.Query(query, companyCode)
 	if err != nil {
 		log.Println("Error executing query:", err)
