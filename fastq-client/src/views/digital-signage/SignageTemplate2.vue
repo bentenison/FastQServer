@@ -281,12 +281,16 @@ export default {
     callTicket(ticketNumber, counterNumber) {
       // Send a request to the server for text-to-speech
       // Handle the TTS response and call the TTS function
-      // this.performTextToSpeech(
-      //   `Ticket number ${ticketNumber} is now ready on counter ${counterNumber}.`
-      // );
-      this.performTextToSpeech(
-        `التذكرة رقم ${ticketNumber} جاهزة الآن في المنضدة ${counterNumber}.`
-      );
+      if (this.customization.tts_language === "en-US") {
+        console.log("in if english");
+        this.performTextToSpeech(
+          `Ticket number ${ticketNumber} is now ready on counter ${counterNumber}.`
+        );
+      } else {
+        this.performTextToSpeech(
+          `التذكرة رقم ${ticketNumber} جاهزة الآن في المنضدة ${counterNumber}.`
+        );
+      }
     },
     add(client) {
       const { length } = this.activeClients;
@@ -304,11 +308,32 @@ export default {
 
         // This overrides the text "Hello World" and is uttered instead
         console.log("voices", voices);
-        utterance.voice = voices[1];
-        utterance.lang = "ar-kw";
+        console.log("customization", this.customization);
+        for (let index = 0; index < voices.length; index++) {
+          const element = voices[index];
+          if (this.customization.tts_language.split("-", 1)[0] === "ar") {
+            if (
+              element.lang.includes(
+                this.customization.tts_language.split("-", 1)[0]
+              )
+            ) {
+              console.log(element);
+              utterance.voice = element;
+              utterance.rate = 0.5;
+              // break;
+            }
+          } else {
+            break;
+          }
+        }
+        if (this.customization.tts_language === "en-US") {
+          utterance.lang = "en-us";
+          utterance.rate = 0.4;
+        } else {
+          utterance.lang = "ar-kw";
+        }
         // utterance.text = text;
         utterance.pitch = 2;
-        utterance.rate = 0.4;
         utterance.volume = 5;
         console.log("Calling Once");
         if (this.count == 0) {

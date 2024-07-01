@@ -17,9 +17,7 @@
                 accept="image/png, image/jpeg, image/bmp"
                 :loader-height="3"
               ></v-file-input>
-              <p class="caption">
-                Maximum file size is 1 MB
-              </p>
+              <p class="caption">Maximum file size is 1 MB</p>
               <v-btn
                 color="primary"
                 elevation="2"
@@ -87,6 +85,7 @@ export default {
         // { text: 'User Type', value: 'uType' },
         // { text: 'Suspended?', value: 'isSuspended' },
         { text: "Modified At", value: "modified_at" },
+        { text: "ID", value: "id" },
         { text: "Actions", value: "actions", sortable: false },
       ],
     };
@@ -108,7 +107,7 @@ export default {
       const ext = filename
         .slice(((filename.lastIndexOf(".") - 1) >>> 0) + 2)
         .toLowerCase();
-    //   console.log("extension", ext);
+      //   console.log("extension", ext);
       // Check if the file extension is in the list of image extensions
       return imageExtensions.includes(ext, 0);
     },

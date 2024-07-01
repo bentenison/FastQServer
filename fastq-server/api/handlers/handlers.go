@@ -117,6 +117,7 @@ func NewHandler(c *Config) {
 	g.POST("/user/updateemail", middleware.AuthUser(h.TokenService), h.UpdateUserEmailHandler)
 	g.POST("/user/updatepassword", middleware.AuthUser(h.TokenService), h.UpdateUserPasswordHandler)
 	g.GET("/user/deleteuser/:id", middleware.AuthUser(h.TokenService), h.DeleteUserHandler)
+	g.GET("/user/resetlogin/:id", middleware.AuthUser(h.TokenService), h.ResetUserLoginsHandler)
 	//? counter handlers
 	g.POST("/counter/addcounter", middleware.AuthUser(h.TokenService), h.AddCounterHandler)
 	g.POST("/counter/getcounter", h.GetCounterHandler)
@@ -195,6 +196,7 @@ func NewHandler(c *Config) {
 	g.GET("/config/getallconfig/:id", h.GetAllConfigHandler)
 	g.GET("/config/getServer/:id", h.GetServerByIDHandler)
 	g.POST("/config/updateIp", h.UpdateServerIPByCodeHandler)
+	g.GET("/config/deleteuploaded/:id", h.DeleteUploadedHandler)
 
 	// Reports Handlers
 	g.GET("/report/tickets-by-service/:id", h.GetTicketsByService)

@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"context"
 	"log"
 	"net/http"
 
@@ -580,5 +581,27 @@ func (h *Handler) DeleteCounterServicesHandler(c *gin.Context) {
 		return
 	}
 	c.JSON(http.StatusOK, "OK")
+
+}
+func (h *Handler) DeleteUploadedHandler(c *gin.Context) {
+	id := c.Param("id")
+	if id == "" {
+		err := apperrors.NewExpectationFailed("id is required param!!")
+		c.JSON(http.StatusExpectationFailed, gin.H{
+			"error": err,
+		})
+		return
+	}
+	// ctx := c.Request.Context()
+	res, err := h.ConfigService.DeleteVideoService(context.TODO(), id)
+	if err != nil {
+		log.Println("error getting data :", err)
+
+		c.JSON(http.StatusExpectationFailed, gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
+	c.JSON(http.StatusOK, res)
 
 }

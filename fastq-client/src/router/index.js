@@ -31,6 +31,12 @@ const routes = [
         component: () => import("@/views/Reports"),
         meta: { RequiresAuth: true },
       },
+      // {
+      //   name: "Counter Reports",
+      //   path: "/counterReports",
+      //   component: () => import("@/views/counterReports"),
+      //   meta: { RequiresAuth: true },
+      // },
       {
         name: "Videos",
         path: "/video-ads",

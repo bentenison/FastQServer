@@ -83,6 +83,11 @@ export default {
           to: '/reports'
         },
         // {
+        //   action: 'mdi-chart-arc',
+        //   title: 'Counter Reports',
+        //   to: '/counterReports'
+        // },
+        // {
         //   action: 'mdi-content-save',
         //   title: 'Ads',
         //   to: '/video-ads'

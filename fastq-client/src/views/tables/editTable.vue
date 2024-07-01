@@ -155,6 +155,20 @@ export default {
                     })
                     // this.show = true
                     break;
+                case "videos":
+                axios
+         .get(`/config/deleteuploaded/${item.id}`)
+        .then((res) => {
+          console.log("user", res.data);
+          this.show = false;
+            window.location.reload();
+          this.$toast.success("item deleted successfully!!");
+        })
+        .catch((err) => {
+          this.$toast.error("error deleting service!!", err);
+        });
+                    // this.show = true
+                    break;
 
                 default:
                     break;
