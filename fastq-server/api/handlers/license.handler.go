@@ -256,6 +256,25 @@ func (h *Handler) UpdateCounterUserHandler(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, "ok")
 }
+func (h *Handler) ResetUserLoginsHandler(c *gin.Context) {
+	id := c.Param("id")
+	if id == "" {
+		err := apperrors.NewExpectationFailed("id is required param!!")
+		c.JSON(err.Status(), gin.H{
+			"error": err,
+		})
+		return
+	}
+	err := h.LicenseService.ResetLoginsService(id)
+	if err != nil {
+		log.Println("error occured while updating user by id", err)
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+		return
+	}
+	c.JSON(http.StatusOK, "ok")
+}
 func (h *Handler) GetAssignedServices(c *gin.Context) {
 	id := c.Param("id")
 	if id == "" {

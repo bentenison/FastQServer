@@ -493,6 +493,14 @@ func (l *licenseService) UpdateCounterUserService(arg string) error {
 	}
 	return nil
 }
+func (l *licenseService) ResetLoginsService(arg string) error {
+	err := resetLogins(context.TODO(), arg, l.db)
+	if err != nil {
+		log.Println("update counter user error ", err)
+		return err
+	}
+	return nil
+}
 func (l *licenseService) InterchangeSystemsCounterService(ctrId, ctrname string) error {
 	err := InterChangeCounterIdsInSystems(context.TODO(), ctrId, ctrname, l.db)
 	if err != nil {
@@ -666,6 +674,25 @@ func checkUserAlreayLoggedIn(ctx context.Context, arg models.ManageUser, db *sql
 func updateCounter(ctx context.Context, arg models.ManageUser, ctrId string, db *sql.DB) error {
 	// var i models.ManageCounter
 	res, err := db.ExecContext(ctx, "update manage_counters set user_id = ? where id = ? ", arg.ID.String, ctrId)
+	if err != nil {
+		log.Println("error while updating counters", err)
+		return err
+	}
+
+	affected, err := res.RowsAffected()
+	if err != nil {
+		log.Println("error while updating counters", err)
+		return err
+	}
+	if affected <= 0 {
+		log.Println("error while updating counters", err)
+		return err
+	}
+	return nil
+}
+func resetLogins(ctx context.Context, ctrId string, db *sql.DB) error {
+	// var i models.ManageCounter
+	res, err := db.ExecContext(ctx, "update manage_counters set user_id = '' where user_id = ?", ctrId)
 	if err != nil {
 		log.Println("error while updating counters", err)
 		return err

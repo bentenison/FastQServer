@@ -192,6 +192,7 @@ type LicenseService interface {
 	DeleteCounterFromLicense(id string) (bool, error)
 	InterChangeCountersInLicenseService(ctrOPayload InterchangePayload) (bool, error)
 	InterchangeSystemsCounterService(ctrId, ctrname string) error
+	ResetLoginsService(arg string) error
 }
 type ConfigService interface {
 	AddVideoService(ctx context.Context, v Video) (sql.Result, error)
@@ -223,4 +224,5 @@ type ConfigService interface {
 	UpdateAssignedServices(ctrSvc CounterService) error
 	UpdateIPByCode(a ServerDetails) error
 	DeleteCounterServices(ctrSvcId string) error
+	DeleteVideoService(ctx context.Context, v string) (sql.Result, error)
 }

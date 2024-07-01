@@ -1057,10 +1057,9 @@ export default {
         )
         .then((res) => {
           this.$toast.success("logged out!!!");
-          localStorage.clear();
-          sessionStorage.clear();
-          // window.close();
-          // this.$router.push("/teller/")
+          // localStorage.clear();
+          // sessionStorage.clear();
+          this.$router.push("/teller/")
         })
         .catch((err) => {
           // this.$toast.error("error logging out");

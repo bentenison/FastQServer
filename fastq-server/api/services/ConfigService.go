@@ -38,6 +38,14 @@ func (c *configService) AddVideoService(ctx context.Context, v models.Video) (sq
 	// v. = tm
 	return AddVideo(ctx, c.db, v)
 }
+func (c *configService) DeleteVideoService(ctx context.Context, v string) (sql.Result, error) {
+	// v.Id = uuid.NewString()
+	// t := time.Now()
+	// tm := t.Format("2006-01-02 15:04:05")
+	// v.CreatedAt = tm
+	// v. = tm
+	return DeleteVideo(ctx, c.db, v)
+}
 func (c *configService) GetAllVideoService(ctx context.Context, id string) ([]models.VideoRes, error) {
 	return getAllVideos(ctx, c.db, id)
 }
@@ -198,6 +206,17 @@ func AddVideo(ctx context.Context, db *sql.DB, newVideo models.Video) (sql.Resul
 		newVideo.BranchName,
 		newVideo.IsDeleted,
 	)
+	if err != nil {
+		log.Println(err)
+		return res, err
+	}
+	return res, nil
+}
+func DeleteVideo(ctx context.Context, db *sql.DB, id string) (sql.Result, error) {
+	query := "delete from videos where id = ?"
+
+	// Execute the SQL query
+	res, err := db.Exec(query, id)
 	if err != nil {
 		log.Println(err)
 		return res, err
@@ -863,37 +882,37 @@ func UpdateServerDetailsByCode(db *sql.DB, sd models.ServerDetails) error {
 func GetAllConf(ctx context.Context, db *sql.DB, id string) (models.AllConfig, error) {
 	var allconf models.AllConfig
 	videos, err := getAllVideos(ctx, db, id)
-	if err != nil {
+	if err != nil && err != sql.ErrNoRows {
 		log.Println("error in getting video conf", err)
 		return allconf, err
 	}
 	allconf.VideoConf = videos
 	audioconf, err := selectOneAudioConfig(db, id)
-	if err != nil {
+	if err != nil && err != sql.ErrNoRows {
 		log.Println("error in getting audio conf", err)
 		return allconf, err
 	}
 	allconf.AudioConf = audioconf
 	dsconf, err := selectOneDSConfig(db, id)
-	if err != nil {
+	if err != nil && err != sql.ErrNoRows {
 		log.Println("error in getting DS conf", err)
 		return allconf, err
 	}
 	allconf.DSConf = dsconf
 	announcement, err := selectOneAnnouncement(db, id)
-	if err != nil {
+	if err != nil && err != sql.ErrNoRows {
 		log.Println("error in getting announcement conf", err)
 		return allconf, err
 	}
 	allconf.AnnouncementConf = announcement
 	ticketconf, err := selectOneTicketConfByCompanyCode(db, id)
-	if err != nil {
+	if err != nil && err != sql.ErrNoRows {
 		log.Println("error in getting ticket conf", err)
 		// return allconf, err
 	}
 	allconf.TicketConf = ticketconf
 	schedular, err := getAllVideosSchedular(context.TODO(), db, id)
-	if err != nil {
+	if err != nil && err != sql.ErrNoRows {
 		log.Println("error in getting schedular conf", err)
 		return allconf, err
 	}
